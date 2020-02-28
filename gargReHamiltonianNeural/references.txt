@@ -1,0 +1,3 @@
+ADam optmizer - kingma2014adam
+
+OPen AI Gym - https://gym.openai.com/

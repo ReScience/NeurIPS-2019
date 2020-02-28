@@ -1,0 +1,69 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Courbariaux et~al.(2015)Courbariaux, Bengio, and
+  David]{courbariaux2015binaryconnect}
+Matthieu Courbariaux, Yoshua Bengio, and Jean-Pierre David.
+\newblock Binaryconnect: Training deep neural networks with binary weights
+  during propagations.
+\newblock In \emph{Advances in neural information processing systems}, pages
+  3123--3131, 2015.
+
+\bibitem[Courbariaux et~al.(2016)Courbariaux, Hubara, Soudry, El-Yaniv, and
+  Bengio]{courbariaux2016binarized}
+Matthieu Courbariaux, Itay Hubara, Daniel Soudry, Ran El-Yaniv, and Yoshua
+  Bengio.
+\newblock Binarized neural networks: Training deep neural networks with weights
+  and activations constrained to+ 1 or-1.
+\newblock \emph{arXiv preprint arXiv:1602.02830}, 2016.
+
+\bibitem[Helwegen et~al.(2019)Helwegen, Widdicombe, Geiger, Liu, Cheng, and
+  Nusselder]{helwegen2019latent}
+Koen Helwegen, James Widdicombe, Lukas Geiger, Zechun Liu, Kwang-Ting Cheng,
+  and Roeland Nusselder.
+\newblock Latent weights do not exist: Rethinking binarized neural network
+  optimization.
+\newblock \emph{arXiv preprint arXiv:1906.02107}, 2019.
+
+\bibitem[Hinton(2012)]{hinton_coursera}
+Geoffrey Hinton.
+\newblock Neural networks for machine learning.
+\newblock \emph{Coursera Video Lectures}, 2012.
+
+\bibitem[Kingma and Ba(2014)]{kingma2014adam}
+DP~Kingma and JL~Ba.
+\newblock Adam: A method for stochastic optimization. arxiv 2014.
+\newblock \emph{arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem[Lei~Ba et~al.(2016)Lei~Ba, Kiros, and Hinton]{lei2016layer}
+Jimmy Lei~Ba, Jamie~Ryan Kiros, and Geoffrey~E Hinton.
+\newblock Layer normalization.
+\newblock \emph{arXiv preprint arXiv:1607.06450}, 2016.
+
+\bibitem[Rastegari et~al.(2016)Rastegari, Ordonez, Redmon, and
+  Farhadi]{xnor_net}
+Mohammad Rastegari, Vicente Ordonez, Joseph Redmon, and Ali Farhadi.
+\newblock Xnor-net: Imagenet classification using binary convolutional neural
+  networks.
+\newblock \emph{CoRR}, abs/1603.05279, 2016.
+\newblock URL \url{http://arxiv.org/abs/1603.05279}.
+
+\bibitem[Simonyan and Zisserman(2014)]{simonyan2014very}
+Karen Simonyan and Andrew Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock \emph{arXiv preprint arXiv:1409.1556}, 2014.
+
+\bibitem[Zhuang et~al.(2019)Zhuang, Shen, Tan, Liu, and Reid]{Zhuang2018}
+Bohan Zhuang, Chunhua Shen, Mingkui Tan, Lingqiao Liu, and Ian Reid.
+\newblock {Structured Binary Neural Networks for Accurate Image Classification
+  and Semantic Segmentation}.
+\newblock \emph{CVPR}, 2019.
+\newblock ISSN 154040.
+\newblock \doi{10.2307/3495996}.
+\newblock URL \url{http://arxiv.org/abs/1811.10413}.
+
+\end{thebibliography}

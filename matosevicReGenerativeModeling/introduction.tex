@@ -1,0 +1,6 @@
+\section{Introduction}
+Recent popular deep generative models can roughly be categorised as either adversarial (GANs) or likelihood-based (VAEs, autoregressive, flow-based). While the former often suffer from unstable training, the latter require a particular architecture or a surrogate loss.
+\citet{ncsn-paper} introduce a novel method based on estimating the gradients of data log-density with respect to the input data (i.e. \textit{score}).
+
+Subsequently, during sampling, an initial random point is moved to a high-density region by using the estimated gradient. In this report, we investigate the reproducibility of %experiments in 
+\cite{ncsn-paper}. For this purpose, we briefly introduce the method (\autoref{sec:method}), present the implementation details and comment on the reproducibility (\autoref{sec:implementation}), provide the results of toy (\autoref{sec:repr-of-toy}) and main (\autoref{sec:main-exp}) experiments, as well as propose and test extensions to the original paper (\autoref{sec:additional}).

@@ -1,0 +1,51 @@
+\section{Implementation}
+\label{sec:implementation}
+
+All implementation was done in Python using TensorFlow 2.0, and the models were trained using P100 and V100 GPUs on the Google Cloud Platform. The original code by the authors was provided in PyTorch. To our knowledge, this is the first time this method has been ported to a new framework. Our code is available on GitHub at \url{https://www.github.com/Xemnas0/NCSN-TF2.0}.
+
+\subsection{Data pipeline}
+\label{sec:data-pipeline}
+
+Since the datasets used (MNIST, CIFAR-10 and CelebA) are standard, we obtained them through the TensorFlow datasets API%\footnote{\url{https://www.tensorflow.org/datasets}}
+. We used the standard training split for each dataset (60,000 samples for MNIST and CIFAR-10, and 162,770 samples for CelebA). We applied preprocessing to the data following \cite{ncsn-paper}. For CelebA, we extracted a $140\times140$ centre crop from the image and then resized to $32\times32$. Since the original paper does not specify which interpolation method to use for resizing, we used the default in TensorFlow (bilinear). For all the datasets, we scaled the values from [0, 255] to [0, 1] by dividing each pixel value by 255. Finally, for CIFAR-10 and CelebA, we also flipped each image along the vertical axis with 50\% probability each time a batch was loaded. The data was shuffled at the beginning of every epoch with a buffer size of 10,000 and then split into batches. After consulting with the published code, we noted that instead of using the default, the authors create a randomly sampled training split for MNIST and CelebA, and shuffle the whole dataset each epoch, but since our buffer is reasonably large, we do not consider these differences significant.
+
+\subsection{Network architecture}
+\label{sec:architecture}
+An important aspect of the method is choice of the score network. The authors used three architectures (MLP and ResNet for toy experiments and RefineNet for the main experiment). As in \cite{ncsn-paper}, all models were trained with Adam optimizer with learning rate 0.001% and default parameters ($\beta_1=0.9$, $\beta_2=0.999$)
+. For all experiments, batch size was 128. For ResNet and RefineNet, we used 64 filters for MNIST and 128 for CIFAR-10 and CelebA.
+
+\paragraph{MLP} For the results in \autoref{fig:est-grad}, following \cite{ncsn-paper}, we use a three-layer MLP with 128 units per layer with softplus activation. While this was not specified by the authors, we do not apply activations to the outputs in any architecture, to keep the scores unnormalized and unbounded.
+
+\paragraph{ResNet} For the results in \autoref{fig:toy1}, we use a ResNet encoder-decoder network as in \cite{ncsn-paper}. The encoder consists of 5 pre-activation residual blocks with 32, 64, 64, 128, 128 filters in each layer respectively, mirrored in the decoder. Downsampling/upsampling is performed at the end of the 2nd and 4th residual blocks in the encoder and decoder respectively. Activation function is ELU. For the details that were not specified in the paper, we made the following assumptions:
+\begin{itemize} 
+    \item  Convolutions (encoder) or transposed convolutions (decoder) are of size $3\times 3$.
+    \item Resizing is performed with (transposed) convolutions of stride 2.
+    \item Normalisation is done over batches and only within the residual blocks.
+    \item For changing the number of filters within a skip connection, we use 1$\times$1 convolutions.
+\end{itemize}
+
+
+
+\paragraph{RefineNet}
+The architecture in \cite{ncsn-paper} follows a 4-cascades RefineNet \citep{refinenet} adjusted to account for different noise levels. In short, the RefineNet is a variant of U-Net with residual blocks, where the upwards cascade consists of RefineBlocks, each of which in turn consists of three components: \textit{residual convolutional units} (RCU), \textit{multi-resolution fusion} (MRF) and \textit{chained residual pooling} (CRP). Since the architecture is complex, for brevity we refer to \cite{refinenet} for the exact details and to \cite{ncsn-paper} for the modifications made to it. From a reproducibility standpoint, we found the wording in the architecture description ambiguous; we contacted the authors for clarifications on certain details and were referred to the official code\footnote{\url{https://github.com/ermongroup/ncsn}}. Since the aim of this challenge was to test the reproducibility of the paper, we tried to rely only on that as much as possible, and checked the published code only when we could not make a justified assumption based on standard practice. Specifically, the aspects that were not clear from the paper, and the assumptions we made accordingly, were as follows:
+
+\begin{itemize}
+    \item \textbf{Number of ResNet blocks}: In \cite{refinenet}, the downward cascade (inputs to the RefineBlocks) are obtained from %different stages of 
+    a ResNet pre-trained on ImageNet. In \cite{ncsn-paper} an unspecified number of pre-activation ResNet blocks per cascade was trained from scratch instead. Referring to the code, we found 2 such blocks were used. In correspondence the authors said there was no specific reason for this number and that it should be robust to different choices, so we used only 1 due to computational limitations. 
+    \item \textbf{Dilated convolution}: The authors replace regular convolutions in the ResNet blocks with dilated convolutions. While the paper claims to increase the dilation by a factor of two in each cascade (which we interpreted as dilation rates 1, 2, 4, 8 corresponding to the four cascades), this would result in extremely large dilations relative to the size of the image in the lowest cascade. In the code, the authors use dilation rates 1, 1, 2, 4, while we decided to apply 1, 2, 2, 4 as a compromise between what is claimed in the paper -- that dilated convolutions are not used only in the first cascade -- and the aforementioned issue. %We use the dilation rates used in the authors' code, 1, 2, 2, 4 in the four cascades respectively.
+    \item \textbf{Downsampling}: It was not specified how and where downsampling was done in the downward cascade, so we referred to the code and found that it was performed by $2\times 2$ average pooling with stride 2, and only after the first cascade. We would like to emphasize that the phrasing in the original paper is ambiguous in this regard, giving the impression that dilated convolutions are used to perform downsampling, when in reality this was not the case.
+    \item \textbf{Filters}: Based on the authors' code, we used 3$\times$3  convolutions at the beginning and the end of the architecture to move between input channels and number of filters. 
+    
+    Following the description in the original paper, we also doubled the number of filters in all layers corresponding to the 2nd, 3rd and 4th cascades, and in the residual blocks where the number of filters is doubled, we added another 1$\times$1 convolution to also double the filters in the skip connection, as is standard practice. However, we later found that this differs slightly from how the authors' implementation -- they increase the number of filters in the final convolution of the 1st cascade, whereas we do it in the first convolution of the 2nd cascade, and they use 3$\times$3 convolutions to increase the number of filters in the skip connections. We further noticed that the authors have 3$\times$3 convolutions in the skip connections of the first residual block of each cascade even when the number of filters does not change.
+    %\item Since not given, we chose kernel size 1 when changing the number of filters and 3 otherwise.
+    \item %The authors introduce instance normalisation conditioned on noise and place this before every convolution in the network, except the first one as it is not common practice to normalise the raw input.
+    \textbf{Initialisation of normalisation parameters}: Since these values were not specified, we initialized the $\alpha$ and $\gamma$ parameters for conditional instance normalisation to ones (instead on $\mathcal{N}(1, 0.02)$ as in the code), and $\beta$ to zeros, as is common practice for batch normalisation.
+\end{itemize}
+
+
+
+
+\subsection{Evaluation}
+\label{sec:eval}
+
+Due to limited computational resources we save checkpoints during training every 10,000 iterations instead of every 5,000 as in \cite{ncsn-paper}. We choose the best model for CIFAR-10 and CelebA by computing the FID on 1000 samples generated from each checkpoint. For MNIST we used the final model as in \cite{ncsn-paper}. The reported Inception score and FID were computed on 50,000 samples from the best model.

@@ -1,0 +1,14 @@
+\section{Implementation}
+
+\subsection{Discussion on Reproducibility Issues}
+
+For all of the methods used to derive the results of this paper, we used the PyTorch framework to train our deep networks along with external components such as Adversarial Belief Matching. We first designed each method on our own, and then consulted the official codes of the zero-shot and few-shot knowledge transfer to find hyperparameter values and fine-tune our networks. In detail, we had to integrate the following settings in our work, which were not mentioned in the paper\cite{Micaelli2019ZeroShotKT} but implemented in the official repository of the authors:
+
+\begin{itemize}
+    \item To our knowledge, there is no mention about weight initialization in \cite{wrn} or \cite{zagoruyko2016paying} from the authors of Wide ResNets. We thus used the weight initialization presented on GitHub\footnote{\url{https://github.com/szagoruyko/wide-residual-networks}}. 
+    \item We initially treated the hyperparameters of Temperature $T$ and $\alpha$ value on knowledge distillation between the teacher and student network as presented in \cite{hinton2015distilling}, and then changed it to the values used by the authors on \cite{zagoruyko2016paying}. In particular, $T$ is equal to 4, while $\alpha$ is equal to 0.9.
+    \item In attention transfer, the authors in \cite{zagoruyko2016paying} suggest that the best way to extract the spatial attention map would be to use the sum of the square of each individual pixel per channel, but the authors of \cite{Micaelli2019ZeroShotKT} use the squared mean instead. Furthermore, the  distance between student and teacher maps is quantified by taking the squared mean over batch and spatial size, as opposed to Euclidean distance which they state in their paper.
+    \item In \cite{zagoruyko2016paying} and \cite{hinton2015distilling}, cross entropy is used for the student's loss term with teacher outputs as targets. However, in both the few-shot KD and zero-shot settings of \cite{Micaelli2019ZeroShotKT} teacher and student are compared with the use of KL divergence between the softmax activations of the former and the log-softmax of the latter (KL for the zero-shot model is stated in the paper). 
+    \item There is no description of the Generator network in \cite{Micaelli2019ZeroShotKT} apart from "We use a generic generator with only three convolutional layers, and our input noise z has 100 dimensions". Thus, we consulted the official code for more details in order to design this network. The structure of the generator can de found in the Appendix Section \ref{gen_lconfig}.
+    \item In the zero-shot method of \cite{Micaelli2019ZeroShotKT} the paper does not mention that weight clipping is performed on both the student and generator networks. We proceeded with integrating weight clipping to our training too. 
+\end{itemize}

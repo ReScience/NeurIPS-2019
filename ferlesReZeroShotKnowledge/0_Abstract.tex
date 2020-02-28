@@ -1,0 +1,5 @@
+\begin{abstract}
+
+We reproduce the work in \textit{Zero-shot Knowledge Transfer via  Adversarial Belief Matching}, which describes a novel approach for knowledge transfer. A teacher network trained on real samples distills knowledge to a student network that is trained solely on pseudo data extracted from a generator network, with the student trying to mimic the teacher's outputs on these datapoints. To this end, we additionally re-implement Wide Residual Networks which are used as the main framework for both teacher and student networks and train them from scratch on CIFAR10 and SVHN. We compare the results of the proposed method with a few-shot knowledge distillation attention transfer setting implemented and trained from scratch. We suggest an approach for further exploitation of the learnt mechanics of the generator network in the zero-shot setting, which operates on top of the main method, and briefly discuss the benefits and drawbacks of this approach. Our code can be found publicly available in \url{https://github.com/AlexandrosFerles/NIPS_2019_Reproducibilty_Challenge_Zero-shot_Knowledge_Transfer_via_Adversarial_Belief_Matching}. 
+ 
+\end{abstract}

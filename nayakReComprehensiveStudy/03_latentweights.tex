@@ -1,0 +1,99 @@
+\section{How do Latent weights perform with respect to binary weights?}
+
+Previous works claimed that binary weight vector is an extremely quantized i.e. binarized version of the latent weights. Many of the previous works consider binary weights as an approximation of real latent weights. According to approximation viewpoint, using latent weights instead of binary weights along with binary activations should result in better accuracy than BNN. Authors of this paper (\cite{helwegen2019latent}) claimed that using latent weights in BNN may not always result into higher accuracy. In this section, we study this claim with experiments conducted on multiple architectures with different datasets.
+
+We consider the task of classification of images as the case for this study. Three neural network architectures are considered:
+\begin{enumerate}
+    \item A fully connected dense neural network (referred as \textit{FullyCon} here on).
+    \item Convolutional Neural Network based on popular LeNet architecture (referred as \textit{LENET5} here on).
+    \item Convolutional Neural Network based in VGGNet architecture which is also considered by the authors (referred as \textit{ConvNet}).
+\end{enumerate}
+The architecture of each of the three networks are shown in Table \ref{FC}, Table \ref{LENET5} and Table \ref{ConvNet} respectively. For convolutional layers, the filter sizes of $(5,5)$ and $(3,3)$ are used for LENET5 and ConvNet respectively. The "Activation" mentioned in Table \ref{FC}, Table \ref{LENET5} and Table \ref{ConvNet} are the activation applied to the output of the corresponding layer. For all of the three cases, there is no binarization activation applied to the input layer. We provide the results on training these architectures in  MNIST and CIFAR10 datasets till the training accuracy saturates.
+
+\begin{table}[ht]
+  \caption{Architecture of \textit{FullyCon}}
+  \label{FC}
+  \centering
+  \begin{tabular}{lcccc}
+    \hline
+    Layer  &  No. of neurons & Batch normalization & Activation & Dropout rate \\
+    \midrule
+    Dropout+DenseFC-binary &  $4096$  & Yes & Binary tanh &  0.5 \\
+    Dropout+DenseFC-binary &  $4096$  & Yes & Binary tanh &  0.5 \\
+    Dropout+DenseFC-binary &  $4096$  & Yes & Binary tanh &  0.5 \\
+    DenseFC-binary+L2SVM loss &  $10$  & Yes & None  &  - \\
+    \bottomrule
+  \end{tabular}
+\end{table} 
+\begin{table}[ht]
+  \caption{Architecture of \textit{LENET5}}
+  \label{LENET5}
+  \centering
+  \begin{tabular}{lccc}
+    \hline
+    Layer  &  No. of filters/neurons & Batch normalization & Activation \\
+    \midrule
+    Binary 2D Convolutional &  $20$  & Yes & Binary tanh   \\
+    Binary 2D Convolutional + Maxpool &  $20$  & Yes & Binary tanh  \\
+    Binary 2D Convolutional &  $50$  & Yes & Binary tanh  \\
+    Binary 2D Convolutional + Maxpool &  $50$  & Yes  & Binary tanh \\
+    Flatten & - & - & - \\
+    Binary DenseFC  & $500$ & Yes & Binary tanh\\
+    Binary DenseFC+Square hinge loss  & $10$ & Yes & None\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\begin{table}[ht]
+  \caption{Architecture of \textit{ConvNet}}
+  \label{ConvNet}
+  \centering
+  \begin{tabular}{lccc}
+    \hline
+    Layer  &  No. of filters/neurons & Batch normalization & Activation \\
+    \midrule
+    Binary 2D Convolutional &  $128$  & Yes & Binary tanh   \\
+    Binary 2D Convolutional + Maxpool &  $128$  & Yes & Binary tanh  \\
+    Binary 2D Convolutional &  $256$  & Yes & Binary tanh  \\
+    Binary 2D Convolutional + Maxpool &  $256$  & Yes  & Binary tanh \\
+    Binary 2D Convolutional  &  $512$  & Yes  & Binary tanh \\
+    Binary 2D Convolutional + Maxpool &  $512$  & Yes  & Binary tanh \\
+    Flatten & - & - & - \\
+    Binary DenseFC  & $1024$ & Yes & Binary tanh\\
+    Binary DenseFC  & $1024$ & Yes & Binary tanh\\
+    Binary DenseFC+Square hinge loss  & $10$ & Yes & None\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The results for MNIST and CIFAR10 datasets are provided in Table \ref{MNISTlatent}) and Table \ref{CIFAR10latent} respectively. We trained the models by backpropagating losses due to binary weights during the training process. At the end of training, the accuracy of using binary weights and latent weights are reported.
+\begin{table}[ht]
+  \caption{Effect of latent weights for MNIST}
+  \label{MNISTlatent}
+  \centering
+  \begin{tabular}{lrr}
+  \hline
+    Binary NN with MNIST dataset     & Fully Connected     & LENET5 \\
+    \midrule
+    Training accuracy($\%$) at $500^{th}$ epoch &  $100.00$  & $99.99$    \\
+    Test accuracy($\%$) with binary weights   & $98.35$ & $99.20$      \\
+    Test accuracy($\%$) with latent weights     & $99.01$       & $98.12$  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+\begin{table}[!ht]
+  \caption{Effect of latent weights for CIFAR10}
+  \label{CIFAR10latent}
+  \centering
+  \begin{tabular}{lrr}
+    Binary NN w/ CIFAR10 dataset     & ConvNet     & LENET5 \\
+    \midrule
+    Training accuracy($\%$) at $100^{th}$ epoch &  $100.00$  & $85.16$     \\
+    Test accuracy($\%$) with binary weights     & $81.72$ & $64.99$      \\
+    Test accuracy($\%$) with latent weights     & $50.52$       & $54.62$  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+We can observe from the experiment that, in general, latent weights when applied to BNN does not perform better than binary weights, verifying authors' claim. Hence, the alternate view point of seeing binary weights as approximation of real latent weights \cite{courbariaux2015binaryconnect,courbariaux2016binarized, xnor_net, Zhuang2018} is not necessarily true. Even though BNN is trained with latent weights, mostly (except MNIST) the BNN with latent weights achieves a lower accuracy than using binary weights.

@@ -1,0 +1,67 @@
+% code from: https://tex.stackexchange.com/questions/447202/highlight-maximum-values-for-each-row-in-large-csv
+
+% commad for drawing ucr table
+% \newcommand{\drawucrepochs}{
+% \drawtable{"results/Experiments_my_own - UCR_all_important_columns.csv"}{1}{Test accuracy scores for all 128 UCR datasets, run with a fixed number of epochs instead of a fixed number of optimization steps.}{tab:ucr_all}{UCR_DATA}
+% }
+
+%\newcommand{\drawucrepochs}{
+%\drawtable{"results/Experiments_my_own_UCR_all_important_columns_alpha_3.csv"}{1}{Test accuracy scores for all 128 UCR datasets, run with a fixed number of epochs instead of a fixed number of optimization steps.}{tab:ucr_all}{UCR_DATA}
+%}
+
+\newcommand{\drawucrsteps}{
+% "results/UCR_results_steps_important_columns.csv"
+\drawtable{"finalized_results/Finalized UCR experiments - ADL project - [For report] features_UCR_steps_noise_complete.csv"}{1}{Test accuracy scores for all 128 UCR datasets.}{tab:ucr_all_steps}{UCR_DATA_steps}
+}
+
+\newcommand{\drawueasteps}{
+% results/UEA_results_steps_important_columns.csv
+\drawtable{"finalized_results/Finalized UEA experiments - ADL project - [For report] features_UEA_steps_noise_complete.csv"}{1}{Test accuracy for all the datasets in the UEA archive.}{tab:uea_all_steps}{UEA_DATA_steps}
+}
+
+%\newcommand{\drawueaepochs}{
+%\drawtable{"results/Experiments_my_own - UEA_important columns (latex).csv"}{1}{Test accuracy for all the datasets in the UEA archive, run with a fixed number of epochs instead of a fixed number of optimization steps.}{tab:uea_all_epochs}{UEA_DATA_epochs}
+%}
+
+%\newcommand{\tableone}{
+%\drawtable{"results/Experiments_my_own - Table 1.csv"}{1}{Scores for all the methods on a selection of the UCR datasets. Missing scores are indicated by '-'.}{tab:table1}{T1DATA}
+%}
+
+\newcommand{\drawtable}[5]{
+% arg 1: csv file name in the results folder
+% arg 2: column number to exclude: columns before that are not considered for the max() operation
+% arg 3: caption of the table
+% arg 4: label of the table
+% arg 5: name of the database created and used by the datatools package. Choose a unique name for this.
+
+
+% "results/Experiments_my_own - UCR_all_important_columns.csv"
+% \DTLdisplaylongdb[caption={Full accuracy results on all 128 UCR datasets}, label={tab:ucr_all}]{DATA}
+
+\DTLloadrawdb[]{#5}{#1}
+\DTLforeach{#5}{}{                                % iterate over rows
+    \def\theMax{0}                                  % set max to zero
+    \DTLforeachkeyinrow{\thisValue}{                % iterate over cols
+        \ifthenelse{\dtlcol>#2}{                     % ignore columns before that
+            \DTLmax{\theMax}{\theMax}{\thisValue}   % compare max with current value
+        }{}
+    }       
+    % Now \theMax should be maximal
+
+    \DTLforeachkeyinrow{\thisValue}{                % iterate again over cols
+        \ifthenelse{\dtlcol>#2}{                     % ignore columns before that
+            % If current Value is maximal, make it bold
+            \ifthenelse{\DTLisieq{\thisValue}{\theMax}}{
+                \DTLreplaceentryforrow{\dtlkey}{\textbf{\theMax}}
+            }{}
+        }{}
+    }           
+}
+% left alight string and int values in the table
+\renewcommand{\dtlstringalign}{l}
+\renewcommand{\dtlrealalign}{l}
+
+\renewcommand{\dtldisplaystarttab}{\hline} % horizontal line before header
+\renewcommand{\dtldisplayafterhead}{\hline} % horizontal line after header
+\DTLdisplaylongdb[caption={#3}, label={#4}]{#5}
+}

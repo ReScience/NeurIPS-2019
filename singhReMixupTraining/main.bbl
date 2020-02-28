@@ -1,0 +1,65 @@
+\begin{thebibliography}{10}
+
+\bibitem{vrm_1}
+Olivier Chapelle, Jason Weston, L\'{e}on Bottou, and Vladimir Vapnik.
+\newblock Vicinal risk minimization.
+\newblock In T.~K. Leen, T.~G. Dietterich, and V.~Tresp, editors, {\em Advances
+  in Neural Information Processing Systems 13}, pages 416--422. MIT Press,
+  2001.
+
+\bibitem{stl10}
+Adam Coates, Andrew Ng, and Honglak Lee.
+\newblock An analysis of single-layer networks in unsupervised feature
+  learning.
+\newblock In Geoffrey Gordon, David Dunson, and Miroslav Dudík, editors, {\em
+  Proceedings of the Fourteenth International Conference on Artificial
+  Intelligence and Statistics}, volume~15 of {\em Proceedings of Machine
+  Learning Research}, pages 215--223, Fort Lauderdale, FL, USA, 11--13 Apr
+  2011. PMLR.
+
+\bibitem{imagenet_cvpr09}
+J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li, and L.~Fei-Fei.
+\newblock {ImageNet: A Large-Scale Hierarchical Image Database}.
+\newblock In {\em CVPR09}, 2009.
+
+\bibitem{calibration}
+Chuan Guo, Geoff Pleiss, Yu~Sun, and Kilian~Q. Weinberger.
+\newblock On calibration of modern neural networks.
+\newblock In {\em Proceedings of the 34th International Conference on Machine
+  Learning - Volume 70}, ICML'17, pages 1321--1330. JMLR.org, 2017.
+
+\bibitem{cifar100}
+Alex Krizhevsky.
+\newblock Learning multiple layers of features from tiny images.
+\newblock Technical report, 2009.
+
+\bibitem{onmixup}
+Sunil Thulasidasan, Gopinath Chennupati, Jeff~A. Bilmes, Tanmoy Bhattacharya,
+  and Sarah~Ellen Michalak.
+\newblock On mixup training: Improved calibration and predictive uncertainty
+  for deep neural networks.
+\newblock {\em ArXiv}, abs/1905.11001, 2019.
+
+\bibitem{erm}
+V.~Vapnik.
+\newblock Principles of risk minimization for learning theory.
+\newblock In J.~E. Moody, S.~J. Hanson, and R.~P. Lippmann, editors, {\em
+  Advances in Neural Information Processing Systems 4}, pages 831--838.
+  Morgan-Kaufmann, 1992.
+
+\bibitem{vrm_0}
+Vladimir~N. Vapnik.
+\newblock {\em The Nature of Statistical Learning Theory}.
+\newblock Springer-Verlag, Berlin, Heidelberg, 1995.
+
+\bibitem{fmnist}
+Han Xiao, Kashif Rasul, and Roland Vollgraf.
+\newblock Fashion-mnist: a novel image dataset for benchmarking machine
+  learning algorithms, 2017.
+
+\bibitem{mixup_2018}
+Hongyi Zhang, Moustapha Cisse, Yann~N. Dauphin, and David Lopez-Paz.
+\newblock mixup: Beyond empirical risk minimization.
+\newblock {\em International Conference on Learning Representations}, 2018.
+
+\end{thebibliography}

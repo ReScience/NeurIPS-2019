@@ -1,0 +1,28 @@
+\documentclass{article}[12pt]
+\PassOptionsToPackage{numbers, compress}{natbib}
+\bibliographystyle{unsrtnat}
+\input{packages.tex}
+%%%%%%%%%%%%%%%%% AUTHORS AND TITLE %%%%%%%%%%%%%%%%%%%%%%
+\title{[RE] Zero-Shot Knowledge Transfer via Adversarial Belief Matching}
+\author{%
+     Alexandros Ferles\thanks{Equal contribution} \\ KTH Royal Institute of Technology\\ \texttt{ferles@kth.se}
+  \And Alexander Nöu\printfnsymbol{1}  \\ KTH Royal Institute of Technology\\\texttt{anou@kth.se} 
+    \And Leonidas Valavanis\printfnsymbol{1}  \\ KTH Royal Institute of Technology\\\texttt{leoval@kth.se} 
+}
+%%%%%%%%%%%%%%%%% MAIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\setcounter{footnote}{0}
+\input{0_Abstract.tex}
+\input{1_Introduction.tex}
+\input{2_Methods.tex}
+\input{3_Implementation.tex}
+\input{4_Experiments.tex}
+\input{5_Results.tex}
+\input{6_Conclusions.tex}
+\newpage
+% \bibliographystyle{ieeetr}
+\bibliography{references.bib}
+\newpage
+\input{7_Appendix.tex}
+\end{document}

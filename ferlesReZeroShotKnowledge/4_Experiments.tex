@@ -1,0 +1,39 @@
+\section{Experiments} 
+
+\subsection{Data and Preprocessing}
+
+The network is evaluated on two commonly used data sets, \textit{CIFAR-10} and \textit{SVHN}, that include 60000 and approximately 100000 32x32 images respectively. On \textit{CIFAR-10}. 50000 images are allocated to its training set, while the remaining 10000 images comprise its test set and are used for evaluation purposes. On \textit{SVHN}, 73257 and 26032 are allocated to its training and test set respectively. The only pre-processing method applied on SVHN is mean/std normalization. On the other hand, we perform a few methods of data augmentation on CIFAR-10 in addition to normalization, namely reflect mode image padding, random cropping and random horizontal flipping. 
+
+\subsection{Training WRN Scratches} % 3 seeds for modified?
+
+The batch size on both datasets is equal to 128, and in order to match the update steps claimed on \cite{Micaelli2019ZeroShotKT}, we trained CIFAR10 for 200 epochs and SVHN for 100 epochs respectively. For both datasets, we apply a Stochastic Gradient Descent (SGD) optimizer with Nesterov momentum (equal to 0.9) and a  weight decay of $5*10^{-4}$. The initial learning rate is equal to 0.1 and divided by 5 when 30\%, 60\% and 80\% of the update steps have been completed. Most of the steps were directly motivated from \cite{Micaelli2019ZeroShotKT}, while we also consulted \cite{zagoruyko2016paying} and \cite{wrn} when some settings were not clear to us. We apply three seeds on each training, namely 0, 1 and 2, and apart from our own method described in \ref{own} we use the same 3 seeds for the rest of this work. As in \cite{Micaelli2019ZeroShotKT}, we train 4 variants of WRN, namely WRN-16-1, WRN-16-2, WRN-40-1 and WRN-40-2. 
+
+We also trained few-shot scratches of WRN-16-1 on M samples per class (M drawn from \{10, 25, 50 , 75, 100\}) on each dataset under the same configurations, to generate the 'No Teacher' models mentioned in \cite{Micaelli2019ZeroShotKT}. In order to train for the same number of update steps, we scale the number of original epochs based on each training dataset size and the value of M, by the following formula:
+
+\useshortskip
+\begin{equation}
+    epochs'= \frac{Dataset\_Size}{10*M} * epochs
+    \label{epochsM}
+\end{equation}
+\useshortskip
+Lastly, we evaluate WRN-16-1 directly on each test set to mimic the 'No Teacher' model with M=0. Since this is exact setting of KD-AT with M=0, we only train this setting once per seed for both cases. 
+
+\subsection{Few-Shot Knowledge Attention Transfer}
+
+For few-shot knowledge distillation with attention transfer, we train WRN-16-1 under the same hyperparameter settings for each dataset and values of M drawn from \{10, 25, 50 , 75, 100\} for WRN-16-1 for both CIFAR and SVHN, and M=5000 for knowledge distillation when trained on full data. Additionally, we combine all the possible teacher-student pairs of the 4 variants of WRN (listed in table \ref{olamesa}) to train the KD-AT setting for M=200 on CIFAR10. Formula (\ref{epochsM}) is once again used to define the number of training epochs for each dataset and value of M. 
+
+\subsection{Zero-Shot and Modified Zero-Shot Training}
+
+The zero-Shot training setting relies on training with fake samples, so we do not need to scale the number of epochs. Instead, for both CIFAR10 and SVHN we train for 80000 iterations, sample a pseudo-batch and update the generator once per iteration ($n_g=1$) and then update the student $n_s=10$ times per iteration. For the modified zero-shot model, the generator produces a new batch for each student update. As in \cite{Micaelli2019ZeroShotKT} we use Adam optimizer\cite{adam} with cosine annealing\cite{cosinelr} in these settings, with an initial learning rate of $2*10^{-3}$ for the student network and $1*10^{-3}$ for the generator. Noisy inputs are sampled from a standard normal distribution with 100 dimensions, and fed to the generator which extracts pseudo batches of size 128*3*32*32, like the input batches of WRNs when trained on real data. In case we wish to use extra M samples for the zero-shot methods, the models are in addition fine-tuned few-shot by using the KD-AT procedure for a further 200 epochs. While the value of M is not clearly stated on \cite{Micaelli2019ZeroShotKT} for the SVHN data, we perform a KD-AT training with M=200 to match the case with the CIFAR data. 
+
+\subsection{Measuring Belief Matching}
+
+For the belief matching experiment, we make use of a WRN-40-2 teacher and three WRN-16-1 students, one trained from the KD-AT setting one from the zero-shot setting and one from the modified zero-shot setting. The paper does not state which $M$ is used for KD-AT. Hence, we choose $M=200$ for fair comparison as it has similar test accuracy to the zero-shot model. In order to compute the probability transition curves described in section \ref{abm}, the process is guided from a learning rate $\xi$ equal to 1, and 100 update steps are performed per sample and fake label. For each of CIFAR10 and SVHN, we use 1000 test set samples, and average over the extracted probability transition curves to display our results. We also compute the Mean Transition Error (MTE) between the teacher and each of the students on each dataset as in \cite{zagoruyko2016paying} via the formula:
+\useshortskip
+\begin{equation}
+    \frac{1}{N_{samples}} \sum_{n=1}^{N_{samples}} \frac{1}{C-1} \sum_{n=1}^{C-1} \frac{1}{K} |p_{student} - p_{teacher}|
+    \label{MTE}
+\end{equation}
+\useshortskip
+
+where $N_{samples}$ represents the 1000 samples from each dataset, $C$ is the number of different classes (equal to 10 for both CIFAR10 and SVHN), $K$ represents the 100 updates steps, $p_{student}$ and $p_{teacher}$ are the probability estimations of the student and teacher for each of the K update steps on C-1 fake labels and $N_{samples}$ samples. 

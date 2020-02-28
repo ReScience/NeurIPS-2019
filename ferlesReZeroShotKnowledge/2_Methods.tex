@@ -1,0 +1,52 @@
+\section{Methods}
+
+\subsection{Wide Residual Networks}
+
+Wide Residual Networks (WRNs) were originally proposed in \cite{wrn} and are used as the main framework for both the teacher and student network in the few-shot knowledge distillation setting of \cite{zagoruyko2016paying} and zero-shot knowledge transfer setting of \cite{Micaelli2019ZeroShotKT}. The main motivation of WRNs is to provide a network with similar performance to much deeper neural networks by taking advantage of less yet wider residual layers. WRNs are uniquely defined by two hyperparameters: the depth $n$ of the network and the width factor $w$ of each layer. 
+
+WRNs comprise of a single convolutional layer, followed by 3 blocks of convolutional layers that extract features which are subsampled by a \textit{global average pooling} layer before being fed to a linear layer to generate class predictions. The number of convolutional layers at each block is the same, and is defined by the factor $n$ of the network. Additionally, each convolutional layer which lies inside the blocks of WRNs, learns a residual function\cite{resnets} on its input. The initial convolutional layer on all WRN versions is the same and performs a convolution operation that outputs 16 feature maps. In their simplest form ($n=16$, $k=1$) WRNs use 16, 32 and 64 output feature maps at each block in respect. Wider version multiply each of these values with $k$ to define the amount of feature maps that will be used at each block.  
+
+At each individual block, the first convolution operation is responsible for the sub-sampling of its input and the increase of the number of feature maps, when necessary. Finally, the operations of batch normalisation and ReLU activation are applied in a reverse order compared to most deep convolutional networks, as in WRNs each batch normalisation layer precedes the non-linearity activation function. 
+
+
+\subsection{Knowledge Distillation and Attention Transfer}\label{helpme}
+
+The zero-shot method is evaluated through comparison with a few-shot knowledge distillation method proposed in \cite{hinton2015distilling}. A student network matches the outputs of a pre-trained teacher network by feeding real data to the teacher and using the output probabilities as targets for training the student. The original paper uses cross entropy loss to train the student with softened teacher probability outputs
+
+\useshortskip
+\begin{equation}
+    q_i = \frac{\exp(z_i/T)}{\sum_j\exp(z_j/T)},\label{eq:1}
+\end{equation}
+\useshortskip
+where temperature $T$ yields a softer probability distribution of classes and \eqref{eq:1} corresponds to standard softmax activation of the teacher outputs $z_i$ when $T=1$. To make use of the true labels of the data, a weighted combination of cross entropy losses with labels and teacher outputs as targets serve as objective for training the student. In the experiments of \cite{Micaelli2019ZeroShotKT}, the Kullback-Leibler divergence is used. Moreover, the baseline model is augmented by adding an attention transfer loss \cite{zagoruyko2016paying}:
+
+\useshortskip
+\begin{equation}
+    \beta\sum_l^{N_L}\left\lvert\left\lvert\frac{f(A_l^{(t)})}{\left\lvert\left\lvert f(A_l^{(t)})\right\rvert\right\rvert_2}-\frac{f(A_l^{(s)})}{\left\lvert\left\lvert f(A_l^{(s)})\right\rvert\right\rvert_2}\right\rvert\right\rvert_2\label{eq:2}
+\end{equation}
+\useshortskip
+The additional loss takes a subset of activation blocks $A_l$ and computes the squared mean over channels in order to get spatial attention maps $f(A_l)$. By adding \eqref{eq:2} to the objective, the student is encouraged to match the spatial attention maps of the teacher. 
+
+As in the zero-shot setting that follows, WRNs will be used for both the teacher and student network. They can easily be integrated in attention-based knowledge transfer methods since we can make use of the output feature maps of each block as a point of comparison, while the spatial resolution of the output of each block is the same regardless of the WRN version. Hence there is no need for interpolation. Additionally, since we aggregate over the filter dimension in order to create the spatial attention maps of each output, we can effectively compare teacher and student WRNs of different widths without extra operations on this dimension, such as a linear mapping to the same filter dimension. 
+
+To follow the notation of \cite{zagoruyko2016paying} and \cite{Micaelli2019ZeroShotKT} for the rest of this paper we refer to this method as KD-AT. 
+
+\subsection{Zero-Shot Knowledge Transfer}
+
+The proposed idea of zero-shot knowledge transfer from teacher to student network is to introduce a generator network, and train the student and the generator adversarially, by using the representation learned from the teacher network. Following the notations of \cite{Micaelli2019ZeroShotKT}, we let $T(x)$, $S(x; \theta)$ and $G(z; \phi)$ be pretrained teacher network, student network and  generator, where the weights $\theta$ and $\phi$ parameterize their respective networks that are to be trained. In order to train the student to match the teacher without real data, we sample noise $z \sim \mathcal{N}(0, I)$ and let $G(z)$ generate fake samples $x_p$. Gradient updates are alternated between student and generator to optimize the Kullback-Leibler divergence:
+\useshortskip
+\begin{equation}
+    D_{KL}(T(x_p)\mid \mid S(x_p)) = \sum_i t_p^{(i)}\log\left(\frac{t_p^{(i)}}{s_p^{(i)}}\right),\label{eq:3}
+\end{equation}
+\useshortskip
+where $t_p$, $s_p$ are the teacher and student output probabilities given pseudo-data, and $i$ denotes the class. The student minimizes \eqref{eq:3} to force it to match the output probabilities of the teacher, which the authors call "belief matching". For the generator, the objective is instead maximized so that it learns to produce samples where the student and teacher disagree the most. The adversarial belief matching is balanced through an appropriate choice  in numbers of gradient steps $n_G$, $n_S$ when alternating the training. In addition, the authors experiment with extra loss functions. The attention transfer term \eqref{eq:2} used for the baseline is also applied to the zero-shot model for the main experiments of the paper.
+
+Thus, zero-shot knowledge transfer acts based on the samples drawn from the generator network, and distills knowledge to a student network by matching the outputs of the teacher much like the knowledge distillation approach in \cite{hinton2015distilling}. The advantage, however, becomes clear compared to the case when only a few training samples are available: Instead of learning to match the teacher on the same limited number of samples at each iteration, the generator is trained alongside the student and will continue to generate challenging pseudo-data to further close the gap between student and teacher.
+
+\subsection{Modification of the Zero-Shot Method}\label{own}
+
+In the training setting of the main method, for each iteration the generator creates a single batch of samples (when $n_G$) on which we then train the student network $n_s$ times to match the teacher's feature maps and outputs on this sole batch. The motivation for using only one batch is clear and justified, since we first force the samples in a position of the sample space which makes it difficult for the student to learn, which requires multiple student updates to balance the training. However, we propose a slight modification on the zero-shot training setting. Instead of using the same sample that the generator was updated on, we use the updated generator to provide us with $n_s$ different batches (keeping $n_G$ the same as before), each of them used only once to update the student based on the teacher's outputs on them. This way, we intend to create a more diverse pseudo-training dataset which could provide an improved training setting for the student network.    
+
+\subsection{Measuring Belief Matching}\label{abm}
+
+In order to measure the student network's degree of belief matching (network's ability to match output probabilities of teacher) with its teacher, the following procedure is executed: Test samples are progressively changed in the direction of the student's decision boundary until they resemble input data of another class. As the student's confidence in a sample belonging to the other class increases, we monitor the predictions of teacher as well. Ideally, we would expect the teacher to follow closely the behaviour of the student. We thus iterate over a number of test samples whose predicted labels are the same for student and teacher. Then, iterating over all possible classes that are not the predicted one, we take $K$ steps of gradient updates on the sample to alter it towards the "fake" class $j$ with learning rate $\xi$. We get the gradient by feeding the sample to the student and computing the cross entropy with class $j$ as target. In each step we let both student and teacher predict the progressively altered sample, and store their respective probability $p_j$ of the sample belonging to class $j$. Finally, the mean over fake classes and test data size results in a transition curve of $p_j$ over $K$ steps. Mean Transition Error is introduced to quantify this matching capability, and computed through the absolute difference $\lvert p_j^s-p_j^t\rvert$ between networks and taking the mean over $K$ steps, fake classes and sample size.

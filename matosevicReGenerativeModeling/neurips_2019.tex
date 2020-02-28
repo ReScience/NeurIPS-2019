@@ -1,0 +1,179 @@
+\documentclass{article}
+% \PassOptionsToPackage{numbers, square}{natbib}
+\usepackage[final, nonatbib]{neurips_2019}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage[dvipsnames]{xcolor}
+\definecolor{greenyellow}{rgb}{0.0, 0.0, 0.8}
+\usepackage[colorlinks = true, urlcolor  = greenyellow, linkcolor = greenyellow, citecolor = greenyellow]{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{amsmath}
+\usepackage{subfig}
+\usepackage{bm}
+\usepackage{wrapfig}
+
+\usepackage{todonotes}
+
+\renewcommand*{\sectionautorefname}{Section}
+\renewcommand*{\subsectionautorefname}{Section}
+\renewcommand*{\figureautorefname}{Figure}
+\renewcommand*{\tableautorefname}{Table}
+
+\renewcommand\thesubfigure{\alph{subfigure}}
+\newcommand{\subfigureautorefname}{\figureautorefname}
+
+
+% \usepackage[nottoc]{tocbibind}
+% \usepackage[colorlinks=true, citecolor=blue, linkcolor=blue, urlcolor=blue]{hyperref}
+
+\usepackage[numbers, square]{natbib}
+% \setcitestyle{numbers, square}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\title{Reproducibility Challenge -- Generative Modeling by Estimating Gradients of the Data Distribution}
+
+\author{%
+  Antonio Matosevic \\
+  \texttt{matose@kth.se} \\
+  \And
+  Eliisabet Hein \\
+  \texttt{elihei@kth.se} \\
+  \And
+  Francesco Nuzzo \\
+  \texttt{fnuzzo@kth.se} \\
+}
+
+\begin{document}
+
+\maketitle
+
+% \begin{abstract}
+%     In this project we attempt to reproduce results from the paper \textit{Generative Modeling by Estimating Gradients of the Data Distribution} by \citet{ncsn-paper}. The authors propose a novel generative framework based solely on gradients of data density estimated by a neural network. Once the model is trained, sampling can be performed with annealed Langevin dynamics. While we managed to reproduce the experiments qualitatively, we failed to achieve comparable results for Inception and FID scores for CIFAR-10. We further extended the original work in various directions (computing and analysing FID and IS also for CelebA, investigation of the sampling hyperparameters $\epsilon$ and $T$, linear instead of geometric annealing schedule for noise levels, and different network architecture).
+% \end{abstract}
+
+
+\input{introduction.tex}
+
+\input{method.tex}
+
+\input{implementation.tex}
+
+\input{toy_experiments.tex}
+
+\input{main_experiments.tex}
+
+\input{additional_experiments.tex}
+
+\input{conclusions.tex}
+
+
+
+
+\small
+
+\bibliographystyle{unsrtnat}
+\bibliography{bibliography}
+
+\clearpage
+\section*{Appendix}
+
+\vspace{5cm}
+
+\begin{figure}[h!]
+  \centering
+     \subfloat[$\epsilon \in \{ 10^{-1},10^{-2},10^{-3},10^{-4},10^{-5},10^{-6} \}$.]{\includegraphics[width=\linewidth]{figures/toy/samples_eps_1.pdf}}\\
+     \subfloat[$\epsilon \in \{ 10^{-4},8 \cdot 10^{-5},6 \cdot 10^{-5},4 \cdot 10^{-5},2 \cdot 10^{-5}, 10^{-5} \}$.]{\includegraphics[width=\linewidth]{figures/toy/samples_eps_2.pdf}}
+     \caption{Samples obtained with different values of $\epsilon$ for toy data with annealed Langevin dynamics. Even after expanding the search in the promising interval $\epsilon \in \{10^{-4}, 10^{-5}\}$, we did not find a value of $\epsilon$ yielding satisfying results.}
+     \label{fig:eps}
+\end{figure}
+
+
+% \vspace{1cm}
+\newpage
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.90\linewidth]{figures/loss_real.pdf}
+    \caption{Loss curves for training real model}
+    \label{fig:losses}
+\end{figure}
+
+\vspace{0.8cm}
+
+\begin{figure}[h!]
+    \centering
+    \subfloat[CIFAR10]{\includegraphics[width=0.47\linewidth]{figures/fid_plots/fid_score_cifar10.png}}
+    \subfloat[CelebA]{\includegraphics[width=0.47\linewidth]{figures/fid_plots/fid_score_celeb_a.png}}
+    \caption{FID scores on 1000 samples for the model trained up to given iteration}
+    \label{fig:fid}
+\end{figure}
+
+\vspace{1cm}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{l c c c}
+    \toprule
+         & \multicolumn{3}{c}{Dataset} \\ \cmidrule{2-4}
+         & MNIST & CIFAR-10 & CelebA \\ \midrule     
+    Downloading data (required once) & 28.7s & 50.4s & 715.4s \\
+    Training with RefineNet & 2.35it/sec & 1.73it/sec & 1.73it/sec \\
+    Sampling (1 image) & 19s & 23s & 23s \\
+    Sampling (100 images) & 112s & 158s & 158s \\
+    Sampling (1000 images) & 910s & 1398s & 1398s \\ \bottomrule
+    \end{tabular}
+    \vspace{3mm}
+    \caption{Time required for different components of the main experiment for each dataset. MNIST was run on a P100 GPU, while the other two datasets were run on a V100 GPU.}
+    \label{tab:times}
+\end{table}
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/samples/mnist_samples_large.png}
+    \caption{Extended samples from MNIST}
+    \label{fig:mnist-samples-large}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/samples/refinenet128_cifar10_L10_step120000_20x20.png}
+    \caption{Extended samples from CIFAR10}
+    \label{fig:cifar10-samples-large}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/samples/celeba_samples_large.png}
+    \caption{Extended samples from CelebA}
+    \label{fig:celeba-samples-large}
+\end{figure}
+
+
+\begin{figure}[h!]
+  \centering
+     \subfloat[MNIST]{\includegraphics[width=0.91\linewidth]{figures/samples/refinenet64_mnist_L10_step200000_20nearest.png}\label{fig:mnist-nearest}}\\
+     \subfloat[CIFAR-10]{\includegraphics[width=0.9\linewidth]{figures/samples/refinenet128_cifar10_L10_step120000_20nearest.png}\label{fig:cifar10-nearest}}\\
+     \subfloat[CelebA]{\includegraphics[width=0.9\linewidth]{figures/samples/refinenet128_celeb_a_L10_step30000_20nearest.png}\label{fig:celeba-nearest}}
+     \caption{Samples (leftmost column) and their nearest neighbours from training set w.r.t. $l_2$ distance.}
+     \label{fig:nn-large}
+\end{figure}
+
+\begin{figure}
+    \centering
+     \subfloat{\includegraphics[width=0.75\linewidth]{figures/samples/refinenet128_celeb_a_L10_step30000_inpainting_occluded_down.png}\label{fig:celeb_a-inpaint_down}}\\
+     \subfloat{\includegraphics[width=0.75\linewidth]{figures/samples/other_occlusions/refinenet128_celeb_a_L10_step30000_inpainting_centered.png}\label{fig:celeb_a-inpaint_centered}}\\
+     \caption{Recontruction with two more different patterns of occlusions on CelebA. Note that unlike the left-right occlusions shown in the main results, utilising face symmetry is not possible with these occlusions, once again proving the method has a good generative capacity.}
+    \label{fig:celeb_a_inpainting}
+\end{figure}
+
+\end{document}
