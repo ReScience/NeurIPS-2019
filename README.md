@@ -4,7 +4,10 @@ Accepted reports to be published in ReScience Journal
 
 ## Directory information
 
-Directories are created using the citation keys of the following reports:
+Directories are created using the citation keys of the following reports. Every directory contains two subfolders:
+
+- `openreview` : Contains the files submitted by authors to OpenReview
+- `journal` : Contains the [ReScience C Template](https://github.com/ReScience/template) files which is modified according to the paper. All modifications should be done here.
 
 ```
 
