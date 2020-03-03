@@ -80,61 +80,61 @@ On the other hand, by training with Mixup, the network is much better calibrated
      \centering
      \begin{subfigure}[b]{0.19\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/joint_plot/no_mixup/0.png}
+         \noindent\includegraphics[width=\textwidth]{images/joint_plot/no_mixup/0.png}
          \caption{}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.19\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/joint_plot/no_mixup/50.png}
+         \noindent\includegraphics[width=\textwidth]{images/joint_plot/no_mixup/50.png}
          \caption{}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.19\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/joint_plot/no_mixup/100.png}
+         \noindent\includegraphics[width=\textwidth]{images/joint_plot/no_mixup/100.png}
          \caption{}
      \end{subfigure}
           \centering
      \begin{subfigure}[b]{0.19\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/joint_plot/no_mixup/150.png}
+         \noindent\includegraphics[width=\textwidth]{images/joint_plot/no_mixup/150.png}
          \caption{}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.19\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/joint_plot/no_mixup/199.png}
+         \noindent\includegraphics[width=\textwidth]{images/joint_plot/no_mixup/199.png}
          \caption{}
      \end{subfigure}
          \centering
      \begin{subfigure}[b]{0.19\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/joint_plot/mixup/0.png}
-         \caption{}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.19\textwidth}
-         \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/joint_plot/mixup/50.png}
+         \noindent\includegraphics[width=\textwidth]{images/joint_plot/mixup/0.png}
          \caption{}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.19\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/joint_plot/mixup/100.png}
+         \noindent\includegraphics[width=\textwidth]{images/joint_plot/mixup/50.png}
+         \caption{}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.19\textwidth}
+         \centering
+         \noindent\includegraphics[width=\textwidth]{images/joint_plot/mixup/100.png}
          \caption{}
      \end{subfigure}
           \centering
      \begin{subfigure}[b]{0.19\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/joint_plot/mixup/150.png}
+         \noindent\includegraphics[width=\textwidth]{images/joint_plot/mixup/150.png}
          \caption{}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.19\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/joint_plot/mixup/199.png}
+         \noindent\includegraphics[width=\textwidth]{images/joint_plot/mixup/199.png}
          \caption{}
      \end{subfigure}
         \caption{Joint density plot for average accuracy vs average confidence computed for different epochs on CIFAR-100 test dataset using Resnet-34 neural network. \textbf{Top Row (a--e):} Trained without Mixup, the network grows overconfident as the training proceeds, as represented by the sharp peak for the confidence. \textbf{Bottom Row (f--j):} Mixup allows the network to be better calibrated in the corresponding epochs.}
@@ -288,32 +288,32 @@ The results can be viewed in Figure \ref{fig:cifar100}. Though we were not able 
      \centering
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{onmixup/images/cifar/accuracyValpha.png}
+         \includegraphics[width=\textwidth]{images/cifar/accuracyValpha.png}
          \caption{Accuracy for different $\alpha$}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{onmixup/images/cifar/eceValpha.png}
+         \includegraphics[width=\textwidth]{images/cifar/eceValpha.png}
          \caption{Expected Calibration Error}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{onmixup/images/cifar/oeValpha.png}
+         \includegraphics[width=\textwidth]{images/cifar/oeValpha.png}
          \caption{Overconfidence error}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/cifar/scatterplot_0.png}
+         \noindent\includegraphics[width=\textwidth]{images/cifar/scatterplot_0.png}
          \caption{No Mixup ($\alpha=0$)}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/cifar/scatterplot_0_3.png}
+         \noindent\includegraphics[width=\textwidth]{images/cifar/scatterplot_0_3.png}
          \caption{$\alpha=0.3$}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/cifar/scatterplot_1.png}
+         \noindent\includegraphics[width=\textwidth]{images/cifar/scatterplot_1.png}
          \caption{Simple average ($\alpha=1$)}
      \end{subfigure}
         \caption{Replication of the results corresponding to CIFAR-100 dataset.}
@@ -329,32 +329,32 @@ The accuracy matches with the values reported by authors as observed in Figure \
      \centering
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{onmixup/images/stl10/accuracyValpha.png}
+         \includegraphics[width=\textwidth]{images/stl10/accuracyValpha.png}
          \caption{Accuracy for different $\alpha$}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{onmixup/images/stl10/eceValpha.png}
+         \includegraphics[width=\textwidth]{images/stl10/eceValpha.png}
          \caption{Expected Calibration Error}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{onmixup/images/stl10/oeValpha.png}
+         \includegraphics[width=\textwidth]{images/stl10/oeValpha.png}
          \caption{Overconfidence Error}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/stl10/scatterplot_0.png}
+         \noindent\includegraphics[width=\textwidth]{images/stl10/scatterplot_0.png}
          \caption{No Mixup ($\alpha=0$)}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/stl10/scatterplot_0-3.png}
+         \noindent\includegraphics[width=\textwidth]{images/stl10/scatterplot_0-3.png}
          \caption{$\alpha=0.3$}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/stl10/scatterplot_1.png}
+         \noindent\includegraphics[width=\textwidth]{images/stl10/scatterplot_1.png}
          \caption{Simple average ($\alpha=1$)}
      \end{subfigure}
         \caption{Replication of the results for STL-10 dataset.}
@@ -369,32 +369,32 @@ The effect of Mixup on accuracy are not quite evident, since the network learns 
      \centering
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{onmixup/images/fmnist/accuracyValpha.png}
+         \includegraphics[width=\textwidth]{images/fmnist/accuracyValpha.png}
          \caption{Accuracy for different $\alpha$}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{onmixup/images/fmnist/eceValpha.png}
+         \includegraphics[width=\textwidth]{images/fmnist/eceValpha.png}
          \caption{Expected Calibration Error}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{onmixup/images/fmnist/oeValpha.png}
+         \includegraphics[width=\textwidth]{images/fmnist/oeValpha.png}
          \caption{Overconfidence error}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/fmnist/scatterplot_0.png}
+         \noindent\includegraphics[width=\textwidth]{images/fmnist/scatterplot_0.png}
          \caption{No Mixup ($\alpha=1$)}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/fmnist/scatterplot_0-3.png}
+         \noindent\includegraphics[width=\textwidth]{images/fmnist/scatterplot_0-3.png}
          \caption{$\alpha=0.3$}
      \end{subfigure}
      \begin{subfigure}[b]{0.31\textwidth}
          \centering
-         \noindent\includegraphics[width=\textwidth]{onmixup/images/fmnist/scatterplot_1.png}
+         \noindent\includegraphics[width=\textwidth]{images/fmnist/scatterplot_1.png}
          \caption{Simple average ($\alpha=1$)}
      \end{subfigure}
         \caption{Replication of the results for Fashion-MNIST dataset.}
@@ -412,12 +412,12 @@ In Figure \ref{fig:out_dist}, the plots closely resemble to the outputs of the p
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{onmixup/images/ood/distplot.png}
+         \includegraphics[width=\textwidth]{images/ood/distplot.png}
          \caption{Out-of-Distribution data}
      \end{subfigure}
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{onmixup/images/noise/distplot.png}
+         \includegraphics[width=\textwidth]{images/noise/distplot.png}
          \caption{Gaussian noise data}
      \end{subfigure}
         \caption{Distribution of confidence of various models when tested on out-of-distribution and Gaussian noise samples, after being trained on the Fashion-MNIST dataset}
