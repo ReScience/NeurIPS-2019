@@ -1,6 +1,13 @@
 .DS_Store
-**/*.log
-**/*.aux
-**/*.fdb_latexmk
-**/*.fls
+**/**/.DS_Store
+**/**/__pycache__/
+**/**/*.log
+**/**/*.aux
+**/**/*.bbl
+**/**/*.blg
+**/**/*.out
+**/**/*.bcf
+**/**/*.fdb_latexmk
+**/**/*.fls
+
 

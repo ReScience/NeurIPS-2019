@@ -5,46 +5,28 @@
 #  - For a successful replication, it shoudl be prefixed with "[Re]"
 #  - For a failed replication, it should be prefixed with "[¬Re]"
 #  - For other article types, no instruction (but please, not too long)
-title: "ReScience (R)evolution"
+title: "[Re] Improved Calibration and Predictive Uncertainty for Deep Neural Networks"
 
 # List of authors with name, orcid number, email and affiliation
 # Affiliation "*" means contact author
 authors:
-  - name: Konrad Hinsen
-    orcid: 0000-0003-0330-9428
-    email: konrad.hinsen@cnrs.fr
-    affiliations: 1,2
+  - name: Aditya Singh
+    orcid: 
+    email: aditya.singh@zebra.com
+    affiliations: 1,*
     
-  - name: Nicolas P. Rougier
-    orcid: 0000-0002-6972-589X
-    email: Nicolas.Rougier@inria.fr
-    affiliations: 3,4,5,*      # * is for contact author
+  - name: Alessandro Bay
+    orcid: 
+    email: alessandro.bay@zebra.com
+    affiliations: 1,      # * is for contact author
 
 # List of affiliations with code (corresponding to author affiliations), name
 # and address. You can also use these affiliations to add text such as "Equal
 # contributions" as name (with no address).
 affiliations:
   - code:    1
-    name:    Centre de Biophysique Moléculaire, CNRS UPR4301
-    address: Orléans, France
-    
-  - code:    2
-    name:    Synchrotron SOLEIL, Division Expériences
-    address: Gif sur Yvette, France
-    
-  - code:    3
-    name:    INRIA Bordeaux Sud-Ouest
-    address: Bordeaux, France
-    
-  - code:    4
-    name:    LaBRI, Université de Bordeaux, Institut Polytechnique de Bordeaux,
-             Centre National de la Recherche Scientifique, UMR 5800
-    address: Talence, France
-    
-  - code:    5
-    name:    Institut des Maladies Neurodégénératives, Université  de Bordeaux,
-             Centre National de la Recherche Scientifique, UMR 5293
-    address: Bordeaux, France
+    name:    Zebra Technologies
+    address: USA
 
 
 # List of keywords (adding the programming language might be a good idea)
@@ -64,22 +46,22 @@ data:
 
 # Information about the original article that has been replicated
 replication:
- - cite: # Full textual citation
- - bib:  # Bibtex key (if any) in your bibliography file
+ - cite: "S. Thulasidasan, G. Chennupati, J. A. Bilmes, T. Bhattacharya, and S. E. Michalak. “On Mixup Training: Improved Calibration and Predictive Uncertainty for Deep Neural Networks.” In: ArXiv abs/1905.11001 (2019)." # Full textual citation
+ - bib:  onmixup # Bibtex key (if any) in your bibliography file
  - url:  # URL to the PDF, try to link to a non-paywall version
  - doi:  # Regular digital object identifier
 
 # Don't forget to surround abstract with double quotes
-abstract: "Three years have passed since ReScience published its first article
-           and since September 2015, things have been going steadily. We're
-           still alive, independent and without a budget. In the meantime, we
-           have published around 20 articles (mostly in computational
-           neuroscience & computational ecology) and the initial has grown
-           from around 10 to roughly 100 members (editors and reviewers), we
-           have advertised ReScience at several conferences worldwide, gave
-           some interviews and we published an article introducing ReScience in
-           PeerJ. Based on our experience at managing the journal during these
-           three years, we think the time is ripe for proposing some changes."
+abstract: "Miscalibration of a model is defined as the mismatch between predicting probability 
+          estimates and the true correctness likelihood. In this work, we aim to replicate 
+          the results reported by \\cite{onmixup} on their analysis of the effect of Mixup
+          \\cite{mixup_2018} on a network's calibration. Mixup is an effective yet 
+          simple approach of data augmentation, which generates a convex combination of a 
+          pair of training images and their corresponding labels as the input and 
+          target for training a network. We replicate the results reported by the
+           authors for CIFAR-100 \\cite{cifar100}, Fashion-MNIST \\cite{fmnist}, 
+           STL-10 \\cite{stl10}, out-of-distribution and random noise data. 
+           Our implementation code can be found at \\url{https://github.com/MacroMayhem/OnMixup}"
 
 # Bibliography file (yours)
 bibliography: bibliography.bib
@@ -89,14 +71,14 @@ bibliography: bibliography.bib
 #  * Editorial
 #  * Letter
 #  * Replication
-type: Editorial
+type: Replication
 
 # Scientific domain of the article (e.g. Computational Neuroscience)
 #  (one domain only & try to be not overly specific)
-domain: 
+domain: NeurIPS 2019 Reproducibility Challenge
 
 # Coding language (main one only if several)
-language:
+language: Python
 
   
 # To be filled by the author(s) after acceptance
@@ -107,8 +89,8 @@ review:
   - url: 
 
 contributors:
-  - name:
-    orcid: 
+  - name: Koustuv Sinha
+    orcid: 0000-0002-2803-9236
     role: editor
   - name:
     orcid:
@@ -119,7 +101,7 @@ contributors:
 
 # This information will be provided by the editor
 dates:
-  - received:  November 1, 2018
+  - received:  February 15, 2020
   - accepted:
   - published: 
 
@@ -133,5 +115,5 @@ article:
 journal:
   - name:   "ReScience C"
   - issn:   2430-3658
-  - volume: 4
+  - volume: 6
   - issue:  1

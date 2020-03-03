@@ -13,34 +13,30 @@
 \def \dateRECEIVED{15 February 2020}
 \def \dateACCEPTED{}
 \def \datePUBLISHED{}
-\def \articleTITLE{ReScience (R)evolution}
+\def \articleTITLE{[Re] Improved Calibration and Predictive Uncertainty for Deep Neural Networks}
 \def \articleTYPE{Replication}
 \def \articleDOMAIN{NeurIPS 2019 Reproducibility Challenge}
 \def \articleBIBLIOGRAPHY{bibliography.bib}
 \def \articleYEAR{2020}
 \def \reviewURL{}
-\def \articleABSTRACT{Three years have passed since ReScience published its first article and since September 2015, things have been going steadily. We're still alive, independent and without a budget. In the meantime, we have published around 20 articles (mostly in computational neuroscience \& computational ecology) and the initial has grown from around 10 to roughly 100 members (editors and reviewers), we have advertised ReScience at several conferences worldwide, gave some interviews and we published an article introducing ReScience in PeerJ. Based on our experience at managing the journal during these three years, we think the time is ripe for proposing some changes.}
-\def \replicationCITE{}
-\def \replicationBIB{}
+\def \articleABSTRACT{Miscalibration of a model is defined as the mismatch between predicting probability estimates and the true correctness likelihood. In this work, we aim to replicate the results reported by \cite{onmixup} on their analysis of the effect of Mixup \cite{mixup_2018} on a network's calibration. Mixup is an effective yet simple approach of data augmentation, which generates a convex combination of a pair of training images and their corresponding labels as the input and target for training a network. We replicate the results reported by the authors for CIFAR-100 \cite{cifar100}, Fashion-MNIST \cite{fmnist}, STL-10 \cite{stl10}, out-of-distribution and random noise data. Our implementation code can be found at \url{https://github.com/MacroMayhem/OnMixup}}
+\def \replicationCITE{S. Thulasidasan, G. Chennupati, J. A. Bilmes, T. Bhattacharya, and S. E. Michalak. “On Mixup Training: Improved Calibration and Predictive Uncertainty for Deep Neural Networks.” In: ArXiv abs/1905.11001 (2019).}
+\def \replicationBIB{onmixup}
 \def \replicationURL{}
 \def \replicationDOI{}
-\def \contactNAME{Nicolas P. Rougier}
-\def \contactEMAIL{Nicolas.Rougier@inria.fr}
+\def \contactNAME{Aditya Singh}
+\def \contactEMAIL{aditya.singh@zebra.com}
 \def \articleKEYWORDS{rescience c, rescience x}
 \def \journalNAME{ReScience C}
 \def \journalVOLUME{6}
 \def \journalISSUE{1}
 \def \articleNUMBER{}
 \def \articleDOI{}
-\def \authorsFULL{Konrad Hinsen and Nicolas P. Rougier}
-\def \authorsABBRV{K. Hinsen and N.P. Rougier}
-\def \authorsSHORT{Hinsen and Rougier}
+\def \authorsFULL{Aditya Singh and Alessandro Bay}
+\def \authorsABBRV{A. Singh and A. Bay}
+\def \authorsSHORT{Singh and Bay}
 \title{\articleTITLE}
 \date{}
-\author[1,2,\orcid{0000-0003-0330-9428}]{Konrad Hinsen}
-\author[3,4,5,\orcid{0000-0002-6972-589X}]{Nicolas P. Rougier}
-\affil[1]{Centre de Biophysique Moléculaire, CNRS UPR4301, Orléans, France}
-\affil[2]{Synchrotron SOLEIL, Division Expériences, Gif sur Yvette, France}
-\affil[3]{INRIA Bordeaux Sud-Ouest, Bordeaux, France}
-\affil[4]{LaBRI, Université de Bordeaux, Institut Polytechnique de Bordeaux, Centre National de la Recherche Scientifique, UMR 5800, Talence, France}
-\affil[5]{Institut des Maladies Neurodégénératives, Université  de Bordeaux, Centre National de la Recherche Scientifique, UMR 5293, Bordeaux, France}
+\author[1]{Aditya Singh}
+\author[1,]{Alessandro Bay}
+\affil[1]{Zebra Technologies, USA}
