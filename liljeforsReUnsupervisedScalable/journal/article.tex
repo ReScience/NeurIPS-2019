@@ -1,0 +1,36 @@
+\documentclass{rescience}
+
+% packages for UCR big table
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{datatool}
+\usepackage{longtable}
+
+% file including commands for drawing our long tables
+\input{../openreview/tables.tex}
+
+\usepackage{color, soul}
+
+\usepackage{subfig}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{tcolorbox}      % boxed text with notes to teacher of ADL course
+\usepackage{arydshln}       % dashed line in table
+
+\begin{document}
+\input{header.tex}
+\input{content.tex}
+
+\hypersetup{linkcolor=black,urlcolor=darkgray}
+\renewcommand\emph[1]{{\bfseries #1}}
+\setlength\bibitemsep{0pt}
+\printbibliography
+
+\input{appendix.tex}
+
+\end{document}
