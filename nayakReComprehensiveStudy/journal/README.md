@@ -1,6 +1,6 @@
 ## NeurIPS 2019 Reproducibility Challenge [ReScience C](https://rescience.github.io/) Template
 
-- Tracking issue: https://github.com/ReScience/NeurIPS-2019/issues/11
+- Tracking issue: https://github.com/ReScience/NeurIPS-2019/issues/10
 
 ### [ReScience C](https://rescience.github.io/) article template
 
