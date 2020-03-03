@@ -1,22 +1,23 @@
 ## NeurIPS 2019 Reproducibility Challenge [ReScience C](https://rescience.github.io/) Template
 
-- Overleaf location: https://www.overleaf.com/4293726636yhmgnpqkghvk
 - Tracking issue: https://github.com/ReScience/NeurIPS-2019/issues/11
 
 ### [ReScience C](https://rescience.github.io/) article template
 
-This repository contains the Latex (optional) template for writing a ReScience
-C article and the (mandatory) YAML metadata file. For the actual article,
-you're free to use any software you like as long as you enforce the proposed
-PDF style. A tool is available for the latex template that produces latex
-definitions from the metadata file. If you use another software, make sure that
-metadata and PDF are always synced.
+This repository contains a [copy of the Latex template](https://github.com/ReScience/template) for writing a ReScience
+C article and the (mandatory) YAML metadata file.
 
-You can also use overleaf with the [provided template](https://www.overleaf.com/read/kfrwdmygjyqw) but in this case, you'll have to enter `metadata.tex` manually.
+#### Prerequisites
+
+Install textlive 2019 in your system. If you are using Mac, easiest would be to install via HomeBrew:
+
+```
+brew cask install mactex
+```
 
 #### Usage
 
-For a submission, fill in information in
+Fill in information in
 [metadata.yaml](./metadata.yaml), modify [content.tex](content.tex)
 and type:
 
@@ -26,8 +27,9 @@ $ make
 
 This will produce an `article.pdf` using xelatex and provided font.
 
+**Note** : From the NeurIPS Latex format, copy all dependencies and add it in context.tex, _including the abstract_. 
 
-After acceptance, you'll need to complete [metadata.yaml](./metadata.yaml) with information provided by the editor and type again:
+As and when required, you'll need to complete [metadata.yaml](./metadata.yaml) with information provided by the editor and type again:
 
 ```bash
 $ make
