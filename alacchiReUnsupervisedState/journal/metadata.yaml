@@ -13,17 +13,17 @@ authors:
   - name: Gabriel Alacchi
     orcid: 
     email: gabriel.alacchi@mail.mcgill.ca
-    affiliations: 1,*
+    affiliations: 1,†,*
     
   - name: Guillaume Lam
     orcid: 
     email: guillaume.lam@mail.mcgill.ca
-    affiliations: 1,      # * is for contact author
+    affiliations: 1,†      # * is for contact author
 
   - name: Carl Perreault-Lafleur
     orcid:
     email: carl.perreault-lafleur@mail.mcgill.ca
-    affiliations: 1,      # * is for contact author
+    affiliations: 1,†      # * is for contact author
 
 # List of affiliations with code (corresponding to author affiliations), name
 # and address. You can also use these affiliations to add text such as "Equal
@@ -33,6 +33,8 @@ affiliations:
     name:    School of Computer Science, McGill University
     address: Montreal, Canada
 
+  - code:    †
+    name:    Equal contributions
 
 # List of keywords (adding the programming language might be a good idea)
 keywords: rescience c, rescience x
