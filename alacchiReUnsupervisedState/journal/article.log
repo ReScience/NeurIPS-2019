@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.3.5)  5 MAR 2020 19:37
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.3.5)  7 MAR 2020 10:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2123,269 +2123,26 @@ LaTeX Font Warning: Font shape `OMS/SourceSerifPro(0)/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbullet' on input line 69.
 
-
-Overfull \hbox (132.72958pt too wide) in paragraph at lines 86--132
- [][] 
- []
-
 [4]
 File: ../openreview/agent_local_avg_f1.png Graphic file (type bmp)
 <../openreview/agent_local_avg_f1.png>
 File: ../openreview/clock_score_avg_f1.png Graphic file (type bmp)
 <../openreview/clock_score_avg_f1.png>
- [5]
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
 File: ../openreview/multiple_params_testing.png Graphic file (type bmp)
 <../openreview/multiple_params_testing.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-[][]\TU/RobotoCondensed(0)/bx/n/9 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-|\T1/SourceSerifPro(0)/m/n/9 Ex-plo-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 dif-fer-ent
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 pa-ram-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 e-ters
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 for the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 en-coder
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 on the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 Box-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 game.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 to the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 base
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 en-coder
- []
-
-
-Underfull \hbox (badness 2005) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 with the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 de-fault
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 pa-ram-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 e-ters
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 (grayscal-
- []
-
-
-Underfull \hbox (badness 1629) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 ing, and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 trained
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 on
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\OT1/cmr/m/n/9 100000$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 frames).
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 to the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 with-out
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 grayscal-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 and (d)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 re-fer
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 to the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 model
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 (a) but
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 trained
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 on
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 re-spec-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 tively
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\OT1/cmr/m/n/9 50000$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\OT1/cmr/m/n/9 150000$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 frames.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 The
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 scores
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 are re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 ported
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 for dif-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 fer-ent
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-\T1/SourceSerifPro(0)/m/n/9 cat-e-
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[6]
 File: ../openreview/ablation2-val_loss(log-log).png Graphic file (type bmp)
 <../openreview/ablation2-val_loss(log-log).png>
-
-Overfull \hbox (96.47336pt too wide) in paragraph at lines 170--171
- [][] 
- []
-
+[6]
 File: ../openreview/ablation2-agent_avg_f1.png Graphic file (type bmp)
 <../openreview/ablation2-agent_avg_f1.png>
 File: ../openreview/ablation2-score_avg_f1.png Graphic file (type bmp)
@@ -2393,38 +2150,32 @@ File: ../openreview/ablation2-score_avg_f1.png Graphic file (type bmp)
 File: ../openreview/ablation2-other_avg_f1.png Graphic file (type bmp)
 <../openreview/ablation2-other_avg_f1.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
-
- []
-
-[7]
 Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
 
-Overfull \hbox (57.72052pt too wide) in paragraph at lines 205--225
- [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
 ) [9] [10]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 38.
- [11]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 38.
  (./article.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 38.
@@ -2438,12 +2189,12 @@ Package logreq Info: Writing requests to 'article.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56607 strings out of 494988
- 1264645 string characters out of 6178639
- 1953523 words of memory out of 5000000
- 59645 multiletter control sequences out of 15000+600000
+ 56604 strings out of 494988
+ 1264611 string characters out of 6178639
+ 1955469 words of memory out of 5000000
+ 59642 multiletter control sequences out of 15000+600000
  544188 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,17n,119p,10426b,4750s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,18n,119p,10426b,4750s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on article.pdf (11 pages).
+Output written on article.pdf (10 pages).
