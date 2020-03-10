@@ -30,13 +30,13 @@ affiliations:
 
 
 # List of keywords (adding the programming language might be a good idea)
-keywords: rescience c, rescience x
+keywords: rescience c, rescience x, network calibration, mixup, python, pytorch
 
 # Code URL and DOI (url is mandatory for replication, doi after acceptance)
 # You can get a DOI for your code from Zenodo,
 #   see https://guides.github.com/activities/citable-code/
 code:
-  - url: https://github.com/rescience-c/template
+  - url: https://github.com/MacroMayhem/OnMixup
   - doi: 
 
 # Date URL and DOI (optional if no data)
@@ -86,7 +86,7 @@ language: Python
 
 # For example, the URL of the GitHub issue where review actually occured
 review: 
-  - url: 
+  - url: https://openreview.net/forum?id=JhZOkalsiI
 
 contributors:
   - name: Koustuv Sinha
