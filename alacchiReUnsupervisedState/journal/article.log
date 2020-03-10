@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.3.5)  7 MAR 2020 10:17
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.3.5)  9 MAR 2020 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2070,10 +2070,6 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-Missing character: There is no † in font ecrm0600!
-Missing character: There is no † in font ecrm0600!
-Missing character: There is no † in font ecrm0600!
-Missing character: There is no † in font ecrm0600!
 Package marginnote Info: Margin note 1.1 is on absolute page 1
 (marginnote)              on input line 47.
 Package marginnote Info: right page because not two side mode on input line 47.
@@ -2191,7 +2187,7 @@ Package logreq Info: Writing requests to 'article.run.xml'.
 Here is how much of TeX's memory you used:
  56604 strings out of 494988
  1264611 string characters out of 6178639
- 1955469 words of memory out of 5000000
+ 1955479 words of memory out of 5000000
  59642 multiletter control sequences out of 15000+600000
  544188 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
