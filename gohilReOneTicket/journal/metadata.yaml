@@ -54,7 +54,7 @@ data:
 # Information about the original article that has been replicated
 replication:
  - cite: "A. Morcos, H. Yu, M. Paganini, and Y. Tian. \"One ticket to win them all: generalizing lottery ticket initializa-tions across datasets and optimizers.\" In:Advances in Neural Information Processing Systems 32, 2019" # Full textual citation
- - bib:  # Bibtex key (if any) in your bibliography file
+ - bib:  \fullcite{repro_paper} # Bibtex key (if any) in your bibliography file
  - url:  https://papers.nips.cc/paper/8739-one-ticket-to-win-them-all-generalizing-lottery-ticket-initializations-across-datasets-and-optimizers.pdf # URL to the PDF, try to link to a non-paywall version
  - doi:  # Regular digital object identifier
 
