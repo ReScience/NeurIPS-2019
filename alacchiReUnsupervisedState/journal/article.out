@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Summary\040of\040the\040Article}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Objective\040and\040Setup}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{The\040SpatioTemporal\040DeepInfoMax\040\(STDIM\)}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{The\040InfoNCE\040Objective}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{The\040STDIM\040Learning\040Objective}{subsection.2.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{Linear\040Probing}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Setup}{}% 8
+\BOOKMARK [1][-]{section.4}{Reproduction\040of\040Results}{}% 9
+\BOOKMARK [1][-]{section.5}{Ablations}{}% 10
+\BOOKMARK [2][-]{subsection.5.1}{Parameter\040tuning}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.2}{Modifying\040the\040Loss\040Function}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.3}{Modifying\040the\040Receptive\040Field\040of\040the\040Base\040Encoder}{section.5}% 13
+\BOOKMARK [1][-]{section.6}{Discussion\040and\040Conclusion}{}% 14
+\BOOKMARK [1][-]{section.7}{Acknowledgements}{}% 15

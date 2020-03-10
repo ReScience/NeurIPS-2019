@@ -1,0 +1,217 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{main_article}{misc}{}
+      \name{author}{6}{}{%
+        {{hash=e9c04884349329f54db6669b03ab4d4a}{%
+           family={Anand},
+           familyi={A\bibinitperiod},
+           given={Ankesh},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1b0ed0dc8b4d1d9b1cc49dfbc39c5f59}{%
+           family={Racah},
+           familyi={R\bibinitperiod},
+           given={Evan},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9ca00ffd7cc35f7cfb8f698aa9239c76}{%
+           family={Ozair},
+           familyi={O\bibinitperiod},
+           given={Sherjil},
+           giveni={S\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=90f75a481318c6e2f4d938116479e00f}{%
+           family={Côté},
+           familyi={C\bibinitperiod},
+           given={Marc-Alexandre},
+           giveni={M\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=aa5aa3d887c39bcb1cf711bf4687b984}{%
+           family={Hjelm},
+           familyi={H\bibinitperiod},
+           given={R.\bibnamedelimi Devon},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{da61d343c6d4020417a3813bff4af512}
+      \strng{fullhash}{800798a0d8c69930540135131c15492a}
+      \strng{bibnamehash}{800798a0d8c69930540135131c15492a}
+      \strng{authorbibnamehash}{800798a0d8c69930540135131c15492a}
+      \strng{authornamehash}{da61d343c6d4020417a3813bff4af512}
+      \strng{authorfullhash}{800798a0d8c69930540135131c15492a}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Unsupervised State Representation Learning in Atari}
+      \field{year}{2019}
+    \endentry
+    \entry{linear_probing}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=e48e52d25dee82d30cb07f7e834ff061}{%
+           family={Alain},
+           familyi={A\bibinitperiod},
+           given={Guillaume},
+           giveni={G\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e957541298e9eee93986a5720aa709f}
+      \strng{fullhash}{4e957541298e9eee93986a5720aa709f}
+      \strng{bibnamehash}{4e957541298e9eee93986a5720aa709f}
+      \strng{authorbibnamehash}{4e957541298e9eee93986a5720aa709f}
+      \strng{authornamehash}{4e957541298e9eee93986a5720aa709f}
+      \strng{authorfullhash}{4e957541298e9eee93986a5720aa709f}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Understanding intermediate layers using linear classifier probes}
+      \field{year}{2017}
+    \endentry
+    \entry{infoNCE}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=cb61786e97e6c4f155a248f309396e0c}{%
+           family={Oord},
+           familyi={O\bibinitperiod},
+           given={A{ä}ron},
+           giveni={A\bibinitperiod},
+           prefix={van\bibnamedelima den},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=ea8af3b8f68d4c40172af64bc26a53c6}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yazhe},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=494b568c5dc85ba8f3f409635f9c5f25}{%
+           family={Vinyals},
+           familyi={V\bibinitperiod},
+           given={Oriol},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{dbbf1bed19c5f4fefc0e946b5a62f997}
+      \strng{fullhash}{dbbf1bed19c5f4fefc0e946b5a62f997}
+      \strng{bibnamehash}{dbbf1bed19c5f4fefc0e946b5a62f997}
+      \strng{authorbibnamehash}{dbbf1bed19c5f4fefc0e946b5a62f997}
+      \strng{authornamehash}{dbbf1bed19c5f4fefc0e946b5a62f997}
+      \strng{authorfullhash}{dbbf1bed19c5f4fefc0e946b5a62f997}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Representation Learning with Contrastive Predictive Coding}
+      \field{year}{2018}
+    \endentry
+    \entry{DIM}{misc}{}
+      \name{author}{7}{}{%
+        {{hash=aa5aa3d887c39bcb1cf711bf4687b984}{%
+           family={Hjelm},
+           familyi={H\bibinitperiod},
+           given={R.\bibnamedelimi Devon},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=148242e024deee69d28f2eff6ff6c18f}{%
+           family={Fedorov},
+           familyi={F\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=643b44ba2ae0d73bc6369426acf7f5eb}{%
+           family={Lavoie-Marchildon},
+           familyi={L\bibinithyphendelim M\bibinitperiod},
+           given={Samuel},
+           giveni={S\bibinitperiod}}}%
+        {{hash=514b6a44940d90919ca13958fb8dd3a9}{%
+           family={Grewal},
+           familyi={G\bibinitperiod},
+           given={Karan},
+           giveni={K\bibinitperiod}}}%
+        {{hash=8fffa3325397670900bcaccb894a5487}{%
+           family={Bachman},
+           familyi={B\bibinitperiod},
+           given={Phil},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c46d8fb3024b8539babffef11e653a9a}{%
+           family={Trischler},
+           familyi={T\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{cf0d09770f431af15d7408bfd8c13f88}
+      \strng{fullhash}{8b3ef26dc62a767555ae0d38dfd0804f}
+      \strng{bibnamehash}{8b3ef26dc62a767555ae0d38dfd0804f}
+      \strng{authorbibnamehash}{8b3ef26dc62a767555ae0d38dfd0804f}
+      \strng{authornamehash}{cf0d09770f431af15d7408bfd8c13f88}
+      \strng{authorfullhash}{8b3ef26dc62a767555ae0d38dfd0804f}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning deep representations by mutual information estimation and maximization}
+      \field{year}{2019}
+    \endentry
+    \entry{ALE}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=cc3634250c84939cbfabdf623e17d51e}{%
+           family={Bellemare},
+           familyi={B\bibinitperiod},
+           given={Marc\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=07c80c48e7c42d8390ac0ad0513cbed3}{%
+           family={Naddaf},
+           familyi={N\bibinitperiod},
+           given={Yavar},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=1cbd91f7404b2298b46bb46c47c08251}{%
+           family={Veness},
+           familyi={V\bibinitperiod},
+           given={Joel},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3318cb7968ff83b0f4b5a04d8f9ec318}{%
+           family={Bowling},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{b860cdd943a1b0da2266361368220a86}
+      \strng{fullhash}{09870dd896ce19dc973ccf9e8c74f057}
+      \strng{bibnamehash}{09870dd896ce19dc973ccf9e8c74f057}
+      \strng{authorbibnamehash}{09870dd896ce19dc973ccf9e8c74f057}
+      \strng{authornamehash}{b860cdd943a1b0da2266361368220a86}
+      \strng{authorfullhash}{09870dd896ce19dc973ccf9e8c74f057}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The arcade learning environment: An evaluation platform for general agents}
+      \field{year}{2013}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

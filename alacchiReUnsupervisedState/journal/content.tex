@@ -17,7 +17,7 @@ The setup is fairly simple, an agent interacts with the environment and realizes
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.32]{../openreview/objective.PNG}
+    \includegraphics[scale=0.44]{../openreview/objective.PNG}
     \caption{Objective of a representation learning method}
     \label{fig:objective}
 \end{figure}
@@ -43,7 +43,7 @@ SpatioTemporal DeepInfoMax (STDIM) is an unsupervised technique for training an 
 \\\\
 An agent interacts with an environment and observes a set of frames $\{x_1, x_2,...,x_n\}$ which generally can be any information which represents the state of the game, but in practice are images from the simulated Atari environment. The InfoNCE objective is derived from mini-batches of consecutive observations $\{(x_t,x_{t+1})_i\}_{i=1}^{B}$ given by the agent's interactions with the environment. Positive samples are defined as pairs of consecutive frames $(x_t,x_{t+1})$, and negative samples as pairs of non-consecutive frames $(x_t,x_{t^\star})$ with $t^\star\ne t+1$. \\
 
-STDIM simultaneously trains two InfoNCE objectives, the global-local objective (GL) and the local-local objective (LL). GL maximizes the MI between the entire frame $x_t$ with small patches of the frame observation at time $t+1$. The representations of the small image patches are chosen to be the result of applying the hidden activation functions of a particular layer of the convolutional encoder to the full observation. The layer is picked appropriately to ensure that the hidden activation functions only have a limited receptive field corresponding to $1/16^{\text{th}}$ the size of the full observations. LL maximizes the MI between the local feature at time $t$ with the corresponding local feature at time $t+1$. The loss function derived from equation \ref{eqn:info-nce} is given by:
+STDIM simultaneously trains two InfoNCE objectives, the global-local objective (GL) and the local-local objective (LL). GL maximizes the MI between the entire frame $x_t$ with small patches of the frame observation at time $t+1$. The representations of the small image patches are chosen to be the result of applying the hidden activation functions of a particular layer of the convolutional encoder to the full observation. The layer is picked appropriately to ensure that the hidden activation functions only have a limited receptive field corresponding to $1/16^{\text{th}}$ of the size of the full observations. LL maximizes the MI between the local feature at time $t$ with the corresponding local feature at time $t+1$. The loss function derived from equation \ref{eqn:info-nce} is given by:
 \begin{equation}
 \mathcal{L}=\mathcal{L}_{GL}+\mathcal{L}_{LL}=\sum_{m=1}^M\sum_{n=1}^N-\left(\log{\frac{\exp{g_{m,n}(x_t,x_{t+1})}}{\sum\limits_{\substack{x_t^\star}} \exp{g_{m,n}(x_t,x_t^\star)}}}+\log{\frac{\exp{f_{m,n}(x_t,x_{t+1})}}{\sum\limits_{\substack{x_t^\star}} \exp{f_{m,n}(x_t,x_t^\star)}}}\right)
 \label{eqn:loss-functions}
@@ -58,7 +58,7 @@ where $\phi$ is the output of the encoder, $\phi_{m,n}$ is the local feature vec
 The base encoder architecture used for all models in the article is shown in Figure \ref{fig:base-encoder-image}.
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.75]{../openreview/base_encoder.PNG}
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{../openreview/base_encoder.PNG}
     \caption{The base encoder from the article.}
     \label{fig:base-encoder-image}
 \end{figure}
@@ -83,6 +83,7 @@ By having the author's code in our hands, we were able to reproduce their result
 
 \begin{table}[H]
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{ll}
 \begin{tabular}{lrrrrrrr}
 \toprule
@@ -128,7 +129,8 @@ Miscellaneous       &  \textbf{0.75}&  \textbf{0.75}\\
 \bottomrule
 \end{tabular}
 
-\end{tabular}
+\end{tabular}%
+}
 \caption{Probe F1 scores for STDIM averaged across categories for each game (left) and averaged across all games for each category (right). The bold numbers represent the best result.}
 \label{tab:reprod}
 \end{table}
@@ -139,8 +141,8 @@ Our first ablation was to tune multiple parameters of the base encoder model. We
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.58]{../openreview/agent_local_avg_f1.png}
-    \includegraphics[scale=0.58]{../openreview/clock_score_avg_f1.png}
+    \includegraphics[scale=0.475]{../openreview/agent_local_avg_f1.png}
+    \includegraphics[scale=0.475]{../openreview/clock_score_avg_f1.png}
     \caption{Probe F1 scores averages on agent localization variables (left) and score/clock variables (right) for different learning rates of the encoder on the Boxing game}
     \label{fig:agent_local_avg_f1}
 \end{figure}
@@ -149,12 +151,12 @@ In Figure \ref{fig:agent_local_avg_f1}, we see that the $\alpha=0.3$ learning ra
 
 After this tuning process, we explored some different parameters of the encoder. Every training was realised with the same learning rate $\alpha=0.3$. \\
 
-\begin{SCfigure}[][h]
+\begin{figure}[h]
     \centering
-    \includegraphics[scale=0.45]{../openreview/multiple_params_testing.png}
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{../openreview/multiple_params_testing.png}
     \caption{Exploration of different parameters for the encoder on the Boxing game. (a) refers to the base encoder with the default parameters (grayscaling, and trained on $100000$ frames). (b) refers to the model (a) without grayscaling. (c) and (d) refer to the model (a) but trained on respectively $50000$ and $150000$ frames. The probe F1 scores are reported for different categories.}
     \label{fig:multiple_params}
-\end{SCfigure}
+\end{figure}
 
 In Figure \ref{fig:multiple_params}, comparing (a) and (b) allows us to confirm that applying grayscaling to the frames does not impact the results. The results obtained with (a), (c) and (d) show that the default size of $100000$ for the number of frames the model is trained on was well chosen. Indeed, taking less frames leads to worse results and taking more frames leads to very similar results. This parameter is important because in addition to affecting the accuracy of the encoders, they greatly impact the training time: (d) took around $15$ hours to train as opposed to $10$ hours for (a).
 
@@ -167,7 +169,7 @@ By varying $p$, we re-weight the importance of minimizing either objective's los
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.23]{../openreview/ablation2-val_loss(log-log).png}
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{../openreview/ablation2-val_loss(log-log).png}
     \caption{Log-log plot of the validation loss of the trainer over time.}
     \label{fig:ablation2-loss}
 \end{figure}
@@ -176,10 +178,10 @@ As our initial hypothesis would suggest, the loss seemed to have general trend o
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.38]{../openreview/ablation2-agent_avg_f1.png}
-    \includegraphics[scale=0.38]{../openreview/ablation2-score_avg_f1.png}
-    \includegraphics[scale=0.38]{../openreview/ablation2-other_avg_f1.png}
-    \caption{Probe F1 scores averages from Space Invaders on agent localization variables (left), score/clock variables (center) and other (right) for different values of $p$}
+    \includegraphics[scale=0.475]{../openreview/ablation2-agent_avg_f1.png}
+    \includegraphics[scale=0.475]{../openreview/ablation2-score_avg_f1.png}
+    \includegraphics[scale=0.475]{../openreview/ablation2-other_avg_f1.png}
+    \caption{Probe F1 scores averages from Space Invaders on agent localization variables (upper left), score/clock variables (upper right) and other (lower center) for different values of $p$}
     \label{fig:ablation2-avg}
 \end{figure}
 
@@ -196,12 +198,13 @@ In STDIM, a window of three consecutive frames $(x_t, x_{t+1},x_{t+2})$ would co
 \subsection{Modifying the Receptive Field of the Base Encoder}
 \label{section:receptive-field}
 
-Our final ablation was to explore the effect of tuning the receptive field size of the encoders when computing the loss in equation \ref{eqn:loss-functions}. Anand et. al use a receptive field size of $1/16$ without justification in the paper \cite{main_article}. The selection of the intermediate layer which defines $\phi_{m,n}$ in the bilinear score functions for the STDIM loss is fixed such that the receptive field of that layer is $1/16^{th}$ of the original image. In our experiments we kept the layer we used fix, but we modified the strides of the base encoder from Figure \ref{fig:base-encoder-image} to achieve receptive field sizes of $1/8$ and $1/32$.
+Our final ablation was to explore the effect of tuning the receptive field size of the encoders when computing the loss in equation \ref{eqn:loss-functions}. Anand et. al use a receptive field size of $1/16$ without justification in the paper \cite{main_article}. The selection of the intermediate layer which defines $\phi_{m,n}$ in the bilinear score functions for the STDIM loss is fixed such that the receptive field of that layer is $1/16^{th}$ of the original image. In our experiments we kept the layer we used fixed, but modified the strides of the base encoder from Figure \ref{fig:base-encoder-image} to achieve receptive field sizes of $1/8$ and $1/32$.
 
 The default strides used in the network are $4, 2, 2, 1$, and thus the third convolutional layer has a receptive field size of $1/16$. For testing a receptive field size of $1/8$ we employ the strides $4, 2, 1, 2$, thus ensuring the output size is approximately the same barring padding. To accomplish $1/32$ we employ the strides $4, 4, 2, 1$, and to compensate for greatly reducing the size of the output of the final convolutional layer we change its depth from $64$ to $128$.
 
 \begin{table}[H]
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{ll}
     \begin{tabular}{c|ccc}
          \toprule Receptive field size & 1/8 & 1/16 & 1/32 \\
@@ -221,7 +224,8 @@ The default strides used in the network are $4, 2, 2, 1$, and thus the third con
         Small object Localization & 0.53 & \textbf{0.54} & 0.53 \\
         Miscellaneous & \textbf{0.68} & 0.65 & 0.60 \\\bottomrule
     \end{tabular}
-\end{tabular}
+\end{tabular}%
+}
 \caption{Probe F1 scores averaged across all categories for the various receptive field sizes (left) and averaged over all games by receptive field size (right). The bold numbers represent the best result.}
 \label{tab:receptive-field-results}
 \end{table}
@@ -240,7 +244,7 @@ where each score function $g^{\ell}_{m,n}$ and $f^{\ell}_{m,n}$ are defined usin
 \section{Discussion and Conclusion}
 Thanks to the efforts of the authors in making their code accessible and interpretable, the results obtained in their article were easily reproducible. We must point out the fact that noteworthy computational power is necessary for reproducing results and to investigate further. It took $17$ days of total compute time to obtain all the results in this report with our limited computational power.\\
 
-We noticed that the authors made choices about the architecture of the encoder, namely the receptive field size and the equal weighting of the GL and LL objectives, without explaining some of the theoretical motivations behind them. For instance, the $1/16$ receptive field decision took up $1$ sentence in the paper, and we believe that decision merits more exploration. To best complement their work, we focused our ablations on ideas that we felt were under explored. Our results showed that the author's decisions with regards to those ablations were experimentally sound. However, bearing in mind that most of the final results stated throughout this study come from the evaluation of a single encoder, these don't fully prove the strength of the aforementioned decisions. For instance, it is much more likely to see a meaningful trend in the performance of the encoders as a function of $p$ if we train multiple times over all $22$ games and average the performances. \\
+We noticed that the authors made choices about the architecture of the encoder, namely the receptive field size and the equal weighting of the GL and LL objectives, without explaining some of the theoretical motivations behind them. For instance, the $1/16$ receptive field decision took up $1$ sentence in the paper, and we believe that decision merits more exploration. To best complement their work, we focused our ablations on ideas that we felt were under explored. Our results showed that the author's decisions with regards to those ablations were experimentally sound. However, bearing in mind that most of the final results stated throughout this study come from the evaluation of a single encoder, these don't fully prove their strength. For instance, it is much more likely to see a meaningful trend in the performance of the encoders as a function of $p$ if we train multiple times over all $22$ games and average the performances. \\
 
 For future work, the first thing to do would be to repeat our experiments using a larger sample size in order to reduce variance. Also training an ensemble of different encoders for each category of variables, selecting ablations discussed in Section 5 with respect to the best choice for each category. We would also explore the various modifications to the loss as described in Sections 5.2 and 5.3.
 
