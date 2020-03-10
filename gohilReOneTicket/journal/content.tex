@@ -6,13 +6,13 @@
     
     \section{Introduction}
     \label{sec:intro}
-    Prior works have shown that 90\% of the parameters of a neural network can be eliminated without compromising accuracy \cite{han_prune, ref2}. Eliminating unnecessary parameters by techniques like pruning reduces the computation requirements and energy consumption of neural networks thereby making inference more efficient. The procedure for pruning networks involves training the entire neural network and eliminating the least important weights after the training phase has been completed. However, if the number of parameters in a neural network can be reduced, why not train the pruned network itself and make training phase more efficient?
+    Prior works have shown that 90\% of the parameters of a neural network can be eliminated without compromising accuracy \cite{han_prune, ref2}. Eliminating unnecessary parameters by techniques like pruning reduces the computation requirements and energy consumption of neural networks thereby making inference more efficient. The procedure for pruning networks involves training the entire neural network and eliminating the least important weights after the training phase has been completed. However, if the number of parameters in a neural network can be reduced, why not train the pruned network itself and make training phase more efficient?\\
     
-    Pruned networks were not trained from scratch as previous works \cite{ref2, han_prune} mention that when pruned networks are trained from scratch they achieve lower accuracy when compared to a network which is pruned after training. However, the recently proposed lottery ticket hypothesis states the following:\\
-    \textit{"A randomly-initialized, dense neural network contains a subnetwork that is initialized such that—when trained in isolation—it can match the test accuracy of the original network after training for at most the same number of iterations"} \cite{lth_orig_paper}.
-    These subnetworks along with the appropriate initializations are referred to as the \textit{winning tickets}. If true, the lottery ticket hypothesis implies that pruned networks can be trained from scratch to achieve accuracy commensurate to the accuracy of original network as long as the pruned network is initialized appropriately. 
+    Pruned networks were not trained from scratch as previous works \cite{ref2, han_prune} mention that when pruned networks are trained from scratch they achieve lower accuracy when compared to a network which is pruned after training. However, the recently proposed lottery ticket hypothesis states the following:
+    \textit{"A randomly-initialized, dense neural network contains a subnetwork that is initialized such that when trained in isolation, it can match the test accuracy of the original network after training for at most the same number of iterations"} \cite{lth_orig_paper}.
+    These subnetworks along with the appropriate initializations are referred to as the \textit{winning tickets}. If true, the lottery ticket hypothesis implies that pruned networks can be trained from scratch to achieve accuracy commensurate to the accuracy of original network as long as the pruned network is initialized appropriately.\\
     
-    Unfortunately, finding these winning ticket initializations requires one to iteratively prune the network which is a computationally expensive procedure. One can potentially avoid this procedure if one can reuse the same winning ticket initialization across multiple datasets and optimizers. However, the answer to the question of whether these winning ticket initializations generalize to the spectrum of datasets and optimizers remains obscure. The paper we reproduce,  \textit{"One ticket to win them all: generalizing lottery ticket initializations across datasets and optimizers"} \cite{repro_paper} provides empirical evidence that these winning ticket initializations generalize across multiple datasets as well as optimizers\footnote{Authors used anywhere in this paper refers to the authors of the paper that we reproduce \cite{repro_paper}}.
+    Unfortunately, finding these winning ticket initializations requires one to iteratively prune the network which is a computationally expensive procedure. One can potentially avoid this procedure if one can reuse the same winning ticket initialization across multiple datasets and optimizers. However, the answer to the question of whether these winning ticket initializations generalize to the spectrum of datasets and optimizers remains obscure. The paper we reproduce,  \textit{"One ticket to win them all: generalizing lottery ticket initializations across datasets and optimizers"} \cite{repro_paper} provides empirical evidence that these winning ticket initializations generalize across multiple datasets as well as optimizers\footnote{Authors used anywhere in this paper refers to the authors of the paper that we reproduce \cite{repro_paper}}.\\
      
      
     As a part of the NeurIPS Reproducibility Challenge's \textit{Replication Track}, we replicate the work done by \cite{repro_paper} and investigate if the winning ticket initializations are generalizable across datasets and optimizers. The target questions of our work are as follows:
@@ -31,12 +31,12 @@
     
     \subsection{Models}
     \label{subsec:models}
-    For all our experiments, we use one of the two network  architectures: ResNet50 and a modified VGG19. 
+    For all our experiments, we use one of the two network  architectures: ResNet50 and a modified VGG19.\\
     
     In the case of the modified VGG19 architecture, we remove all the fully connected layers from the network. Following the last convolutional layer, we add a global-average-pooling layer. Finally, we add a linear classification layer from the global average pool to the number of output classes. We use the ReLU non-linearity and perform batch normalization after each convolutional layer. For our experiments, we initialize all the convolutional layers using Xavier normal initialization and the biases to 0. We set batch norm weights and bias parameters to 1 and 0 respectively. We train all the VGG19 models for 160 epochs and anneal the learning rates
-    by a factor of 10 at the 80$^{th}$ and the 120$^{th}$ epochs. 
+    by a factor of 10 at the 80$^{th}$ and the 120$^{th}$ epochs.\\ 
     
-    We use the standard ResNet50 architecture that was proposed in \cite{DBLP:journals/corr/HeZRS15}. We use the Kaiming normal initialization for convolutional layers, which is also the default initialization for ResNets in PyTorch. We train all the ResNet models for 90 epochs. We anneal the learning rates by a factor of 10 at the 50$^{th}$, 65$^{th}$ and 80$^{th}$ epochs. 
+    We use the standard ResNet50 architecture that was proposed in \cite{DBLP:journals/corr/HeZRS15}. We use the Kaiming normal initialization for convolutional layers, which is also the default initialization for ResNets in PyTorch. We train all the ResNet models for 90 epochs. We anneal the learning rates by a factor of 10 at the 50$^{th}$, 65$^{th}$ and 80$^{th}$ epochs. \\
     
     The initializations, number of epochs, learning rate annealing schedules are in accordance to \cite{repro_paper} to maintain consistency of experiments.
     
@@ -49,11 +49,11 @@
     
     
     \subsection{Pruning Methodology and Implementation}
-    There are two widely used methods for pruning - one shot pruning and iterative pruning. Suppose we want to prune $p\%$ of a network.  In one shot pruning, we first train the network, then prune $p\%$ of the weights and finally reset the weights to the original initialization that the network had before training. In iterative pruning the network is trained, pruned and reset every round for $n$ rounds. As can be observed, at the end of each round, $p^{\frac{1}{n}} \%$ of the weights that survived the previous round are pruned. In this work we use iterative pruning for pruning the neural networks.  We use iterative pruning as prior work \cite{lth_orig_paper} shows that it finds winning tickets that match the accuracy of original network at higher pruning fractions when compared to one shot pruning.
+    There are two widely used methods for pruning - one shot pruning and iterative pruning. Suppose we want to prune $p\%$ of a network.  In one shot pruning, we first train the network, then prune $p\%$ of the weights and finally reset the weights to the original initialization that the network had before training. In iterative pruning the network is trained, pruned and reset every round for $n$ rounds. As can be observed, at the end of each round, $p^{\frac{1}{n}} \%$ of the weights that survived the previous round are pruned. In this work we use iterative pruning for pruning the neural networks.  We use iterative pruning as prior work \cite{lth_orig_paper} shows that it finds winning tickets that match the accuracy of original network at higher pruning fractions when compared to one shot pruning.\\
     
-    Further, for each iteration a neural network can be pruned either in a global manner or in a local manner. When pruning in a global manner, the weights of all layers of the network are pooled together and then a fraction of weights are removed from this global pool. In local pruning, the same fraction of weights are removed in each layer for all the layers. In our work we use global pruning as used in the paper we are reproducing \cite{repro_paper}.
+    Further, for each iteration a neural network can be pruned either in a global manner or in a local manner. When pruning in a global manner, the weights of all layers of the network are pooled together and then a fraction of weights are removed from this global pool. In local pruning, the same fraction of weights are removed in each layer for all the layers. In our work we use global pruning as used in the paper we are reproducing \cite{repro_paper}.\\
     
-    In our implementation of pruning,  we set the value of the parameters to be pruned to be zero before each forward pass by multiplying the parameter tensor with a binary mask of identical shape. This automatically ensures two things: (a) the forward pass is on the pruned network and (b) the gradients are computed on the pruned network. 
+    In our implementation of pruning,  we set the value of the parameters to be pruned to be zero before each forward pass by multiplying the parameter tensor with a binary mask of identical shape. This automatically ensures two things: (a) the forward pass is on the pruned network and (b) the gradients are computed on the pruned network. \\
     
     We perform iterative pruning for 30 pruning iterations and use a 20\% pruning rate. For our experiments we use magnitude-based pruning i.e. the weights with the magnitudes in the lowest 20\% of remaining non-zero weights are removed after each iteration. 
     
@@ -79,11 +79,11 @@
     
     \section{Cost of Reproducibility}
     \label{sec:cost}
-    The authors of the original paper \cite{repro_paper} did not release their code. We replicate the results by implementing the all experiments from scratch. We did not experience significant difficulty in developing the code base we use for our experiments. We believe that a person having experience with PyTorch  can implement the code without major challenges. Further, we also contacted the authors via email. We inquired about the data-augmentations used while training the networks as they were not mentioned in the original paper. Further we contacted them to understand the concept of random masks. 
+    The authors of the original paper \cite{repro_paper} did not release their code. We replicate the results by implementing the all experiments from scratch. We did not experience significant difficulty in developing the code base we use for our experiments. We believe that a person having experience with PyTorch  can implement the code without major challenges. Further, we also contacted the authors via email. We inquired about the data-augmentations used while training the networks as they were not mentioned in the original paper. Further we contacted them to understand the concept of random masks.\\
     
-    Replicating the results required a significant amount of computing resources. We experienced that the CodeOcean compute resources provided by organizers of NeurIPS Reproducibility Challenge,  were not sufficient for the experimentation and hence we performed the experiments on Google Cloud. Further, finding winning tickets for larger datasets is computationally expensive, with the authors using 16 GPUs \cite{repro_paper}. As we did not have access to such a large amount of computing resources, we only replicated the results on smaller datasets like Cifar-10, Cifar-100, SVHN and FashionMNIST. We could not conduct experiments for larger datasets like ImageNet (1.8 million images) \cite{imagenet} and Places365 (8 million images) \cite{places365} as we were severely limited by compute capability and the time allotted for the reproducibility challenge. Overall, we used  approximately \$500 worth of Google Cloud credits for our experimentation.
+    Replicating the results required a significant amount of computing resources. We experienced that the CodeOcean compute resources provided by organizers of NeurIPS Reproducibility Challenge,  were not sufficient for the experimentation and hence we performed the experiments on Google Cloud. Further, finding winning tickets for larger datasets is computationally expensive, with the authors using 16 GPUs \cite{repro_paper}. As we did not have access to such a large amount of computing resources, we only replicated the results on smaller datasets like Cifar-10, Cifar-100, SVHN and FashionMNIST. We could not conduct experiments for larger datasets like ImageNet (1.8 million images) \cite{imagenet} and Places365 (8 million images) \cite{places365} as we were severely limited by compute capability and the time allotted for the reproducibility challenge. Overall, we used  approximately \$500 worth of Google Cloud credits for our experimentation.\\
     
-    The process of generating winning tickets is time-consuming as well. Training a ResNet50 model for 90 epochs using Nvidia P100, the fastest GPU we used, takes approximately 33 minutes. Similarly, training the VGG19 model for 160 epochs using Nvidia P100 takes approximately 43 minutes. For our experiments we trained a ResNet50 model 450 times and a VGG19 model 540 times. All the experiments would take approximately 634 hours (26 days) to run sequentially. To complete the experiments in time we scheduled multiple experiments parallelly on Google Cloud.  
+    The process of generating winning tickets is time-consuming as well. Training a ResNet50 model for 90 epochs using Nvidia P100, the fastest GPU we used, takes approximately 33 minutes. Similarly, training the VGG19 model for 160 epochs using Nvidia P100 takes approximately 43 minutes. For our experiments we trained a ResNet50 model 450 times and a VGG19 model 540 times. All the experiments would take approximately 634 hours (26 days) to run sequentially. To complete the experiments in time we scheduled multiple experiments parallelly on Google Cloud.\\ 
     
     We open-source our code base for reproducing the results of \cite{repro_paper}. Along with our code base, we also open-source the winning tickets we found during our experimentation. We hope this will help the community avoid expensive and time-consuming computation, as these winning tickets can directly be used for inference and can be studied to improve our understanding of lottery tickets. 
     
@@ -92,135 +92,136 @@
     The original paper reports results for 3 experiments, each concerning a target question we mentioned in Section \ref{sec:intro}. For each experiment, we plot the test accuracy at convergence as function of fraction of pruned weights. Owing to the compute and time constraints mentioned in Section \ref{sec:cost}, we could only replicate the results with 1 random seed. 
     
     \subsection{Transfer within same data distribution}
-    With this experiment, we aim to investigate if the winning ticket initializations generalize within the same data distribution. For this experiment, we divide the CIFAR-10 dataset into 2 halves - CIFAR-10a and CIFAR-10b. Both these halves contain 25,000 training images, having 2500 images of each class. We find the winning ticket initialization for CIFAR-10a using SGD and verify if it generalizes to CIFAR-10b. As our baselines, we use the CIFAR-10b winning ticket initialization with SGD and random tickets. We perform this experiment for both, VGG19 and ResNet50 architectures,
-    
-      
+    With this experiment, we aim to investigate if the winning ticket initializations generalize within the same data distribution. For this experiment, we divide the CIFAR-10 dataset into 2 halves - CIFAR-10a and CIFAR-10b. Both these halves contain 25,000 training images, having 2500 images of each class. We find the winning ticket initialization for CIFAR-10a using SGD and verify if it generalizes to CIFAR-10b. As our baselines, we use the CIFAR-10b winning ticket initialization with SGD and random tickets. We perform this experiment for both, VGG19 and ResNet50 architectures.
+        
+
     \begin{figure}[h]
-        \centering
-        \begin{minipage}{.497\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../openreview/plots/Exp1_VGG_N.pdf}
-        % \caption{Transfer of winning ticket initializations within same dataset using VGG19}
-        % \label{fig:exp1_vgg}
-        \end{minipage}
-    % \end{figure}
-    % \begin{figure}[h]
-        % \centering
-        \begin{minipage}{.497\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../openreview/plots/Exp1_ResNet_N.pdf}
-        % \caption{Transfer of winning ticket initializations within same dataset using ResNet50}
-        % \label{fig:exp1_resnet}
-        \end{minipage}
+            \begin{subfigure}[b]{0.45\textwidth}
+                    \includegraphics[width=\linewidth]{../openreview/plots/Exp1_VGG_N.pdf}
+
+            \end{subfigure}
+            \begin{subfigure}[b]{0.45\textwidth}
+                    \includegraphics[width=\linewidth]{../openreview/plots/Exp1_ResNet_N.pdf}
+            \end{subfigure}
         \caption{Transfer of winning ticket initializations within same data distribution}
         \label{fig:exp1}
     \end{figure}
-    
-    
+
+
+          
     Our results are presented in Figure \ref{fig:exp1}. The results show that winning tickets found on CIFAR-10a generalize well to CIFAR-10b. We also see that while using ResNet50, for low pruning fractions random ticket provides better accuracy than winning tickets found using CIFAR10-a and CIFAR10-b. The same phenomena is reported in the original paper \cite{repro_paper}. Our results support the hypothesis presented in original paper that ResNet50 winning tickets are sensitive to smaller datasets at low pruning fractions.
     
     
     \subsection{Transfer across optimizers}
     With this experiment, we aim to investigate if the winning ticket initializations generalize across optimizers. For our experiments, we use the modified VGG19 architecture discussed in Section \ref{subsec:models}. We find the winning tickets for CIFAR-10 dataset using both Adam and SGD optimizers and analyze the effect on accuracy when the ticket generated using one optimizer is further trained using another optimizer. Our results show that even after transfering tickets from SGD to Adam and vice-versa the accuracy of the tickets was comparable to when the tickets were trained using the same optimizer without any transfer. This supports the claim made in the original paper that VGG19 winning tickets are \textit{optimizer-independent}. 
     
-    
-    
     \begin{figure}[h]
-        \centering
-        \begin{minipage}{.497\textwidth}
-        \includegraphics[width=\textwidth]{../openreview/plots/Exp3_CIFAR10_SGD_N.pdf}
-        % \caption{Transfer of winning ticket initializations across optimizers on SGD}
-        % \label{fig:exp3_sgd}
-        \end{minipage}
-    % \end{figure}
-    % \begin{figure}[h]
-    %     \centering
-        \begin{minipage}{.497\textwidth}
-        \includegraphics[width=\textwidth]{../openreview/plots/Exp3_CIFAR10_Adam_N.pdf}
-        % \caption{Tranfer of winning ticket initializations across optimizers on Adam}
-        % \label{fig:exp3_adam}
-        \end{minipage}
+            \begin{subfigure}[b]{0.45\textwidth}
+                    \includegraphics[width=\linewidth]{../openreview/plots/Exp3_CIFAR10_SGD_N.pdf}
+
+            \end{subfigure}
+            \begin{subfigure}[b]{0.45\textwidth}
+                    \includegraphics[width=\linewidth]{../openreview/plots/Exp3_CIFAR10_Adam_N.pdf}
+            \end{subfigure}
         \caption{Transfer of winning ticket initializations across optimizers}
         \label{fig:exp3}
     \end{figure}
-    
+
+
     \subsection{Transfer across datasets}
-    With this experiment, we aim to investigate if the winning ticket initializations generalize across datasets. For our experiments, we used ResNet50 and the modified VGG19 architectures. We train the models on Cifar-10, Cifar-100, FashionMNIST and SVHN datasets with SGD optimizer. 
-    
-    Our results also reveal the key trends which the authors discuss in the original paper. Firstly, we see in Figures \ref{fig:exp2_resnet} and \ref{fig:exp2_vgg} that individual winning tickets show accuracy similar to that of winning ticket generated on the target dataset. This supports the author's hypothesis that the inductive bias provided by the winning tickets is \textit{dataset-independent}.  
-    
-    Second, we observe that winning tickets generated from more complex datasets (with higher number of classes) generalize better than those generated on relatively simpler datasets. Winning tickets generated on CIFAR-100 transfer better than those generated by those on CIFAR-10. This effect can be clearly seen in Figure \ref{fig:exp2_resnet} for ResNet50 architecture, while for VGG19 architecture both winning tickets show similar accuracy.
-    
-    Third, while we observe that the winning rates transferred similarly for both ResNet50 and VGG19 architectures, the ResNet50 architecture tickets showed a sharper degradation in accuracy at higher pruning fractions compared to VGG19 architecture tickets. This can be observed by comparing Figure \ref{fig:exp2_resnet} with Figure \ref{fig:exp2_vgg}.
-    
-    We do not report the results of VGG19 winning tickets on FashionMNIST as we exhausted our Google Cloud Credits before completion of the experiment. 
-    
-    \begin{figure}[h]
-        \centering
-        \begin{minipage}{.497\textwidth}
-        \includegraphics[width=\textwidth]{../openreview/plots/Exp2_ResNet_CIFAR10_N.pdf}
-        % \caption{Verifying transfer of winning ticket initializations across datasets - CIFAR10 with ResNet50}
-        % \label{fig:exp2_resnet_cifar10}
-        \end{minipage}
-    % \end{figure}
-    % \begin{figure}[h]
-    %     \centering
-        \begin{minipage}{.497\textwidth}
-        \includegraphics[width=\textwidth]{../openreview/plots/Exp2_ResNet_CIFAR100_N.pdf}
-        % \caption{Verifying transfer of winning ticket initializations across datasets - CIFAR100 with ResNet50}
-        % \label{fig:exp2_resnet_cifar100}
-        \end{minipage}
-        % \caption{Transfer of winning ticket initializations across datasets with ResNet50}
-        % \label{fig:exp2_resnet_1}
-    % \end{figure}
-    % \begin{figure}[h]
-    %     \centering
-        \begin{minipage}{.497\textwidth}
-        \includegraphics[width=\textwidth]{../openreview/plots/Exp2_ResNet_SVHN_N.pdf}
-        % \caption{Verifying transfer of winning ticket initializations across datasets - SVHN with ResNet50}
-        % \label{fig:exp2_resnet_svhn}
-        \end{minipage}
-    % \end{figure}
-    % \begin{figure}[h]
-    %     \centering
-        \begin{minipage}{.497\textwidth}
-        \includegraphics[width=\textwidth]{../openreview/plots/Exp2_Resnet_FashionMNIST1_N.pdf}
-        % \caption{Verifying transfer of winning ticket initializations across datasets - FashionMNIST with ResNet50}
-        % \label{fig:exp2_resnet_fashionmnist}
-        \end{minipage}
+        \begin{figure}[h]
+            \begin{subfigure}[b]{0.45\textwidth}
+                    \includegraphics[width=\linewidth]{../openreview/plots/Exp2_ResNet_CIFAR10_N.pdf}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.45\textwidth}
+                    \includegraphics[width=\linewidth]{../openreview/plots/Exp2_ResNet_CIFAR100_N.pdf}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.45\textwidth}
+                    \includegraphics[width=\linewidth]{../openreview/plots/Exp2_ResNet_SVHN_N.pdf}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.45\textwidth}
+                    \includegraphics[width=\linewidth]{../openreview/plots/Exp2_Resnet_FashionMNIST1_N.pdf}
+            \end{subfigure}
         \caption{Transfer of winning ticket initializations across datasets with ResNet50}
         \label{fig:exp2_resnet}
     \end{figure}
-    \begin{figure}[]
-        \centering
-        \begin{minipage}{.497\textwidth}
-        \includegraphics[width=\textwidth]{../openreview/plots/Exp2_VGG_CIFAR10_N.pdf}
-        % \caption{Verifying transfer of winning ticket initializations across datasets - CIFAR10 with VGG19}
-        % \label{fig:exp2_vgg_cifar10}
-        \end{minipage}
-    % \end{figure}
+    With this experiment, we aim to investigate if the winning ticket initializations generalize across datasets. For our experiments, we used ResNet50 and the modified VGG19 architectures. We train the models on Cifar-10, Cifar-100, FashionMNIST and SVHN datasets with SGD optimizer.\\ 
+    
+    Our results also reveal the key trends which the authors discuss in the original paper. Firstly, we see in Figures \ref{fig:exp2_resnet} and \ref{fig:exp2_vgg} that individual winning tickets show accuracy similar to that of winning ticket generated on the target dataset. This supports the author's hypothesis that the inductive bias provided by the winning tickets is \textit{dataset-independent}.\\
+    
+    Second, we observe that winning tickets generated from more complex datasets (with higher number of classes) generalize better than those generated on relatively simpler datasets. Winning tickets generated on CIFAR-100 transfer better than those generated by those on CIFAR-10. This effect can be clearly seen in Figure \ref{fig:exp2_resnet} for ResNet50 architecture, while for VGG19 architecture both winning tickets show similar accuracy.\\
+    
+    Third, while we observe that the winning rates transferred similarly for both ResNet50 and VGG19 architectures, the ResNet50 architecture tickets showed a sharper degradation in accuracy at higher pruning fractions compared to VGG19 architecture tickets. This can be observed by comparing Figure \ref{fig:exp2_resnet} with Figure \ref{fig:exp2_vgg}.\\
+    
+    We do not report the results of VGG19 winning tickets on FashionMNIST as we exhausted our Google Cloud Credits before completion of the experiment. 
+
+
     % \begin{figure}[h]
-    %     \centering
-        \begin{minipage}{.497\textwidth}
-        \includegraphics[width=\textwidth]{../openreview/plots/Exp2_VGG_CIFAR100_N1.pdf}
-        % \caption{Verifying transfer of winning ticket initializations across datasets - CIFAR100 with VGG19}
-        % \label{fig:exp2_vgg_cifar100}
-        \end{minipage}
-    %     \caption{Transfer of winning ticket initializations across datasets with VGG19}
-    %     \label{fig:exp2_vgg_1}
+    %         \begin{subfigure}[b]{0.45\textwidth}
+    %                 \includegraphics[width=\linewidth]{../openreview/plots/Exp2_ResNet_CIFAR10_N.pdf}
+    %         \end{subfigure}
+    %         \begin{subfigure}[b]{0.45\textwidth}
+    %                 \includegraphics[width=\linewidth]{../openreview/plots/Exp2_ResNet_CIFAR100_N.pdf}
+    %         \end{subfigure}
+    %         \begin{subfigure}[b]{0.45\textwidth}
+    %                 \includegraphics[width=\linewidth]{../openreview/plots/Exp2_ResNet_SVHN_N.pdf}
+    %         \end{subfigure}
+    %         \begin{subfigure}[b]{0.45\textwidth}
+    %                 \includegraphics[width=\linewidth]{../openreview/plots/Exp2_Resnet_FashionMNIST1_N.pdf}
+    %         \end{subfigure}
+    %     \caption{Transfer of winning ticket initializations across datasets with ResNet50}
+    %     \label{fig:exp2_resnet}
     % \end{figure}
-    % \begin{figure}[h]
-    %     \centering
-        \begin{minipage}{.497\textwidth}
-       
-        \includegraphics[width=\textwidth]{../openreview/plots/Exp2_VGG_SVHN_N.pdf}
-        % \caption{Verifying transfer of winning ticket initializations across datasets - SVHN with VGG19}
-        % \label{fig:exp2_vgg_svhn}
-        \end{minipage}
+
+    \begin{figure}[h]
+            % \begin{subfigure}[b]{0.47\textwidth}
+            %         \includegraphics[width=\linewidth]{../openreview/plots/Exp2_ResNet_CIFAR10_N.pdf}
+            % \end{subfigure}
+            \begin{subfigure}[b]{0.45\textwidth}
+                    \includegraphics[width=\linewidth]{../openreview/plots/Exp2_VGG_CIFAR10_N.pdf}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.45\textwidth}
+                    \includegraphics[width=\linewidth]{../openreview/plots/Exp2_VGG_CIFAR100_N1.pdf}
+            \end{subfigure}
+           \centering
+            \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[width=\linewidth]{../openreview/plots/Exp2_VGG_SVHN_N.pdf}
+            \end{subfigure}
         \caption{Transfer of winning ticket initializations across datasets with VGG19}
         \label{fig:exp2_vgg}
     \end{figure}
+
+
     
+    % \begin{figure}[]
+    %     \centering
+    %     \begin{minipage}{.497\textwidth}
+    %     \includegraphics[width=\textwidth]{../openreview/plots/Exp2_VGG_CIFAR10_N.pdf}
+    %     % \caption{Verifying transfer of winning ticket initializations across datasets - CIFAR10 with VGG19}
+    %     % \label{fig:exp2_vgg_cifar10}
+    %     \end{minipage}
+    % % \end{figure}
+    % % \begin{figure}[h]
+    % %     \centering
+    %     \begin{minipage}{.497\textwidth}
+    %     \includegraphics[width=\textwidth]{../openreview/plots/Exp2_VGG_CIFAR100_N1.pdf}
+    %     % \caption{Verifying transfer of winning ticket initializations across datasets - CIFAR100 with VGG19}
+    %     % \label{fig:exp2_vgg_cifar100}
+    %     \end{minipage}
+    % %     \caption{Transfer of winning ticket initializations across datasets with VGG19}
+    % %     \label{fig:exp2_vgg_1}
+    % % \end{figure}
+    % % \begin{figure}[h]
+    % %     \centering
+    %     \begin{minipage}{.497\textwidth}
+       
+    %     \includegraphics[width=\textwidth]{../openreview/plots/Exp2_VGG_SVHN_N.pdf}
+    %     % \caption{Verifying transfer of winning ticket initializations across datasets - SVHN with VGG19}
+    %     % \label{fig:exp2_vgg_svhn}
+    %     \end{minipage}
+    %     \caption{Transfer of winning ticket initializations across datasets with VGG19}
+    %     \label{fig:exp2_vgg}
+    % \end{figure}
     \subsection{Discussion}
      From our results, we make the following observations:
     \begin{itemize}
@@ -231,7 +232,7 @@
      Overall, these observations motivate further work in area of neural network initializations. Further, as generating lottery tickets using iterative pruning is computationally expensive and time-consuming, more efficient methods for generating winning tickets are needed.
     
     
-    
+
     \section{Conclusion}
     The original paper \cite{repro_paper} investigates the generalizability of winning ticket initializations across datasets and optimizers. We replicate the experiments of the original paper from scratch. Our results support the major claims of the original paper and empirically show that the winning ticket initializations can be transferred across datasets and optimizers. We appreciate the authors' ability to explain their experiments and observations in a lucid and replicable manner. While the results are replicable, we find that process of reproducing the results is extremely compute-intensive. Hence along with our code base, we also open-source the winning tickets we find during our experiments.
     

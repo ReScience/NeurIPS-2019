@@ -10,6 +10,7 @@ def generate_latex_metadata(filename, article):
         "% DO NOT EDIT - automatically generated from {filename}\n\n"
         "\\def \\codeURL{{{_.code.url}}}\n"
         "\\def \\codeDOI{{{_.code.doi}}}\n"
+        "\\def \\codeSWH{{{_.code.swh}}}\n"
         "\\def \\dataURL{{{_.data.url}}}\n"
         "\\def \\dataDOI{{{_.data.doi}}}\n"
         "\\def \\editorNAME{{{_.editors[0].name}}}\n"
@@ -66,8 +67,12 @@ def generate_latex_metadata(filename, article):
 
 # -----------------------------------------------------------------------------
 if __name__ == '__main__':
+    import locale
     import argparse
     from article import Article
+
+    # Set to a UTF-8 locale - any non-ascii characters in the metadata in metadata.yaml should be in UTF-8
+    locale.setlocale(locale.LC_ALL,'en_US.UTF-8')
 
     parser = argparse.ArgumentParser(description='YAML to latex converter.')
     parser.add_argument('--input', '-i', dest='filename_in', action='store',
