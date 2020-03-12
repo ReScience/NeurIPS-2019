@@ -11,19 +11,19 @@ title: "[Re] A comprehensive study on binary optimizer and its applicability"
 # Affiliation "*" means contact author
 authors:
   - name: Nancy Nayak
-    orcid: 
+    orcid: 0000-0002-9492-6183
     email: ee17d408@smail.iitm.ac.in
-    affiliations: 1,*
+    affiliations: 1,$\dagger$,*
     
   - name: Vishnu Raj
-    orcid: 
+    orcid: 0000-0002-6939-8884
     email: ee14d213@ee.iitm.ac.in
-    affiliations: 1,      # * is for contact author
+    affiliations: 1,$\dagger$      # * is for contact author
 
   - name: Sheetal Kalyani
-    orcid:
+    orcid: 0000-0002-1530-0140
     email: skalyani@ee.iitm.ac.in
-    affiliations: 1,
+    affiliations: 1
 
 # List of affiliations with code (corresponding to author affiliations), name
 # and address. You can also use these affiliations to add text such as "Equal
@@ -33,6 +33,8 @@ affiliations:
     name:    Department of Electrical Engineering, Indian Institute of Technology, Madras
     address: Chennai, India 600036
 
+  - code:    $\dagger$
+    name:    Equal contributions
 
 # List of keywords (adding the programming language might be a good idea)
 keywords: rescience c, rescience x
@@ -41,7 +43,7 @@ keywords: rescience c, rescience x
 # You can get a DOI for your code from Zenodo,
 #   see https://guides.github.com/activities/citable-code/
 code:
-  - url: https://github.com/rescience-c/template
+  - url: https://github.com/nancy-nayak/rethinking-bnn
   - doi: 
 
 # Date URL and DOI (optional if no data)
@@ -51,13 +53,13 @@ data:
 
 # Information about the original article that has been replicated
 replication:
- - cite: # Full textual citation
- - bib:  # Bibtex key (if any) in your bibliography file
- - url:  # URL to the PDF, try to link to a non-paywall version
+ - cite: "Helwegen, Koen, et al. \"Latent weights do not exist: Rethinking binarized neural network optimization.\" Advances in neural information processing systems. 2019." # Full textual citation
+ - bib: \cite{helwegen2019latent} # Bibtex key (if any) in your bibliography file
+ - url: https://papers.nips.cc/paper/8971-latent-weights-do-not-exist-rethinking-binarized-neural-network-optimization # URL to the PDF, try to link to a non-paywall version
  - doi:  # Regular digital object identifier
 
 # Don't forget to surround abstract with double quotes
-abstract: "Binarized Neural Networks are paving a way towards the deployment of deep neural networks with less memory and computation. In this report, we present a detailed study on the paper titled \"Latent Weights Do Not Exist: Rethinking Binarized Neural Network Optimization\" by \\cite{helwegen2019latent} which proposes a new optimization method for training BNN called BOP. We first investigate the effect of using latent weights in BNN for analyzing prediction performance in terms of accuracy. Next, a comprehensive ablation study on hyperparameters is provided. Finally, we explore the usability of BNN in denoising autoencoders. Code for all our experiments are available at  \\url{https://github.com/nancy-nayak/rethinking-bnn/}"
+abstract: "Binarized Neural Networks are paving a way towards the deployment of deep neural networks with less memory and computation. In this report, we present a detailed study on the paper titled \"Latent Weights Do Not Exist: Rethinking Binarized Neural Network Optimization\" by \\cite{helwegen2019latent} which proposes a new optimization method for training BNN called BOP. We first investigate the effect of using latent weights in BNN for analyzing prediction performance in terms of accuracy. Next, a comprehensive ablation study on hyperparameters is provided. Finally, we explore the usability of BNN in denoising autoencoders."
 
 # Bibliography file (yours)
 bibliography: bibliography.bib
@@ -82,7 +84,7 @@ language: Python
 
 # For example, the URL of the GitHub issue where review actually occured
 review: 
-  - url: 
+  - url: https://openreview.net/forum?id=y53aaSM5o
 
 contributors:
   - name: Koustuv Sinha
