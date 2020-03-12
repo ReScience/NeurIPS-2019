@@ -13,36 +13,38 @@ authors:
   - name: Varun Gohil
     orcid: 
     email: gohil.varun@iitgn.ac.in
-    affiliations: 1,*
+    affiliations: 1,$\dagger$,*
     
   - name: S. Deepak Narayanan
     orcid: 
     email: deepak.narayanan@iitgn.ac.in
-    affiliations: 1,      # * is for contact author
+    affiliations: 1,$\dagger$      # * is for contact author
 
   - name: Atishay Jain
     orcid:
     email: atishay.jain@iitgn.ac.in
-    affiliations: 1,      # * is for contact author
+    affiliations: 1,$\dagger$      # * is for contact author
 
 # List of affiliations with code (corresponding to author affiliations), name
 # and address. You can also use these affiliations to add text such as "Equal
 # contributions" as name (with no address).
 affiliations:
   - code:    1
-    name:    Indian Institute of Technology, Gandhinagar
+    name:    Indian Institute of Technology Gandhinagar
     address: Gandhinagar, India
 
+  - code:    $\dagger$
+    name:    Equal Contribution
 
 # List of keywords (adding the programming language might be a good idea)
-keywords: rescience c, rescience x
+keywords: lottery ticket hypothesis, pytorch
 
 # Code URL and DOI (url is mandatory for replication, doi after acceptance)
 # You can get a DOI for your code from Zenodo,
 #   see https://guides.github.com/activities/citable-code/
 code:
-  - url: https://github.com/rescience-c/template
-  - doi: 
+  - url: https://github.com/varungohil/Generalizing-Lottery-Tickets
+  - doi: 10.5281/zenodo.3700320
 
 # Date URL and DOI (optional if no data)
 data:
@@ -51,13 +53,13 @@ data:
 
 # Information about the original article that has been replicated
 replication:
- - cite: "" # Full textual citation
- - bib:  # Bibtex key (if any) in your bibliography file
- - url:  # URL to the PDF, try to link to a non-paywall version
+ - cite: "A. Morcos, H. Yu, M. Paganini, and Y. Tian. \"One ticket to win them all: generalizing lottery ticket initializa-tions across datasets and optimizers.\" In:Advances in Neural Information Processing Systems 32, 2019" # Full textual citation
+ - bib:  \fullcite{repro_paper} # Bibtex key (if any) in your bibliography file
+ - url:  https://papers.nips.cc/paper/8739-one-ticket-to-win-them-all-generalizing-lottery-ticket-initializations-across-datasets-and-optimizers.pdf # URL to the PDF, try to link to a non-paywall version
  - doi:  # Regular digital object identifier
 
 # Don't forget to surround abstract with double quotes
-abstract: ""
+abstract: "    The lottery ticket hypothesis states that smaller subnetworks within a larger deep network can be trained in isolation to achieve accuracy similar to that of original network, as long as they are initialized appropriately. However, whether these subnetworks or winning tickets are transferable across datasets and optimizers remains unclear. The paper \"One ticket to win them all:generalizing lottery ticket initializations across datasets and optimizers\" empirically shows that these winning tickets are transferable. We reproduce the results in the paper from scratch by implementing all the experiments. Our results support the original paper's claim of the winning ticket initializations being transferable. While the paper is replicable, we find that reproducing the paper requires access to large amount of computing resources for generating the winning tickets. Hence we also open-source the winning tickets we find, so others can avoid the compute-intensive procedure of generating them."
 
 # Bibliography file (yours)
 bibliography: bibliography.bib
@@ -82,7 +84,7 @@ language: Python
 
 # For example, the URL of the GitHub issue where review actually occured
 review: 
-  - url: 
+  - url: https://openreview.net/forum?id=SklFHaqG6S
 
 contributors:
   - name: Koustuv Sinha
