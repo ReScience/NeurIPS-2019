@@ -11,17 +11,17 @@ title: "[Re] Tensor Monte Carlo: Particle Methods for the GPU Era"
 # Affiliation "*" means contact author
 authors:
   - name: Oskar Kviman
-    orcid: 
+    orcid: 0000-0002-6369-712X
     email: okviman@kth.se
     affiliations: 1,*
     
   - name: Linus Nilsson
-    orcid: 
+    orcid: 0000-0002-4232-1094
     email: linunils@kth.se
     affiliations: 1,      # * is for contact author
 
   - name: Martin Larsson
-    orcid:
+    orcid: 0000-0002-9151-5119
     email: mlar2@kth.se
     affiliations: 1,      # * is for contact author
 
@@ -35,14 +35,14 @@ affiliations:
 
 
 # List of keywords (adding the programming language might be a good idea)
-keywords: rescience c, rescience x
+keywords: deep learning, variational autoencoders, rescience c, python, tensorflow
 
 # Code URL and DOI (url is mandatory for replication, doi after acceptance)
 # You can get a DOI for your code from Zenodo,
 #   see https://guides.github.com/activities/citable-code/
 code:
-  - url: https://github.com/rescience-c/template
-  - doi: 
+  - url: https://github.com/LinuNils/TMC\_reproduced
+  - doi: 10.5281
 
 # Date URL and DOI (optional if no data)
 data:
@@ -51,13 +51,16 @@ data:
 
 # Information about the original article that has been replicated
 replication:
- - cite: "" # Full textual citation
- - bib:  # Bibtex key (if any) in your bibliography file
- - url:  # URL to the PDF, try to link to a non-paywall version
- - doi:  # Regular digital object identifier
+ - cite: "Laurence Aitchison. Tensor monte carlo: particle methods for the gpu era. In Advances in NeuralInformation Processing Systems, pages 7146–7155, 2019" # Full textual citation
+ - bib: \cite{tmc} # Bibtex key (if any) in your bibliography file
+ - url: http://papers.nips.cc/paper/8936-tensor-monte-carlo-particle-methods-for-the-gpu-era.pdf # URL to the PDF, try to link to a non-paywall version
+ - doi: 1806.08593 # Regular digital object identifier
 
 # Don't forget to surround abstract with double quotes
-abstract: ""
+abstract: "In this work, we reproduce what we believe are the most important results presented in the Tensor Monte Carlo paper (Aitchison [2019]),
+           where we also provide our reimplementation code. The original results in the TMC paper were attained via a PyTorch (Paszke et al. [2017]) implementation.
+           In an attempt to ease understanding for those unfamiliar with PyTorch, we contribute with a TensorFlow (Abadi et al. [2015]) implementation.
+           Additionally, as we found the TMC architecture non-trivial to understand, we aim to ease understanding for future users by complementing the textual description of the model with an algorithmic description and a depiction of the model."
 
 # Bibliography file (yours)
 bibliography: bibliography.bib
@@ -82,7 +85,7 @@ language: Python
 
 # For example, the URL of the GitHub issue where review actually occured
 review: 
-  - url: 
+  - url: https://openreview.net/forum?id=BJxUSaczTH
 
 contributors:
   - name: Koustuv Sinha
