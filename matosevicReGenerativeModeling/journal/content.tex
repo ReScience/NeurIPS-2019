@@ -1,3 +1,42 @@
+%\usepackage[final, nonatbib]{neurips_2019}
+%\usepackage[utf8]{inputenc} % allow utf-8 input
+%\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+%\usepackage[dvipsnames]{xcolor}
+%\definecolor{greenyellow}{rgb}{0.0, 0.0, 0.8}
+%\usepackage[colorlinks = true, urlcolor  = greenyellow, linkcolor = greenyellow, citecolor = greenyellow]{hyperref}       % hyperlinks
+%\usepackage{url}            % simple URL typesetting
+%\usepackage{booktabs}       % professional-quality tables
+%\usepackage{amsfonts}       % blackboard math symbols
+%\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+%\usepackage{microtype}      % microtypography
+
+%\usepackage{graphicx}
+%\usepackage{float}
+%\usepackage{gensymb}
+%\usepackage{amsmath}
+%\usepackage{subfig}
+%\usepackage{bm}
+%\usepackage{wrapfig}
+
+%\usepackage{todonotes}
+
+%\usepackage[numbers, square]{natbib}
+
+\renewcommand*{\sectionautorefname}{Section}
+\renewcommand*{\subsectionautorefname}{Section}
+\renewcommand*{\figureautorefname}{Figure}
+\renewcommand*{\tableautorefname}{Table}
+
+\renewcommand\thesubfigure{\alph{subfigure}}
+\newcommand{\subfigureautorefname}{\figureautorefname}
+
+%\DeclareMathOperator*{\argmax}{arg\,max}
+
+
+\begin{abstract}
+    In this project we attempt to reproduce results from the paper \textit{Generative Modeling by Estimating Gradients of the Data Distribution} by \citet{ncsn-paper}. The authors propose a novel generative framework based solely on gradients of data density estimated by a neural network. Once the model is trained, sampling can be performed with annealed Langevin dynamics. While we managed to reproduce the experiments qualitatively, we failed to achieve comparable results for Inception and FID scores for CIFAR-10. We further extended the original work in various directions (computing and analysing FID and IS also for CelebA, investigation of the sampling hyperparameters $\epsilon$ and $T$, linear instead of geometric annealing schedule for noise levels, and different network architecture).
+\end{abstract}
+
 \input{../openreview/introduction.tex}
 
 \input{../openreview/method.tex}
