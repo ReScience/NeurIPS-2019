@@ -18,7 +18,7 @@ authors:
   - name: Sammed Shantinath Kagi
     orcid: 
     email: sammed.shantinath@iitgn.ac.in
-    affiliations: 1,      # * is for contact author
+    affiliations: 1      # * is for contact author
 
 # List of affiliations with code (corresponding to author affiliations), name
 # and address. You can also use these affiliations to add text such as "Equal
@@ -30,13 +30,13 @@ affiliations:
 
 
 # List of keywords (adding the programming language might be a good idea)
-keywords: rescience c, rescience x
+keywords: hamiltonian neural networks, pytorch
 
 # Code URL and DOI (url is mandatory for replication, doi after acceptance)
 # You can get a DOI for your code from Zenodo,
 #   see https://guides.github.com/activities/citable-code/
 code:
-  - url: https://github.com/rescience-c/template
+  - url: https://github.com/ayushgarg31/HNN-Neurips2019
   - doi: 
 
 # Date URL and DOI (optional if no data)
@@ -46,13 +46,15 @@ data:
 
 # Information about the original article that has been replicated
 replication:
- - cite: "" # Full textual citation
- - bib:  # Bibtex key (if any) in your bibliography file
- - url:  # URL to the PDF, try to link to a non-paywall version
+ - cite: "Greydanus, Samuel, Misko Dzamba, and Jason Yosinski. \"Hamiltonian neural networks.\" Advances in Neural Information Processing Systems. 2019." # Full textual citation
+ - bib:  \fullcite{greydanus}
+ # Bibtex key (if any) in your bibliography file
+ - url:  https://papers.nips.cc/paper/9672-hamiltonian-neural-networks.pdf
+ # URL to the PDF, try to link to a non-paywall version
  - doi:  # Regular digital object identifier
 
 # Don't forget to surround abstract with double quotes
-abstract: ""
+abstract: "Even though neural networks enjoy widespread use, they still struggle to learn the basic laws of physics. How might we endow them with better inductive biases? In this paper, we draw inspiration from Hamiltonian mechanics to train models that learn and respect exact conservation laws in an unsupervised manner. We evaluate our models on problems where conservation of energy is important, including the two-body problem and pixel observations of a pendulum. Our model trains faster and generalizes better than a regular neural network. An interesting side effect is that our model is perfectly reversible in time."
 
 # Bibliography file (yours)
 bibliography: bibliography.bib
@@ -77,7 +79,7 @@ language: Python
 
 # For example, the URL of the GitHub issue where review actually occured
 review: 
-  - url: 
+  - url: https://openreview.net/forum?id=HJxNSp9MTr
 
 contributors:
   - name: Koustuv Sinha
