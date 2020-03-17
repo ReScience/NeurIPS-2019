@@ -1,11 +1,10 @@
 # Fdb version 3
-["biber article"] 1583455258 "article.bcf" "article.bbl" "article" 1583807748
-  "article.bcf" 1583807748 87977 3a94d42ede1801cacc094ed1207fe724 ""
+["biber article"] 1584449517 "article.bcf" "article.bbl" "article" 1584449528
+  "article.bcf" 1584449527 87977 3a94d42ede1801cacc094ed1207fe724 ""
   "bibliography.bib" 1583455150 1083 51c62909650cc8af3ed123143e4cf699 ""
   (generated)
-  "article.blg"
   "article.bbl"
-["pdflatex"] 1583807744 "article.tex" "article.pdf" "article" 1583807748
+["pdflatex"] 1584449525 "article.tex" "article.pdf" "article" 1584449528
   "../openreview/ablation2-agent_avg_f1.png" 1583596750 12438 643a053ee91ca4e91582b9f6884c80c7 ""
   "../openreview/ablation2-other_avg_f1.png" 1583596750 12946 2e6ba6156a4b997ab4e31eeb122f804a ""
   "../openreview/ablation2-score_avg_f1.png" 1583596750 15262 c9cd6c16adc5d298ddb80970169775d4 ""
@@ -283,19 +282,19 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1583454260 2420967 a69896f845aaee58e3ad25c4ab7729d0 ""
-  "article.aux" 1583807748 9229 a4fae354e6532f4b339793041caa1baf ""
-  "article.bbl" 1583455259 8476 9294dbc7048c9f42dbff411152772818 "biber article"
-  "article.out" 1583807748 1076 e91f10afd2e267b3015c715a45ddb008 ""
-  "article.run.xml" 1583807748 2429 f314d0facb1450ab286ab4a440bf1597 ""
+  "article.aux" 1584449527 9229 a4fae354e6532f4b339793041caa1baf ""
+  "article.bbl" 1584449518 8476 9294dbc7048c9f42dbff411152772818 "biber article"
+  "article.out" 1584449527 1076 e91f10afd2e267b3015c715a45ddb008 ""
+  "article.run.xml" 1584449527 2429 f314d0facb1450ab286ab4a440bf1597 ""
   "article.tex" 1583455150 819 2b5aa5921a5fdf5d459a6b539fa8ce89 ""
   "content.tex" 1583807725 27173 45ea495cdd68674bcdd9d11ef5707d98 ""
   "header.tex" 1583455150 3295 5661edb71a2a218a5589d8edc050fbc2 ""
   "metadata.tex" 1583807266 1465 d2bb2fbb00328653b643331b254dfcc5 ""
   "rescience.cls" 1583455150 10412 6cabfdbbf728119a24bc6b185acfe10f ""
   (generated)
+  "article.pdf"
+  "article.bcf"
+  "article.aux"
   "article.log"
   "article.run.xml"
-  "article.pdf"
   "article.out"
-  "article.aux"
-  "article.bcf"
