@@ -11,17 +11,17 @@ title: "[Re] Unsupervised Scalable Representation Learning for Multivariate Time
 # Affiliation "*" means contact author
 authors:
   - name: Felix Liljefors
-    orcid: 
+    orcid: 0000-0002-8927-4328
     email: felixlil@kth.se
     affiliations: 1,*
     
   - name: Moein Sorkhei
-    orcid: 
+    orcid: 0000-0001-6204-0778
     email: sorkhei@kth.se
     affiliations: 1,      # * is for contact author
 
   - name: Sofia Broomé
-    orcid:
+    orcid: 0000-0001-5458-3473
     email: sbroome@kth.se
     affiliations: 1,      # * is for contact author
 
@@ -41,7 +41,7 @@ keywords: rescience c, rescience x
 # You can get a DOI for your code from Zenodo,
 #   see https://guides.github.com/activities/citable-code/
 code:
-  - url: https://github.com/rescience-c/template
+  - url: "https://github.com/lilfelix/reproducibility_NeurIPS19"
   - doi: 
 
 # Date URL and DOI (optional if no data)
@@ -51,12 +51,13 @@ data:
 
 # Information about the original article that has been replicated
 replication:
- - cite: "" # Full textual citation
- - bib:  # Bibtex key (if any) in your bibliography file
- - url:  # URL to the PDF, try to link to a non-paywall version
+ - cite: "Franceschi, A. Dieuleveut, and M. Jaggi. Unsupervised scalable representation learning for multivariate time series. CoRR, abs/1901.10738, 2019. URL http://arxiv.org/abs/1901.10738" # Full textual citation
+ - bib:  FranceschiUnsupervised2019 # Bibtex key (if any) in your bibliography file
+ - url:  http://arxiv.org/abs/1901.10738 # URL to the PDF, try to link to a non-paywall version
  - doi:  # Regular digital object identifier
 
 # Don't forget to surround abstract with double quotes
+# make sure your abstract is url encoded
 abstract: ""
 
 # Bibliography file (yours)
@@ -82,7 +83,7 @@ language: Python
 
 # For example, the URL of the GitHub issue where review actually occured
 review: 
-  - url: 
+  - url: https://openreview.net/forum?id=HyxQr65z6S
 
 contributors:
   - name: Koustuv Sinha
