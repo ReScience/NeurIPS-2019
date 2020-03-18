@@ -84,8 +84,8 @@
       \strng{authorbibnamehash}{4e957541298e9eee93986a5720aa709f}
       \strng{authornamehash}{4e957541298e9eee93986a5720aa709f}
       \strng{authorfullhash}{4e957541298e9eee93986a5720aa709f}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Understanding intermediate layers using linear classifier probes}
@@ -117,8 +117,8 @@
       \strng{authorbibnamehash}{dbbf1bed19c5f4fefc0e946b5a62f997}
       \strng{authornamehash}{dbbf1bed19c5f4fefc0e946b5a62f997}
       \strng{authorfullhash}{dbbf1bed19c5f4fefc0e946b5a62f997}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Representation Learning with Contrastive Predictive Coding}
@@ -168,8 +168,8 @@
       \strng{authorbibnamehash}{8b3ef26dc62a767555ae0d38dfd0804f}
       \strng{authornamehash}{cf0d09770f431af15d7408bfd8c13f88}
       \strng{authorfullhash}{8b3ef26dc62a767555ae0d38dfd0804f}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Learning deep representations by mutual information estimation and maximization}
@@ -204,8 +204,8 @@
       \strng{authorbibnamehash}{09870dd896ce19dc973ccf9e8c74f057}
       \strng{authornamehash}{b860cdd943a1b0da2266361368220a86}
       \strng{authorfullhash}{09870dd896ce19dc973ccf9e8c74f057}
-      \field{sortinit}{7}
-      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{The arcade learning environment: An evaluation platform for general agents}
