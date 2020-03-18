@@ -59,7 +59,7 @@
   Path = ./source-serif-pro/SourceSerifPro-, Extension = .otf,
   UprightFont= Light,
   ItalicFont = LightIt,
-  BoldFont   = Regular,
+  BoldFont = Regular,
   BoldItalicFont = It,
 ]
 \setsansfont{Roboto Condensed}[
