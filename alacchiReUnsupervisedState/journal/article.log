@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.3.5)  17 MAR 2020 23:20
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.3.5)  17 MAR 2020 23:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -909,7 +909,7 @@ LaTeX Info: Redefining \- on input line 4015.
 . 
 . Font family 'SourceSerifPro(0)' created for font 'Source Serif Pro' with
 . options [Ligatures=TeX,Ligatures=TeX,Path =
-. ./source-serif-pro/SourceSerifPro-,Extension = .otf,UprightFont=
+. ./source-serif-pro/SourceSerifPro-,Extension = .otf,UprightFont =
 . Light,ItalicFont = LightIt,BoldFont = Regular,BoldItalicFont = It].
 .  
 .  This font family consists of the following NFSS series/shapes:
@@ -2152,7 +2152,7 @@ Package logreq Info: Writing requests to 'article.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  56566 strings out of 494988
- 1263423 string characters out of 6178639
+ 1263424 string characters out of 6178639
  1962625 words of memory out of 5000000
  59612 multiletter control sequences out of 15000+600000
  537336 words of font info for 94 fonts, out of 8000000 for 9000
