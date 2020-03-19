@@ -1,3 +1,32 @@
+% MIT License
+
+% Copyright (c) 2020 Linus Nilsson, Oskar Kviman, Martin Larsson
+
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
+
+
+
+
+%\begin{abstract}
+%\end{abstract}
+
 \section{Introduction}
 Variational autoencoders (VAE), first introduced in the works of \cite{kingma2013autoencoding}, sparked a trend in designing generative models in order to approximate the intractable posterior distribution. Many recent papers have provided ingenious schemes for improving upon VAE, among some (\cite{iwae, rezende2015variational, ladder, kingma2018glow}), by achieving tighter log-likelihood bounds on the marginal likelihood (explained in greater detail below). The original bottom-up and top-down architecture has been experimented with (\cite{ladder}), as well as employing chains of transformations on an, in VAE, assumed simplistic prior distribution (\cite{rezende2015variational, kingma2018glow}). The importance weighted variational autoencoder (IWAE; \cite{iwae}) utilized averaging over multiple samples, as opposed to VAE's single-sample objective, to tighten the mentioned bound while being able to model a richer latent space – in effect, this multi-sample scheme allows for a more complex approximate posterior. In light of IWAE, tensor Monte-Carlo (\cite{tmc}; TMC) was recently proposed as an attempt to improve upon IWAE by sampling exponentially many importance samples. For each of the $n$ latent variables in the TMC, $K$ samples are drawn yielding $K^n$ marginal log-likelihood evaluations. Averaging over this large number of samples might appear computationally impossible, but via clever tensor products computed in parallel, the TMC is approximately as fast as the less importance sample exhausting IWAE. 
 
@@ -50,9 +79,38 @@ As stated above, we provide the complete reproducibility code publicly on GitHub
 \subsection{Tensor Monte-Carlo}
 For reproducibility, we begin this section with providing an algorithmic description of the TMC, see Alg. \ref{algo:tmc}, which we next complement with some important details.
 
+% \vspace{-2cm}
 
-\begin{algorithm}
 
+As seen in Alg. \ref{algo:tmc}, the TMC 
+evaluates exponentially many importance samples as the IWAE (\cite{tmc, iwae}). Doing this, in turns, gives rise to a new objective function. In order to average over all different combinations of marginal log-likelihoods, Aitchison (\cite{tmc}), defines the new marginal likelihood estimator as
+
+\begin{equation}
+    \mathcal{P}_{\text{TMC}} = \frac{1}{\prod\limits_{i=1} K_i}
+    \sum\limits_{k_1, k_2, ..., k_{L_q}} \frac{p_{\theta}(\bm x|\bm z^{k_1}_1)\prod_{j}p_{\theta}(\bm z^{k_j}_{j}|\bm z^{k_{j+1}}_{j+1})}
+    {\prod\limits_i q_{\theta}(\bm z_i^{k_i}| \bm z_{k-1}^{k_{i-1}})},
+    \label{eq:tmc_estimator}
+\end{equation}
+which yields the following multi-sample objective
+\begin{equation}
+    \log p_{\theta}(\bm x) \geq \mathbb E_{q_{\theta}} \left[\mathcal{P}_{\text{TMC}}\right] = \mathcal{L}_{TMC} (\bold x).
+    \label{eq:tmc_loss}
+\end{equation}
+
+Note that the estimator in Eq. (\ref{eq:tmc_estimator}) only applies when assuming a non-factorized proposal. Also note, in contrast to the notations used when describing IWAE, $k_l$ here is a set with cardinality $K$ and not the number of samples per latent $\bm z$. To compute the tensor inner-product in a numerically stable way, the author provides a method referred to as logmmexp (\cite{tmc}; see Appendix \ref{sec:appendix_tmul}).
+
+
+
+\section{Reproducibility}
+Please note, that in the above section we provided a list of what we aim to reproduce.
+Here, we go through our experimental methodology in greater detail. 
+
+
+
+
+
+\begin{figure}[H]
+\begin{algorithm}[H]
 \small
 
 \DontPrintSemicolon
@@ -92,29 +150,15 @@ Initialize $\bm \theta$\;
 \caption{Non-factorised Tensor Monte-Carlo (TMC) algorithm. $d$ here is the dimension of a data point, $b$ is the batch size, and the number of layers in the recognition model is $L_q$.}
 \label{algo:tmc}
 \end{algorithm}
+\end{figure}
 
 
-As seen in Alg. \ref{algo:tmc}, the TMC 
-evaluates exponentially many importance samples as the IWAE (\cite{tmc, iwae}). Doing this, in turns, gives rise to a new objective function. In order to average over all different combinations of marginal log-likelihoods, Aitchison (\cite{tmc}), defines the new marginal likelihood estimator as
-
-\begin{equation}
-    \mathcal{P}_{\text{TMC}} = \frac{1}{\prod\limits_{i=1} K_i}
-    \sum\limits_{k_1, k_2, ..., k_{L_q}} \frac{p_{\theta}(\bm x|\bm z^{k_1}_1)\prod_{j}p_{\theta}(\bm z^{k_j}_{j}|\bm z^{k_{j+1}}_{j+1})}
-    {\prod\limits_i q_{\theta}(\bm z_i^{k_i}| \bm z_{k-1}^{k_{i-1}})},
-    \label{eq:tmc_estimator}
-\end{equation}
-which yields the following multi-sample objective
-\begin{equation}
-    \log p_{\theta}(\bm x) \geq \mathbb E_{q_{\theta}} \left[\mathcal{P}_{\text{TMC}}\right] = \mathcal{L}_{TMC} (\bold x).
-    \label{eq:tmc_loss}
-\end{equation}
-
-Note that the estimator in Eq. (\ref{eq:tmc_estimator}) only applies when assuming a non-factorized proposal. Also note, in contrast to the notations used when describing IWAE, $k_l$ here is a set with cardinality $K$ and not the number of samples per latent $\bm z$. To compute the tensor inner-product in a numerically stable way, the author provides a method referred to as logmmexp (\cite{tmc}; see Appendix \ref{sec:appendix_tmul}).
 
 
-\section{Reproducibility}
-Please note, that in the above section we provided a list of what we aim to reproduce.
-Here, we go through our experimental methodology in greater detail. 
+
+
+
+
 
 \subsection{Dataset}
 The TMC paper uses the MNIST (\cite{mnist}) handwritten digit database to evaluate the performance of TMC compared to IWAE. Although the author of the TMC paper also conducts an enlightening toy experiment where the true marginal likelihood is known, we restrain our work to the MNIST dataset as these results are arguably most informative when comparing with existing models in the literature. The dataset was downloaded and pre-processed via Keras (\cite{keras}), while we normalized all pixels by division with $255$. No explicit scheme of how the training proceeded was presented, but the following was done, justified by discussion with the author: similar to that presented in \cite{iwae}, the model was exposed to all the training data, presented in randomly drawn mini-batches. Next the same was done for all the test data, concluding an epoch.
@@ -159,12 +203,12 @@ For the small IWAE and TMC models mentioned above, we, in Appendix \ref{sec:app_
     \begin{subfigure}[t]{0.5\textwidth}
     \hspace*{-2cm}
         \centering
-        \includegraphics[height=5.5cm]{../openreview/Figures/nfs_iwae_tmc.png}
+        \includegraphics[height=5.5cm]{Figures/nfs_iwae_tmc.png}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[height=5.5cm]{../openreview/Figures/nfl_iwae_tmc.png}
+        \includegraphics[height=5.5cm]{Figures/nfl_iwae_tmc.png}
     \end{subfigure}
     \caption{Results of the non-factorized IWAE and TMC models, evaluated on their respective objective functions for both small and large models over 1200 epochs. Results corresponding to legends noted with ``TMC paper'' was given to us by the author. }
     \label{fig:iwae_tmc_small_large}
@@ -189,22 +233,22 @@ TMC small & $-91.63\pm0.16$ \\ \hline
     \begin{subfigure}[t]{0.5\textwidth}
     \hspace*{-2cm}
         \centering
-        \includegraphics[height=5cm]{../openreview/Figures/hp_s_1.png}
+        \includegraphics[height=5cm]{Figures/hp_s_1.png}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[height=5cm]{../openreview/Figures/hp_s_5.png}
+        \includegraphics[height=5cm]{Figures/hp_s_5.png}
     \end{subfigure}
         \begin{subfigure}[t]{0.5\textwidth}
     \hspace*{-2cm}
         \centering
-        \includegraphics[height=5cm]{../openreview/Figures/hp_s_20.png}
+        \includegraphics[height=5cm]{Figures/hp_s_20.png}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[height=5cm]{../openreview/Figures/hp_s_50.png}
+        \includegraphics[height=5cm]{Figures/hp_s_50.png}
     \end{subfigure}
     \caption{Results of the hyper-parameter search for the small TMC model, for different values of K and learning rates over 500 epochs.}
     \label{fig:hp_search}
@@ -219,7 +263,7 @@ During our non-exhaustive hyper-parameter search, we evaluated the TMC model for
 
 \begin{figure}[th!]
     \centering
-    \includegraphics[width=0.5\textwidth, height=4.5cm]{../openreview/Figures/ablation_study_tmc.png}
+    \includegraphics[width=0.5\textwidth, height=4.5cm]{Figures/ablation_study_tmc.png}
     \caption{Results of the ablation study (more detailed description in text). The test was conducted with K=5, batch size=128 and a learning rate of 1e-3 over 500 epochs.}
     \label{fig:ablation_study}
 \end{figure}
@@ -232,6 +276,9 @@ To conclude, we have successfully reproduced the fundamental results of the Neur
 
 \section{Acknowledgements}
 We would like to thank Laurence Aitchison for supplying us with answers to our questions (patiently), and the original results so that we could integrate them here. 
+%\newpage
+%\bibliography{bibliography} 
+%\bibliographystyle{ieeetr}
 
-% \bibliography{bibtex} 
-% \bibliographystyle{ieeetr}
+
+
