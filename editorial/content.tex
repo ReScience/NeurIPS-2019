@@ -1,0 +1,256 @@
+One of the challenges in machine learning research is to ensure that the presented and
+published results are sound and reliable. Reproducibility, which is obtaining similar results
+as presented in a paper or talk, using the same code and data (when available), is a
+necessary step to verify the reliability of research findings. Reproducibility is also an
+important step to promote open and accessible research, thereby allowing the scientific
+community to quickly integrate new findings and convert ideas to practice.
+Reproducibility also promotes the use of robust experimental workflows, which
+potentially reduce unintentional errors. In 2019, the Neural Information Processing
+Systems conference, the premier international conference for research in machine
+learning, introduced a reproducibility program, designed to improve the standards
+across the community for how we conduct, communicate, and evaluate machine
+learning research. One of the components in the program consisted of a community-wide reproducibility challenge on the accepted papers. In this special issue of the ReScience C Journal, we present the top peer-reviewed submissions of the challenge, namely 2019 NeurIPS Reproducibility Challenge.
+
+
+\section{The Challenge} 
+
+The goal of this challenge was to investigate the reproducibility of empirical results submitted to the 2019 edition of Neural Information Processing Systems (NeurIPS) conference. Unlike our previous editions (2018 ICLR, 2019 ICLR), in this challenge, we only focused on accepted papers at the conference. The primary target audience of the challenge was early career researchers from universities, however, we received participation from the industry as well. The main objective of this challenge was to provide independent verification of the empirical claims in accepted NeurIPS papers and to leave a public trace of the findings from this secondary analysis. We provide a comparative analysis of participation of this challenge as compared to the previous editions in Table 1. A total of 173 papers were claimed for reproduction, which is a 92\% increase since the last edition. We had participants from 73 institutions (63 universities and 10 industries) from around the world. Institutions with the most participants came from 3 continents and include McGill University, Canada, KTH in Sweden, Brown University in the US and IIT Roorkee in India. In those cases (and several others), a high participation rate occurred when a professor at the university used this challenge as a final course project. In this special issue, we present the top 10 peer-reviewed reports, selected from 84 submissions.
+
+\section{Baselines, Ablations and Replications}
+
+Replication of a computational study typically means running the same code, using the same input data, and then checking if the results are the same or at least “close enough” by some degree of numerical approximations. This is most easily achieved when the exact code and data to replicate the experiments are provided. To this end, the organizers of the 2019 NeurIPS conference instated a code submission policy for the accepted papers this year. While it wasn’t mandatory, the policy was to encourage authors to submit their code by providing enough flexibility on the timing of submission. This resulted in 74.4\% of papers being associated with their code, which was less than 50\% in the 2018 NeurIPS conference. From the very beginning of the challenge, we made these codebases available to participants and offered three tracks to choose from. 
+
+\begin{enumerate}
+    \item \xhdr{Baselines Track} Sometimes it is not feasible to reproduce all the experiments in a paper: factors such as private datasets, extensive training time, the requirement of non-standard compute infrastructure can all limit reproducibility. It is also sometimes the case that baseline methods reported in the papers are not properly implemented, or hyper-parameter search is not done with sufficient care, leading to a poor comparison of alternative methods. Thus we provided an option to the challenge participants to perform a rigorous analysis on the baselines by re-implementing them wherever necessary. Reproducing the baselines can further add to the technical contributions of a paper, and therefore was encouraged in this challenge.
+    
+    \item \xhdr{Ablations Track} Since we had almost 75\% of accepted papers accompanied with their code, we provided a track which only focuses on the released code. Participants are encouraged to use the authors’ code and perform rigorous ablation experiments by modifying the model and hyperparameter choices, to gain extra insights from the reported methods of the paper and add value to their understanding. 
+    
+    \item \xhdr{Replications Track} A higher bar of reproducibility is to replicate the experiments explained in the paper from scratch without having to refer to the original codebase. This is helpful in detecting anomalies in the presentation of the ideas in a paper, and it sheds light on the aspects of the implementation that could affect the final results. This is far by the most difficult track, and the implementation results directly add the most value to the understanding of the original paper, often leading to continued discussions with the authors. 
+    
+\end{enumerate}
+
+
+\section{Platform and Medium} 
+
+In this edition of the Reproducibility Challenge, we were fortunate enough to have big support from OpenReview and the Program Chairs of NeurIPS 2019. All NeurIPS 2019 accepted papers were hosted by OpenReview, which facilitated online discussions for the larger research community who were unable to be present physically at the conference in Vancouver in December 2019. OpenReview built a unique platform for the Reproducibility Challenge, which featured the accepted papers as well as allowed challenge participants to claim a paper to work on, and later submit their reports based on their claim. Once submitted, all reproducibility reports underwent an extensive review cycle by a large set of reviewers of the NeurIPS 2019 conference. Due to the transparent review process of OpenReview, many reproducibility reports attracted comments from the original authors, which in turn helped the overall reviewing pipeline. Finally, we selected 10 high-quality reports from 84 submissions to be published in this journal, ReScience C, which is a perfect platform for publication of reproducibility efforts of various computational fields of science.
+
+\section{Relationship with Authors}
+
+Authors of research papers have much to gain from this challenge as the participants. Using OpenReview, we encouraged participants to clarify various nuances of the implementation of the paper with the original authors. Due to the dual nature of our OpenReview platform, challenge participants could easily communicate with the authors who themselves received notifications from the comments arising in the forum associated with their papers. During the review period, these communications were also taken into consideration by the reviewers in judging the quality of the report.
+
+\section{Computing Resources} 
+
+In this challenge, we partnered with CodeOcean for providing free cloud computing credits to select teams. CodeOcean is an online web-based platform for reproducible computational science, which is a shareable Docker container living in the cloud. Participants were able to leverage the free compute resources from CodeOcean to run their experiments. CodeOcean provided prompt and necessary support enabling participants to resolve implementation issues to request additional resources to support their experiments.
+
+\section{Content}
+
+The overall quality of the submissions in this challenge was very high, and thus it was a difficult decision to select the best ones. Thus, we are hosting all of the accepted reports in OpenReview for the community to read and add to their understanding of the original NeurIPS 2019 paper. In this special issue, we present the top 10 peer-reviewed reports of the 2019 Reproducibility Challenge. These reports were selected after critical reviews from our reviewers, and consist of reproducibility efforts over broad coverage of topics in Machine Learning, including optimization, initialization, generative modeling, transfer learning, and reinforcement learning.
+
+\section{Conclusion} 
+
+Reproducibility in machine learning has recently garnered a considerable amount of attention and momentum thanks to key efforts by top researchers. Conferences such as ICLR, AAAI, ICML have organized dedicated workshops on the topic. The premier conference in the field, NeurIPS, has undertaken a reproducibility program this year which consisted of three components: a code submission policy, the inclusion of the Machine Learning Reproducibility checklist as part of the paper submission process, and this challenge. We hope our endeavor will similarly spur more efforts in reproducing existing ideas and papers, and in turn promote open, accessible and sound machine learning research.
+            
+
+\section{Acknowledgements} 
+
+We thank the NeurIPS board and the NeurIPS 2019 general chair (Hanna Wallach) and program chairs (Hugo Larochelle, Alina Beygelzimer, Florence d’Alché-Buc, Emily Fox) for the unfailing support of this initiative. We thank the many authors who submitted their work to NeurIPS 2019 and communicated with the challenge participants. We thank the program committee (Zhenyu (Sherry) Xue) of NeurIPS 2019 for providing us data and statistics of the papers accepted in the NeurIPS 2019 conference which helped us in building the portal. We thank the OpenReview team (in particular Andrew McCallum, Pam Mandler, Melisa Bok, Michael Spector, and Mohit Uniyal) who provided extensive support from day one to build and host the dual-purpose portal, and to host the results of the reproducibility challenge. We thank CodeOcean (Xu Fei) for supporting our challenge by providing cloud compute resources. Finally, we thank the several participants of the reproducibility challenge who dedicated time and effort to verify results that were not their own, to help strengthen our understanding of machine learning, and the types of problems we can solve today.
+
+\section{Reviewers}
+
+In this iteration of the Reproducibility Challenge, we were fortunate enough to attract a large base of reviewers having prior experience in reviewing in large Machine Learning conferences such as NeurIPS, ICML, ICLR, etc. Many thanks to all our reviewers, we acknowledge their hard efforts who spent their precious time to critically review the reports. We hope that our reviewer base will keep supporting us in this endeavor in the future.
+
+\begin{multicols}{3}
+\begin{itemize}[label={}]
+    \item Abhinav Agrawal
+    \item Adria Garriga-Alonso
+    \item Ambrish Rawat
+    \item Andreas Ruttor
+    \item Andreea Gane
+    \item Andrew Drozdov
+    \item Andrew Jaegle
+    \item Andrew Ross
+    \item Angus Galloway
+    \item Antti Koskela
+    \item Arna Ghosh
+    \item Austin Brockmeier
+    \item Awa Dieng
+    \item Bryan Gibson
+    \item Cagri Coltekin
+    \item Chao Qin
+    \item Charbel Sakr
+    \item Chen Tessler
+    \item Cheng Ju
+    \item Chuan Li
+    \item Dagmar Kainmueller
+    \item Damian Roqueiro
+    \item David Arbour
+    \item David Krueger
+    \item Di He
+    \item Dmitriy Serdyuk
+    \item Dong Gong
+    \item Dong Yin
+    \item Donghyeon Cho
+    \item Du Tran
+    \item Dylan Hadfield-Menell
+    \item Elaheh Raisi
+    \item Emmanuel Bengio
+    \item Erfan Sadeqi Azer
+    \item Eric Crawford
+    \item Eric Jang
+    \item Erin Conlon
+    \item Erin Grant
+    \item Ernest Ryu
+    \item Fang Liu
+    \item Fang Zhao
+    \item Felix Gimeno
+    \item Fernando Martínez-Plumed
+    \item Forough Poursabzi-Sangdeh
+    \item Gabriel Synnaeve
+    \item Gang Wang
+    \item Gavin Weiguang Ding
+    \item Georg Martius
+    \item Georgios Leontidis
+    \item Gianfranco Doretto
+    \item Haiqin Yang
+    \item Haitian Sun
+    \item Hanna Suominen
+    \item Hao He
+    \item Hei Law
+    \item Hidekazu Oiwa
+    \item Hong Ge
+    \item Hongyi Wang
+    \item Hua Wang
+    \item Huaibo Huang
+    \item Huimin Ma
+    \item Huitong Qiu
+    \item Huziel Sauceda
+    \item J. Hernandez-Garcia
+    \item Jaeho Lee
+    \item Jake Bruce
+    \item Jesse Dodge
+    \item Jessica Forde
+    \item Ji Lin
+    \item Jiahui Yu
+    \item Jiakai Zhang
+    \item Jiangwen Sun
+    \item Jing Wang
+    \item Jinghui Chen
+    \item Jitong Chen
+    \item Joan Puigcerver
+    \item Joel Lehman
+    \item Joelle Pineau
+    \item John Wieting
+    \item Jonathan Hunt
+    \item Josh Roy
+    \item Kai Han
+    \item Kanika Madan
+    \item Katherine Lee
+    \item Khimya Khetarpal
+    \item Konstantin Mishchenko
+    \item Leo Lahti
+    \item Levent Sagun
+    \item Li cheng
+    \item Li Li
+    \item Li Shen
+    \item Lijun Wu
+    \item Linh Tran
+    \item Liping Liu
+    \item Lluis Castrejon
+    \item Lovedeep Gondara
+    \item Malik Altakrori
+    \item Maneesh Singh
+    \item Manoj Acharya
+    \item Måns Magnusson
+    \item Marlos C. Machado
+    \item Martin Klissarov
+    \item Massimiliano Mancini
+    \item Mathew Monfort
+    \item Matthew Schlegel
+    \item Matthias Gallé
+    \item Maxime Wabartha
+    \item Maxwell Collins
+    \item Melanie F. Pradier
+    \item Michal Drozdzal
+    \item Mike Chrzanowski
+    \item Mingkui Tan
+    \item Mingrui Liu
+    \item Minjia Zhang
+    \item Mirco Musolesi
+    \item Nan Ke
+    \item Nesreen Ahmed
+    \item Nikolaos Vasiloglou
+    \item Olga Isupova
+    \item Olivier Delalleau
+    \item Olivier Koch
+    \item Pablo Robles-Granda
+    \item Pascal Lamblin
+    \item Patrick Philipp
+    \item Paul Tylkin
+    \item Peixian Chen
+    \item Peter Henderson
+    \item Praveen Narayanan
+    \item Prithvijit Chattopadhyay
+    \item Qihang Lin
+    \item Razieh Nabi
+    \item Razvan Pascanu
+    \item Reinhold Scherer
+    \item Ritambhara Singh
+    \item Robert Vandermeulen
+    \item Roy Schwartz
+    \item Ryan Lowe
+    \item Sadid A. Hasan
+    \item Samuel Albanie
+    \item Sandhya Prabhakaran
+    \item Sara Hooker
+    \item Scott Fujimoto
+    \item Sercan Arik
+    \item Sergio Valcarcel Macua
+    \item Seungjae Lee
+    \item Shagun Sodhani
+    \item Shalini Ghosh
+    \item Shih-Yang Su
+    \item Shivam Patel
+    \item Shuai Tang
+    \item Shuai Zheng
+    \item Shuxin Zheng
+    \item Simon Kornblith
+    \item Sohil Shah
+    \item Stanislaw Jastrzebski
+    \item Stefan Magureanu
+    \item Steffen Udluft
+    \item Swapnil Mishra
+    \item Takashi Ishida
+    \item Takeshi Teshima
+    \item Tammo Rukat
+    \item Tobias Uelwer
+    \item Tzu-Yun Shann
+    \item Uthaipon Tantipongpipat
+    \item Venkatadheeraj Pichapati
+    \item Víctor Campos
+    \item Vincent Francois-Lavet
+    \item Vincent Lepetit
+    \item Volker Fischer
+    \item Wenhao Yu
+    \item Wenxiao Wang
+    \item Wenxuan Wu
+    \item Wesley Maddox
+    \item Xavier Bouthillier
+    \item Xiang Yu
+    \item Xiang Zhang
+    \item Xiangliang Zhang
+    \item Xiangru Lian
+    \item Xin GUO
+    \item Xin Lu
+    \item Xinggang Wang
+    \item Xingrui Yu
+    \item Xingyu Liu
+    \item Yash Goyal
+    \item Yingyezhe Jin
+    \item Yoonho Lee
+    \item Yufei Han
+    \item Yuji Matsumoto
+    \item Yuntian Deng
+    \item Zhangjie Cao
+    \item Zhourong Chen
+\end{itemize}
+\end{multicols}

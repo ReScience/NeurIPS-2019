@@ -1,0 +1,161 @@
+# To be filled by the author(s) at the time of submission
+# -------------------------------------------------------
+
+# Title of the article:
+#  - For a successful replication, it shoudl be prefixed with "[Re]"
+#  - For a failed replication, it should be prefixed with "[¬Re]"
+#  - For other article types, no instruction (but please, not too long)
+title: "NeurIPS 2019 Reproducibility Challenge"
+
+# List of authors with name, orcid number, email and affiliation
+# Affiliation "*" means contact author (required even for single-authored papers)
+authors:
+  - name: Koustuv Sinha
+    orcid: 0000-0002-2803-9236
+    email: koustuv.sinha@mail.mcgill.ca
+    affiliations: 1,2,3,*
+    
+  - name: Joelle Pineau
+    orcid: 
+    email: jpineau@cs.mcgill.ca
+    affiliations: 1,2,3      # * is for contact author
+
+  - name: Jessica Forde
+    orcid: 
+    email: 
+    affiliations: 4      # * is for contact author
+
+  - name: Rosemary Nan Ke
+    orcid: 
+    email: rosemary.nan.ke@gmail.com
+    affiliations: 2,5      # * is for contact author
+
+  - name: Hugo Larochelle
+    orcid: 
+    email: 
+    affiliations: 6      # * is for contact author
+
+# List of affiliations with code (corresponding to author affiliations), name
+# and address. You can also use these affiliations to add text such as "Equal
+# contributions" as name (with no address).
+affiliations:
+  - code:    1
+    name:    McGill University
+    address: Montreal, Canada
+    
+  - code:    2
+    name:    Montreal Institute of Learning Algorithms (Mila)
+    address: Montreal, Canada
+
+  - code:    3
+    name:    Facebook AI Research
+    address: Montreal, Canada
+
+  - code:    4
+    name:    Brown University
+    address: USA
+
+  - code:    5
+    name:    Polytechnic University
+    address: Montreal, Canada
+
+  - code:    6
+    name:    Google Brain
+    address: Montreal, Canada
+    
+  # - code:    3
+  #   name:    INRIA Bordeaux Sud-Ouest
+  #   address: Bordeaux, France
+    
+  # - code:    4
+  #   name:    LaBRI, Université de Bordeaux, Institut Polytechnique de Bordeaux,
+  #            Centre National de la Recherche Scientifique, UMR 5800
+  #   address: Talence, France
+    
+  # - code:    5
+  #   name:    Institut des Maladies Neurodégénératives, Université  de Bordeaux,
+  #            Centre National de la Recherche Scientifique, UMR 5293
+  #   address: Bordeaux, France
+
+
+# List of keywords (adding the programming language might be a good idea)
+keywords: machine learning, neurips, reproducibility challenge
+
+# Code URL and DOI/SWH (url is mandatory for replication, doi after acceptance)
+# You can get a DOI for your code from Zenodo, or an SWH identifier from
+# Software Heritage.
+#   see https://guides.github.com/activities/citable-code/
+code:
+  - url: https://github.com/rescience-c/template
+  - doi: 
+  - swh: 
+
+# Data URL and DOI (optional if no data)
+data:
+  - url:
+  - doi:
+
+# Information about the original article that has been replicated
+replication:
+ - cite: # Full textual citation
+ - bib:  # Bibtex key (if any) in your bibliography file
+ - url:  # URL to the PDF, try to link to a non-paywall version
+ - doi:  # Regular digital object identifier
+
+# Don't forget to surround abstract with double quotes
+abstract: "The Third Editon of Reproducibility Challenge, conducted at NeurIPS 2019 and part of its official program of reproducibility, is an open, peer-reviewed, collaborative experiment in evaluating Replicability and Reproducibility of Machine Learning articles accepted at NeurIPS 2019. We conduct the challenge through Fall 2019 on accepted papers in this conference, and in this special issue of ReScience journal we present the peer-reviewed selected reports."
+
+# Bibliography file (yours)
+bibliography: bibliography.bib
+  
+# Type of the article
+# Type can be:
+#  * Editorial
+#  * Letter
+#  * Replication
+type: Editorial
+
+# Scientific domain of the article (e.g. Computational Neuroscience)
+#  (one domain only & try to be not overly specific)
+domain: 
+
+# Coding language (main one only if several)
+language:
+
+  
+# To be filled by the author(s) after acceptance
+# -----------------------------------------------------------------------------
+
+# For example, the URL of the GitHub issue where review actually occured
+review: 
+  - url: 
+
+contributors:
+  - name:
+    orcid: 
+    role: editor
+  - name:
+    orcid:
+    role: reviewer
+  - name:
+    orcid:
+    role: reviewer
+
+# This information will be provided by the editor
+dates:
+  - received:  November 1, 2018
+  - accepted:
+  - published: 
+
+# This information will be provided by the editor
+article:
+  - number: # Article number will be automatically assigned during publication
+  - doi:    # DOI from Zenodo
+  - url:    # Final PDF URL (Zenodo or rescience website?)
+
+# This information will be provided by the editor
+journal:
+  - name:   "ReScience C"
+  - issn:   2430-3658
+  - volume: 4
+  - issue:  1
