@@ -1,7 +1,5 @@
 \begin{abstract}
-In this study, we performed some ablations on the main model developed in the paper "Unsupervised Representation Learning in
-Atari" \cite{main_article} as part of the 2019 NeurIPS Reproducibility Challenge. In this paper, Anand et. al introduce a new learning method called SpatioTemporal DeepInfoMax (STDIM), which is an unsupervised method that aims at learning state representations by maximizing particular forms of mutual information between a series of observations. Our work focuses on recreating a subset of their results, along with hyperparameter tuning, slightly altering the STDIM learning objective, and altering the receptive field of the encoder model that Anand et. al introduce in their article. We also suggest directions for further expanding the STDIM method. Our results also suggest that creating an ensemble model would allow for further boosting of the effectiveness of this model.
-
+In this study, we performed some ablations on the main model developed in the paper \textbf{Unsupervised Representation Learning in Atari} \cite{main_article} as part of the 2019 NeurIPS Reproducibility Challenge. In this paper, Anand et. al introduce a new learning method called SpatioTemporal DeepInfoMax (STDIM), which is an unsupervised method that aims at learning state representations by maximizing particular forms of mutual information between a series of observations. Our work focuses on recreating a subset of their results, along with hyperparameter tuning, slightly altering the STDIM learning objective, and altering the receptive field of the encoder model that Anand et. al introduce in their article. We also suggest directions for further expanding the STDIM method. Our results also suggest that creating an ensemble model would allow for further boosting of the effectiveness of this model.
 \end{abstract}
 
 \section{Introduction}
@@ -29,7 +27,7 @@ In order to evaluate a representation learning method after it has been trained,
 
 \subsubsection{The InfoNCE Objective}
 
-The methods introduced by Anand et. al \cite{main_article} rely on the InfoNCE mutual information bound \cite{infoNCE}. Generally speaking we are given a set of samples $\{(x_i, y_i)\}_{i=1}^{M}$ drawn from a distribution $p(x, y)$. Samples $(x_i, y_i)$ are considered positive samples since they are drawn from the joint probability distribution. Samples which are not indexed the same, i.e. $(x_i, y_j)$ for $i\neq j$ are considered negative samples since they are drawn independently from the marginal distributions, i.e. $Pr(x_i, y_j)=p(x_i)p(y_j)$. The InfoNCE objective is to learn a score function $f$ which maximizes the following estimate which acts as a lower bound of the mutual information between $X$ and $Y$.
+The methods introduced by Anand et. al \cite{main_article} rely on the InfoNCE mutual information bound \cite{infoNCE}. Generally speaking, we have access to a set of samples $\{(x_i, y_i)\}_{i=1}^{M}$ drawn from a distribution $p(x, y)$. Samples $(x_i, y_i)$ are considered positive samples since they are drawn from the joint probability distribution. Samples which are not indexed the same, i.e. $(x_i, y_j)$ for $i\neq j$ are considered negative samples since they are drawn independently from the marginal distributions, i.e. $Pr(x_i, y_j)=p(x_i)p(y_j)$. The InfoNCE objective is to learn a score function $f$ which maximizes the following estimate which acts as a lower bound of the mutual information between $X$ and $Y$.
 
 \begin{equation}
 \mathcal{I}_{NCE}=\sum_{i=1}^N\log{\frac{\exp{f(x_i,y_i)}}{\sum\limits_{\substack{j=1}}^N \exp{f(x_i,y_j)}}}
@@ -59,7 +57,7 @@ The base encoder architecture used for all models in the article is shown in Fig
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{../openreview/base_encoder.PNG}
-    \caption{The base encoder from the article.}
+    \caption{The base encoder from the article}
     \label{fig:base-encoder-image}
 \end{figure}
 
@@ -170,7 +168,7 @@ By varying $p$, we re-weight the importance of minimizing either objective's los
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{../openreview/ablation2-val_loss(log-log).png}
-    \caption{Log-log plot of the validation loss of the trainer over time.}
+    \caption{Log-log plot of the validation loss of the trainer over time}
     \label{fig:ablation2-loss}
 \end{figure}
 

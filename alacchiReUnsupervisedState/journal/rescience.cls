@@ -57,9 +57,9 @@
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Source Serif Pro}[
   Path = ./source-serif-pro/SourceSerifPro-, Extension = .otf,
-  UprightFont= Light,
+  UprightFont = Light,
   ItalicFont = LightIt,
-  BoldFont   = Regular,
+  BoldFont = Regular,
   BoldItalicFont = It,
 ]
 \setsansfont{Roboto Condensed}[
@@ -222,6 +222,7 @@
 \renewcommand\Affilfont{\normalfont\sffamily\footnotesize}
 \renewcommand\Authfont{\sffamily\bfseries\small}
 \renewcommand\Authands{\normalfont\sffamily\small}
+\renewcommand\Authands{, }
 \makeatletter
 \renewcommand\AB@affilsepx{ -- \protect\Affilfont}
 \makeatother

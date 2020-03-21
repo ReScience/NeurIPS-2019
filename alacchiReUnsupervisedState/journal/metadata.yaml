@@ -53,13 +53,13 @@ data:
 
 # Information about the original article that has been replicated
 replication:
- - cite: "" # Full textual citation
- - bib:  # Bibtex key (if any) in your bibliography file
- - url:  # URL to the PDF, try to link to a non-paywall version
+ - cite: "A.Anand, E.Racah, S.Ozair, Y.Bengio, M.-A.Côté, and R.D.Hjelm. Unsupervised State Representation Learning in Atari. 2019." # Full textual citation
+ - bib: \cite{main_article} # Bibtex key (if any) in your bibliography file 
+ - url: https://arxiv.org/pdf/1906.08226.pdf # URL to the PDF, try to link to a non-paywall version
  - doi:  # Regular digital object identifier
 
 # Don't forget to surround abstract with double quotes
-abstract: ""
+abstract: "In this study, we performed some ablations on the main model developed in the paper \\textbf{Unsupervised Representation Learning in Atari} as part of the 2019 NeurIPS Reproducibility Challenge. In this paper, Anand et. al introduce a new learning method called SpatioTemporal DeepInfoMax (STDIM), which is an unsupervised method that aims at learning state representations by maximizing particular forms of mutual information between a series of observations. Our work focuses on recreating a subset of their results, along with hyperparameter tuning, slightly altering the STDIM learning objective, and altering the receptive ﬁeld of the encoder model that Anand et. al introduce in their article. We also suggest directions for further expanding the STDIM method. Our results also suggest that creating an ensemble model would allow for further boosting of the eﬀectiveness of this model."
 
 # Bibliography file (yours)
 bibliography: bibliography.bib

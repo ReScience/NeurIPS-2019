@@ -1924,16 +1924,17 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">main_article</bcf:citekey>
-    <bcf:citekey order="2">linear_probing</bcf:citekey>
-    <bcf:citekey order="3">main_article</bcf:citekey>
-    <bcf:citekey order="4">infoNCE</bcf:citekey>
-    <bcf:citekey order="5">DIM</bcf:citekey>
-    <bcf:citekey order="6">infoNCE</bcf:citekey>
-    <bcf:citekey order="7">ALE</bcf:citekey>
-    <bcf:citekey order="8">main_article</bcf:citekey>
+    <bcf:citekey order="2">main_article</bcf:citekey>
+    <bcf:citekey order="3">linear_probing</bcf:citekey>
+    <bcf:citekey order="4">main_article</bcf:citekey>
+    <bcf:citekey order="5">infoNCE</bcf:citekey>
+    <bcf:citekey order="6">DIM</bcf:citekey>
+    <bcf:citekey order="7">infoNCE</bcf:citekey>
+    <bcf:citekey order="8">ALE</bcf:citekey>
     <bcf:citekey order="9">main_article</bcf:citekey>
-    <bcf:citekey order="10">infoNCE</bcf:citekey>
-    <bcf:citekey order="11">main_article</bcf:citekey>
+    <bcf:citekey order="10">main_article</bcf:citekey>
+    <bcf:citekey order="11">infoNCE</bcf:citekey>
+    <bcf:citekey order="12">main_article</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
