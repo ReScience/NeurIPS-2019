@@ -221,7 +221,8 @@
 \setlength{\affilsep}{0.25em}
 \renewcommand\Affilfont{\normalfont\sffamily\footnotesize}
 \renewcommand\Authfont{\sffamily\bfseries\small}
-\renewcommand\Authands{\normalfont\sffamily\small}
+% \renewcommand\Authands{\normalfont\sffamily\small}
+\renewcommand\Authands{, and }
 \makeatletter
 \renewcommand\AB@affilsepx{ -- \protect\Affilfont}
 \makeatother
