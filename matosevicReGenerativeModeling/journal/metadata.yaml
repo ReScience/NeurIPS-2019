@@ -57,7 +57,7 @@ replication:
  - doi:  # no doi in the original article
 
 # Don't forget to surround abstract with double quotes
-abstract: "In this project we attempt to reproduce results from the paper \textit{Generative Modeling by Estimating Gradients of the Data Distribution} by \\citet{ncsn-paper}. The authors propose a novel generative framework based solely on gradients of data density estimated by a neural network. Once the model is trained, sampling can be performed with annealed Langevin dynamics. While we managed to reproduce the experiments qualitatively, we failed to achieve comparable results for Inception and FID scores for CIFAR-10. We further extended the original work in various directions (computing and analysing FID and IS also for CelebA, investigation of the sampling hyperparameters $\epsilon$ and $T$, linear instead of geometric annealing schedule for noise levels, and different network architecture)."
+abstract: "In this project we attempt to reproduce results from the paper \textit{Generative Modeling by Estimating Gradients of the Data Distribution} by \\citet{ncsn-paper}. The authors propose a novel generative framework based solely on gradients of data density estimated by a neural network. Once the model is trained, sampling can be performed with annealed Langevin dynamics. While we managed to reproduce the experiments qualitatively, we failed to achieve comparable results for Inception and FID scores for CIFAR-10. We further extended the original work in various directions (computing and analysing FID and IS also for CelebA, investigation of the sampling hyperparameters \\$\\epsilon\\$ and \\$T\\$, linear instead of geometric annealing schedule for noise levels, and different network architecture)."
 
 # Bibliography file (yours)
 bibliography: bibliography.bib
@@ -88,7 +88,7 @@ contributors:
   - name: Koustuv Sinha
     orcid: 0000-0002-2803-9236
     role: editor
-  - name:
+  - name: Anonymous Reviewers
     orcid:
     role: reviewer
   - name:
