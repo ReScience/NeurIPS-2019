@@ -21,3 +21,8 @@ Directories are created using the citation keys of the following reports. Every 
 - Matosevic, A., Hein, E. & Nuzzo, F. _[Re] Generative Modeling by Estimating Gradients of the Data Distribution._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/matosevicReGenerativeModeling/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/matosevicReGenerativeModeling)
 - Nayak, N., Raj, V. & Kalyani, S. _[Re] A comprehensive study on binary optimizer and its applicability._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/nayakReComprehensiveStudy/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/nayakReComprehensiveStudy/)
 - Singh, A. & Bay, A. _[Re] On Mixup Training: Improved Calibration and Predictive Uncertainty for Deep Neural Networks._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/singhReMixupTraining/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/singhReMixupTraining)
+
+## Editorial
+
+- Sinha, K., Pineau, J., Forde, J., Ke, R. N. & Larochelle, H. _[Editorial] NeurIPS 2019 Reproducibility Challenge._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/editorial/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/editorial)
+
