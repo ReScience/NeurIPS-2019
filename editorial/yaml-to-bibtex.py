@@ -1,0 +1,1 @@
+../rescience_template/yaml-to-bibtex.py

@@ -86,7 +86,7 @@ keywords: machine learning, neurips, reproducibility challenge
 # Software Heritage.
 #   see https://guides.github.com/activities/citable-code/
 code:
-  - url: https://github.com/rescience-c/template
+  - url: https://github.com/ReScience/NeurIPS-2019/tree/master/editorial
   - doi: 
   - swh: 
 
@@ -131,7 +131,7 @@ review:
   - url: 
 
 contributors:
-  - name:
+  - name: Nicolas Rougier
     orcid: 
     role: editor
   - name:
@@ -143,7 +143,7 @@ contributors:
 
 # This information will be provided by the editor
 dates:
-  - received:  November 1, 2018
+  - received:  March 20, 2020
   - accepted:
   - published: 
 
@@ -157,5 +157,5 @@ article:
 journal:
   - name:   "ReScience C"
   - issn:   2430-3658
-  - volume: 4
+  - volume: 6
   - issue:  1
