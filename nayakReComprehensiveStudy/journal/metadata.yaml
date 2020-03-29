@@ -45,6 +45,7 @@ keywords: rescience c, rescience x
 code:
   - url: https://github.com/nancy-nayak/rethinking-bnn
   - doi: 
+  - swh:
 
 # Date URL and DOI (optional if no data)
 data:

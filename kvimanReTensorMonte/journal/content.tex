@@ -93,7 +93,7 @@ evaluates exponentially many importance samples as the IWAE (\cite{tmc, iwae}). 
 \end{equation}
 which yields the following multi-sample objective
 \begin{equation}
-    \log p_{\theta}(\bm x) \geq \mathbb E_{q_{\theta}} \left[\mathcal{P}_{\text{TMC}}\right] = \mathcal{L}_{TMC} (\bold x).
+    \log p_{\theta}(\bm x) \geq \mathbb E_{q_{\theta}} \left[\mathcal{P}_{\text{TMC}}\right] = \mathcal{L}_{TMC} (\mathbb x).
     \label{eq:tmc_loss}
 \end{equation}
 
@@ -118,8 +118,8 @@ Initialize $\bm \theta$\;
 \While{Not converged}{
     $\bm{x} \xleftarrow{}$ Randomly draw a data minibatch, 
     $\bm{z}_0$, of size $b$\;
-    \For{l \in \{1, ..., L_q\}}{
-        $\bm h_l^{k_l} \xleftarrow{} $ \text{MLP}$(\bm{z}_{l-1}^{k_{l-1}})$\;
+    \For{$l \in \{1, ..., L_q\}$}{
+        $\bm h_l^{k_l} \xleftarrow{} \text{MLP}(\bm{z}_{l-1}^{k_{l-1}})$\;
         $\bm{\mu}_l^{k_l} \xleftarrow{} \text{Linear}(\bm h_l^{k_l})$\;
         $\bm{\rho}_l^{k_l} \xleftarrow{} \text{SoftPlus}(\text{Linear}(\bm h_l))$\;
         $\bm{\epsilon}^{k_l}_l \xleftarrow{} \mathcal{N}(0, 1)$ \tcp{Reparameterization trick, $b\times K \times d$-tensor of univariate gaussians}
@@ -132,8 +132,8 @@ Initialize $\bm \theta$\;
     Store the log-likelihoods and the sampled latents\;
     }
     Compute and store $\log p_{\bm{\theta}}(\bm z^{k_{L_q}}_{L_q})$\;
-    \For{\bm{z}^{k_l}_l \in \{\bm{z}^{k_{L_q}}_{L_q}, ..., \bm{z}^{k_{2}}_{2}\}}{
-        $\bm{h}_{l-1}^{k_{l-1}} \xleftarrow{} $\text{MLP}$(\bm{z}_{l}^{k_{l}})$\;
+    \For{$\bm{z}^{k_l}_l \in \{\bm{z}^{k_{L_q}}_{L_q}, ..., \bm{z}^{k_{2}}_{2}\}$}{
+        $\bm{h}_{l-1}^{k_{l-1}} \xleftarrow{} \text{MLP}(\bm{z}_{l}^{k_{l}})$\;
         $\bm{\mu}_{l-1}^{k_{l-1}} \xleftarrow{} \text{Linear}(\bm h_{l-1}^{k_{l-1}})$\;
         $\bm{\rho}_{l-1}^{k_{l-1}} \xleftarrow{} \text{SoftPlus}(\text{Linear}(\bm h_{l-1}^{k_{l-1}}))$\;
         \For{$i \in \{ 1, ..., K \} $}{
