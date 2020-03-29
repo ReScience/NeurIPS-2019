@@ -1,6 +1,6 @@
 # NeurIPS-2019 Reproducibility Challenge
 
-Accepted reports to be published in ReScience Journal
+Accepted reports of the [NeurIPS 2019 Reproducibility Challenge](https://reproducibility-challenge.github.io/neurips2019/), conducted in [OpenReview](https://openreview.net/group?id=NeurIPS.cc/2019/Reproducibility_Challenge), to be published in ReScience Journal.
 
 ## Directory information
 
