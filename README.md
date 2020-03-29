@@ -9,65 +9,15 @@ Directories are created using the citation keys of the following reports. Every 
 - `openreview` : Contains the files submitted by authors to OpenReview
 - `journal` : Contains the [ReScience C Template](https://github.com/ReScience/template) files which is modified according to the paper. All modifications should be done here.
 
-```
+## Papers
 
-@article{alacchiReUnsupervisedState,
-  title = {[{{Re}}] {{Unsupervised State Representation Learning}} in {{Atari}}},
-  author = {Alacchi, Gabriel and Lam, Guillaume and {Perreault-Lafleur}, Carl},
-  pages = {9}
-}
-
-@article{ferlesReZeroShotKnowledge,
-  title = {[{{Re}}] {{Zero}}-{{Shot Knowledge Transfer}} via {{Adversarial Belief Matching}}},
-  author = {Ferles, Alexandros and N{\"o}u, Alexander and Valavanis, Leonidas},
-  pages = {15}
-}
-
-@article{gargReHamiltonianNeural,
-  title = {[{{Re}}] {{Hamiltonian Neural Networks}}},
-  author = {Garg, Ayush and Kagi, Sammed Shantinath},
-  pages = {9}
-}
-
-@article{gohilReOneTicket,
-  title = {[{{Re}}] {{One}} Ticket to Win Them All: Generalizing Lottery Ticket Initializations across Datasets and Optimizers},
-  author = {Gohil, Varun and Narayanan, S Deepak and Jain, Atishay},
-  pages = {8}
-}
-
-@article{kvimanReTensorMonte,
-  title = {[{{Re}}] {{Tensor Monte Carlo Particle Methods}} for the {{GPU Era}}},
-  author = {Kviman, Oskar and Nilsson, Linus and Larsson, Martin}
-}
-
-@article{liljeforsReUnsupervisedScalable,
-  title = {[{{Re}}] {{Unsupervised Scalable Representation Learning}} for {{Multivariate Time Series}}},
-  author = {Liljefors, Felix and Sorkhei, Mohammad Moein and Broom{\'e}, Sofia},
-  pages = {12}
-}
-
-@article{liuReWhenTrust,
-  title = {[{{Re}}] {{When}} to {{Trust Your Model}}: {{Model}}-{{Based Policy Optimization}}},
-  author = {Liu, Yuting and Xu, Jiahao and Pan, Yiming},
-  pages = {9}
-}
-
-@article{matosevicReGenerativeModeling,
-  title = {[{{Re}}] {{Generative Modeling}} by {{Estimating Gradients}} of the {{Data Distribution}}},
-  author = {Matosevic, Antonio and Hein, Eliisabet and Nuzzo, Francesco},
-  pages = {15}
-}
-
-@article{nayakReComprehensiveStudy,
-  title = {[{{Re}}] {{A}} Comprehensive Study on Binary Optimizer and Its Applicability},
-  author = {Nayak, Nancy and Raj, Vishnu and Kalyani, Sheetal},
-  pages = {9}
-}
-
-@article{singhReMixupTraining,
-  title = {[{{Re}}] {{On Mixup Training}}: {{Improved Calibration}} and {{Predictive Uncertainty}} for {{Deep Neural Networks}}},
-  author = {Singh, Aditya and Bay, Alessandro},
-  pages = {7}
-}
-
-```
+- Alacchi, G., Lam, G. & Perreault-Lafleur, C. _[Re] Unsupervised State Representation Learning in Atari._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/alacchiReUnsupervisedState/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/tree/master/alacchiReUnsupervisedState)
+- Ferles, A., Nöu, A. & Valavanis, L. _[Re] Zero-Shot Knowledge Transfer via Adversarial Belief Matching._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/ferlesReZeroShotKnowledge/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/ferlesReZeroShotKnowledge)
+- Garg, A. & Kagi, S. S. _[Re] Hamiltonian Neural Networks._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/ferlesReZeroShotKnowledge/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/ferlesReZeroShotKnowledge)
+- Gohil, V., Narayanan, S. D. & Jain, A. _[Re] One ticket to win them all: generalizing lottery ticket initializations across datasets and optimizers._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/gohilReOneTicket/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/gohilReOneTicket)
+- Kviman, O., Nilsson, L. & Larsson, M. _[Re] Tensor Monte Carlo Particle Methods for the GPU Era._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/kvimanReTensorMonte/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/kvimanReTensorMonte)
+- Liljefors, F., Sorkhei, M. M. & Broomé, S. _[Re] Unsupervised Scalable Representation Learning for Multivariate Time Series._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/liljeforsReUnsupervisedScalable/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/liljeforsReUnsupervisedScalable)
+- Liu, Y., Xu, J. & Pan, Y. _[Re] When to Trust Your Model: Model-Based Policy Optimization._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/liuReWhenTrust/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/liuReWhenTrust/)
+- Matosevic, A., Hein, E. & Nuzzo, F. _[Re] Generative Modeling by Estimating Gradients of the Data Distribution._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/matosevicReGenerativeModeling/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/matosevicReGenerativeModeling)
+- Nayak, N., Raj, V. & Kalyani, S. _[Re] A comprehensive study on binary optimizer and its applicability._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/nayakReComprehensiveStudy/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/nayakReComprehensiveStudy/)
+- Singh, A. & Bay, A. _[Re] On Mixup Training: Improved Calibration and Predictive Uncertainty for Deep Neural Networks._ [Compiled File](https://github.com/ReScience/NeurIPS-2019/blob/master/singhReMixupTraining/journal/article.pdf), [Folder](https://github.com/ReScience/NeurIPS-2019/blob/master/singhReMixupTraining)
