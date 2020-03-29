@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber article"] 1585441351 "article.bcf" "article.bbl" "article" 1585441362
-  "article.bcf" 1585441361 91052 63576d743110c07580f66ed16d699764 "pdflatex"
+["biber article"] 1585455073 "article.bcf" "article.bbl" "article" 1585455083
+  "article.bcf" 1585455083 91052 63576d743110c07580f66ed16d699764 "pdflatex"
   "bibliography.bib" 1583775771 1083 51c62909650cc8af3ed123143e4cf699 ""
   (generated)
   "article.bbl"
   "article.blg"
-["pdflatex"] 1585441359 "article.tex" "article.pdf" "article" 1585441362
+["pdflatex"] 1585455080 "article.tex" "article.pdf" "article" 1585455083
   "../openreview/ablation2-agent_avg_f1.png" 1582419098 12438 643a053ee91ca4e91582b9f6884c80c7 ""
   "../openreview/ablation2-other_avg_f1.png" 1582419098 12946 2e6ba6156a4b997ab4e31eeb122f804a ""
   "../openreview/ablation2-score_avg_f1.png" 1582419098 15262 c9cd6c16adc5d298ddb80970169775d4 ""
@@ -15,7 +15,7 @@
   "../openreview/clock_score_avg_f1.png" 1582419098 13116 5512402ef77164770d63d41e03e8ee39 ""
   "../openreview/multiple_params_testing.png" 1582419098 18796 960a26d811bd87777e52771cb77ca3d0 ""
   "../openreview/objective.PNG" 1582419098 117217 2802afd092d6e1024ecd94e50d998678 ""
-  "/dev/null" 1585441359 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "/dev/null" 1585455083 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -274,19 +274,19 @@
   "/usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf" 1557092114 35484 cb1661360667bf4db662a8895053b554 ""
   "/usr/local/texlive/2019/texmf-var/web2c/xetex/xelatex.fmt" 1557342089 3751069 3e95e8a30a2d43fc44f2c90c78c41394 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "article.aux" 1585441361 9740 1042d90306d6799bd294d082ec2499e6 "pdflatex"
-  "article.bbl" 1585441352 8476 5c2e2dc1b10085f6c0a3c0127b8e3e3f "biber article"
-  "article.out" 1585441361 1076 e91f10afd2e267b3015c715a45ddb008 "pdflatex"
-  "article.run.xml" 1585441361 2429 bb3cd8c5c8f3243a6e2037a1c8323856 "pdflatex"
+  "article.aux" 1585455083 9740 1042d90306d6799bd294d082ec2499e6 "pdflatex"
+  "article.bbl" 1585455074 8476 5c2e2dc1b10085f6c0a3c0127b8e3e3f "biber article"
+  "article.out" 1585455083 1076 e91f10afd2e267b3015c715a45ddb008 "pdflatex"
+  "article.run.xml" 1585455083 2429 bb3cd8c5c8f3243a6e2037a1c8323856 "pdflatex"
   "article.tex" 1585439652 631 e1ca680d8a1ecd6aacab6efb0c36e818 ""
   "content.tex" 1585439652 27183 b4d3a9dc86190246f43151745cc5b933 ""
   "header.tex" 1585440612 3534 6b05e0c01e3066a3f9f2fd9479cf3645 ""
-  "metadata.tex" 1585440317 2575 5da917dfc175de4f7c99bee7d8b1d52a ""
+  "metadata.tex" 1585455069 2645 3e09a3001f385cef86ef1065f3f739d3 ""
   "rescience.cls" 1585440612 10491 d898b7fe6fbd9dc31de870ea69376000 ""
   (generated)
-  "article.out"
   "article.pdf"
-  "article.log"
   "article.bcf"
-  "article.run.xml"
   "article.aux"
+  "article.out"
+  "article.run.xml"
+  "article.log"

@@ -43,7 +43,7 @@ keywords: rescience c, rescience x
 # You can get a DOI for your code from Zenodo,
 #   see https://guides.github.com/activities/citable-code/
 code:
-  - url:
+  - url: https://github.com/GabrielAlacchi/atari-ari-extensions
   - doi: 
 
 # Date URL and DOI (optional if no data)
