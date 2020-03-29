@@ -46,6 +46,7 @@ keywords: rescience c, rescience x
 code:
   - url: "https://github.com/lilfelix/reproducibility_NeurIPS19"
   - doi: 
+  - swh:
 
 # Date URL and DOI (optional if no data)
 data:
@@ -92,7 +93,7 @@ contributors:
   - name: Koustuv Sinha
     orcid: 0000-0002-2803-9236
     role: editor
-  - name:
+  - name: Anonymous Reviewers
     orcid:
     role: reviewer
   - name:
