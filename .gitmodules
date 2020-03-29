@@ -1,0 +1,3 @@
+[submodule "rescience_template"]
+	path = rescience_template
+	url = git@github.com:ReScience/template.git
