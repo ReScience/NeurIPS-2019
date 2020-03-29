@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.9 $
+% $ biblatex bbl format version 3.0 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -46,18 +46,18 @@
            familyi={C\bibinitperiod},
            given={Marc-Alexandre},
            giveni={M\bibinithyphendelim A\bibinitperiod}}}%
-        {{hash=aa5aa3d887c39bcb1cf711bf4687b984}{%
+        {{hash=68d18c6f3387bc203910c98ed4e1303c}{%
            family={Hjelm},
            familyi={H\bibinitperiod},
            given={R.\bibnamedelimi Devon},
            giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
       }
       \strng{namehash}{da61d343c6d4020417a3813bff4af512}
-      \strng{fullhash}{800798a0d8c69930540135131c15492a}
-      \strng{bibnamehash}{800798a0d8c69930540135131c15492a}
-      \strng{authorbibnamehash}{800798a0d8c69930540135131c15492a}
+      \strng{fullhash}{ab88a75f8dce4c7257c00aae6d8318da}
+      \strng{bibnamehash}{ab88a75f8dce4c7257c00aae6d8318da}
+      \strng{authorbibnamehash}{ab88a75f8dce4c7257c00aae6d8318da}
       \strng{authornamehash}{da61d343c6d4020417a3813bff4af512}
-      \strng{authorfullhash}{800798a0d8c69930540135131c15492a}
+      \strng{authorfullhash}{ab88a75f8dce4c7257c00aae6d8318da}
       \field{sortinit}{1}
       \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
@@ -84,8 +84,8 @@
       \strng{authorbibnamehash}{4e957541298e9eee93986a5720aa709f}
       \strng{authornamehash}{4e957541298e9eee93986a5720aa709f}
       \strng{authorfullhash}{4e957541298e9eee93986a5720aa709f}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Understanding intermediate layers using linear classifier probes}
@@ -93,7 +93,7 @@
     \endentry
     \entry{infoNCE}{misc}{}
       \name{author}{3}{}{%
-        {{hash=cb61786e97e6c4f155a248f309396e0c}{%
+        {{hash=eb4d5c66a32d8ff3f8cb56e4544c1876}{%
            family={Oord},
            familyi={O\bibinitperiod},
            given={A{ä}ron},
@@ -111,14 +111,14 @@
            given={Oriol},
            giveni={O\bibinitperiod}}}%
       }
-      \strng{namehash}{dbbf1bed19c5f4fefc0e946b5a62f997}
-      \strng{fullhash}{dbbf1bed19c5f4fefc0e946b5a62f997}
-      \strng{bibnamehash}{dbbf1bed19c5f4fefc0e946b5a62f997}
-      \strng{authorbibnamehash}{dbbf1bed19c5f4fefc0e946b5a62f997}
-      \strng{authornamehash}{dbbf1bed19c5f4fefc0e946b5a62f997}
-      \strng{authorfullhash}{dbbf1bed19c5f4fefc0e946b5a62f997}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \strng{namehash}{111989b983537e71a3701957dfcd97ff}
+      \strng{fullhash}{111989b983537e71a3701957dfcd97ff}
+      \strng{bibnamehash}{111989b983537e71a3701957dfcd97ff}
+      \strng{authorbibnamehash}{111989b983537e71a3701957dfcd97ff}
+      \strng{authornamehash}{111989b983537e71a3701957dfcd97ff}
+      \strng{authorfullhash}{111989b983537e71a3701957dfcd97ff}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Representation Learning with Contrastive Predictive Coding}
@@ -126,7 +126,7 @@
     \endentry
     \entry{DIM}{misc}{}
       \name{author}{7}{}{%
-        {{hash=aa5aa3d887c39bcb1cf711bf4687b984}{%
+        {{hash=68d18c6f3387bc203910c98ed4e1303c}{%
            family={Hjelm},
            familyi={H\bibinitperiod},
            given={R.\bibnamedelimi Devon},
@@ -162,14 +162,14 @@
            given={Yoshua},
            giveni={Y\bibinitperiod}}}%
       }
-      \strng{namehash}{cf0d09770f431af15d7408bfd8c13f88}
-      \strng{fullhash}{8b3ef26dc62a767555ae0d38dfd0804f}
-      \strng{bibnamehash}{8b3ef26dc62a767555ae0d38dfd0804f}
-      \strng{authorbibnamehash}{8b3ef26dc62a767555ae0d38dfd0804f}
-      \strng{authornamehash}{cf0d09770f431af15d7408bfd8c13f88}
-      \strng{authorfullhash}{8b3ef26dc62a767555ae0d38dfd0804f}
-      \field{sortinit}{6}
-      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \strng{namehash}{e698b0755ff9183773b17459b24d75e4}
+      \strng{fullhash}{72687c8db54211f7cb9824cab848a082}
+      \strng{bibnamehash}{72687c8db54211f7cb9824cab848a082}
+      \strng{authorbibnamehash}{72687c8db54211f7cb9824cab848a082}
+      \strng{authornamehash}{e698b0755ff9183773b17459b24d75e4}
+      \strng{authorfullhash}{72687c8db54211f7cb9824cab848a082}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Learning deep representations by mutual information estimation and maximization}
@@ -177,7 +177,7 @@
     \endentry
     \entry{ALE}{misc}{}
       \name{author}{4}{}{%
-        {{hash=cc3634250c84939cbfabdf623e17d51e}{%
+        {{hash=eae3aa0ab9cb8b33a1ade80739e79e57}{%
            family={Bellemare},
            familyi={B\bibinitperiod},
            given={Marc\bibnamedelima G.},
@@ -198,14 +198,14 @@
            given={Michael},
            giveni={M\bibinitperiod}}}%
       }
-      \strng{namehash}{b860cdd943a1b0da2266361368220a86}
-      \strng{fullhash}{09870dd896ce19dc973ccf9e8c74f057}
-      \strng{bibnamehash}{09870dd896ce19dc973ccf9e8c74f057}
-      \strng{authorbibnamehash}{09870dd896ce19dc973ccf9e8c74f057}
-      \strng{authornamehash}{b860cdd943a1b0da2266361368220a86}
-      \strng{authorfullhash}{09870dd896ce19dc973ccf9e8c74f057}
-      \field{sortinit}{8}
-      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \strng{namehash}{6053df28940389b0a23ac429c3b0634d}
+      \strng{fullhash}{49395aa0bfa961c14ab74a906578e3ee}
+      \strng{bibnamehash}{49395aa0bfa961c14ab74a906578e3ee}
+      \strng{authorbibnamehash}{49395aa0bfa961c14ab74a906578e3ee}
+      \strng{authornamehash}{6053df28940389b0a23ac429c3b0634d}
+      \strng{authorfullhash}{49395aa0bfa961c14ab74a906578e3ee}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{The arcade learning environment: An evaluation platform for general agents}
