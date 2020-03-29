@@ -38,6 +38,7 @@ keywords: hamiltonian neural networks, pytorch
 code:
   - url: https://github.com/ayushgarg31/HNN-Neurips2019
   - doi: 
+  - swh: 
 
 # Date URL and DOI (optional if no data)
 data:
@@ -85,7 +86,7 @@ contributors:
   - name: Koustuv Sinha
     orcid: 0000-0002-2803-9236
     role: editor
-  - name:
+  - name: Anonymous Reviewers
     orcid:
     role: reviewer
   - name:
