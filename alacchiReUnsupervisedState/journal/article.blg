@@ -1,15 +1,15 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [0] Config.pm:307> INFO - Logfile is 'article.blg'
-[44] biber-darwin:315> INFO - === Sun Mar 29, 2020, 00:11:14
-[68] Biber.pm:371> INFO - Reading 'article.bcf'
-[166] Biber.pm:889> INFO - Found 5 citekeys in bib section 0
-[180] Biber.pm:4093> INFO - Processing section 0
-[193] Biber.pm:4254> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[194] bibtex.pm:1523> INFO - LaTeX decoding ...
-[201] bibtex.pm:1340> INFO - Found BibTeX data source 'bibliography.bib'
-[249] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[249] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[249] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[249] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
-[253] bbl.pm:636> INFO - Writing 'article.bbl' with encoding 'UTF-8'
-[256] bbl.pm:739> INFO - Output to article.bbl
+[43] biber-darwin:315> INFO - === Tue Mar 31, 2020, 10:15:26
+[67] Biber.pm:371> INFO - Reading 'article.bcf'
+[156] Biber.pm:889> INFO - Found 5 citekeys in bib section 0
+[170] Biber.pm:4093> INFO - Processing section 0
+[182] Biber.pm:4254> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[184] bibtex.pm:1523> INFO - LaTeX decoding ...
+[190] bibtex.pm:1340> INFO - Found BibTeX data source 'bibliography.bib'
+[240] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[240] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[240] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[240] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[244] bbl.pm:636> INFO - Writing 'article.bbl' with encoding 'UTF-8'
+[247] bbl.pm:739> INFO - Output to article.bbl

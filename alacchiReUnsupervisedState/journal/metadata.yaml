@@ -45,6 +45,7 @@ keywords: rescience c, rescience x
 code:
   - url: https://github.com/GabrielAlacchi/atari-ari-extensions
   - doi: 
+  - swh: swh:1:dir:9f3337a643ab37a0898e0f0acb9ccf29a0428108
 
 # Date URL and DOI (optional if no data)
 data:
