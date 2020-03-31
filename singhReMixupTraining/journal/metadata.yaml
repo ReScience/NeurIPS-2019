@@ -38,6 +38,7 @@ keywords: rescience c, rescience x, network calibration, mixup, python, pytorch
 code:
   - url: https://github.com/MacroMayhem/OnMixup
   - doi: 
+  - swh: swh:1:dir:824bff001a04ed1c4bb78dc6fbed52fb4470b7a5
 
 # Date URL and DOI (optional if no data)
 data:
