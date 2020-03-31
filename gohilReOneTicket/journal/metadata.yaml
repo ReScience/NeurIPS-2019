@@ -45,7 +45,7 @@ keywords: lottery ticket hypothesis, pytorch
 code:
   - url: https://github.com/varungohil/Generalizing-Lottery-Tickets
   - doi: 10.5281/zenodo.3700320
-  - swh: 
+  - swh: swh:1:dir:8a9e53bc8a9028428bbad6a4e77ae3fedae49d30
 
 # Date URL and DOI (optional if no data)
 data:
