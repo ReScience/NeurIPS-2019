@@ -46,7 +46,7 @@ keywords: rescience c, rescience x
 code:
   - url: "https://github.com/lilfelix/reproducibility_NeurIPS19"
   - doi: 
-  - swh:
+  - swh: swh:1:dir:87ee9c9e46eff652b568a19f4d4af1a1663cd55a
 
 # Date URL and DOI (optional if no data)
 data:
