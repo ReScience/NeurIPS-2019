@@ -43,6 +43,7 @@ keywords: generative model, tensorflow
 code:
   - url: https://github.com/Xemnas0/NCSN-TF2.0
   - doi: 
+  - swh: swh:1:dir:fbec9d7aa3f9e35a60af607b09595304cc30a2a3
 
 # Date URL and DOI (optional if no data)
 data:
