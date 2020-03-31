@@ -43,7 +43,7 @@ keywords: model-based policy optimization, pytorch, tensorflow
 code:
   - url: https://github.com/jxu43/replication-mbpo
   - doi: 
-  - swh: 
+  - swh: swh:1:dir:d89e39582172e356c1f4fdd5b5cbbde21a70bf27
 
 # Date URL and DOI (optional if no data)
 data:
