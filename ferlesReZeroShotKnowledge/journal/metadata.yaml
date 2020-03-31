@@ -43,7 +43,7 @@ keywords: rescience c, rescience x
 code:
   - url: https://github.com/AlexandrosFerles/NIPS_2019_Reproducibilty_Challenge_Zero-shot_Knowledge_Transfer_via_Adversarial_Belief_Matching
   - doi: 
-  - swh:
+  - swh: swh:1:dir:2c366708175b2ed7c83ce6b33a80dd43c8aad915
 
 # Date URL and DOI (optional if no data)
 data:
