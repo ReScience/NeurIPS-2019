@@ -86,7 +86,7 @@ keywords: machine learning, neurips, reproducibility challenge
 # Software Heritage.
 #   see https://guides.github.com/activities/citable-code/
 code:
-  - url: https://github.com/ReScience/NeurIPS-2019/tree/master/editorial
+  - url: 
   - doi: 
   - swh: 
 

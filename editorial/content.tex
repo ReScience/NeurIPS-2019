@@ -7,7 +7,7 @@ community to quickly integrate new findings and convert ideas to practice.
 Reproducibility also promotes the use of robust experimental workflows, which
 potentially reduce unintentional errors. In 2019, the Neural Information Processing
 Systems conference, the premier international conference for research in machine
-learning, introduced a reproducibility program, designed to improve the standards
+learning, introduced a reproducibility program \cite{pineau2020improving}, designed to improve the standards
 across the community for how we conduct, communicate, and evaluate machine
 learning research. One of the components in the program consisted of a community-wide reproducibility challenge on the accepted papers. In this special issue of the ReScience C Journal, we present the top peer-reviewed submissions of the challenge, namely 2019 NeurIPS Reproducibility Challenge.
 
@@ -35,7 +35,7 @@ NeurIPS 2019 & 6743 & 21.1 & 173 & 73 & 84 \\ \hline
 
 \section{Baselines, Ablations and Replications}
 
-Replication of a computational study typically means running the same code, using the same input data, and then checking if the results are the same or at least “close enough” by some degree of numerical approximations. This is most easily achieved when the exact code and data to replicate the experiments are provided. To this end, the organizers of the 2019 NeurIPS conference instated a code submission policy for the accepted papers this year. While it wasn’t mandatory, the policy was to encourage authors to submit their code by providing enough flexibility on the timing of submission. This resulted in 74.4\% of papers being associated with their code, which was less than 50\% in the 2018 NeurIPS conference. From the very beginning of the challenge, we made these codebases available to participants and offered three tracks to choose from. 
+Replication of a computational study typically means running the same code, using the same input data, and then checking if the results are the same or at least “close enough” by some degree of numerical approximations \footnote{We have used the definition of ``Replication'' in the NeurIPS 2019 Reproducibility Challenge following the old definition adopted by ACM \cite{plesser2018reproducibility}. Recent changes to this definition has been proposed by \cite{heroux2018toward} and \cite{national2019reproducibility}, which states the above definition is suitable for the term ``Reproduction'' instead.}. This is most easily achieved when the exact code and data to replicate the experiments are provided. To this end, the organizers of the 2019 NeurIPS conference instated a code submission policy for the accepted papers this year. While it wasn’t mandatory, the policy was to encourage authors to submit their code by providing enough flexibility on the timing of submission. This resulted in 74.4\% of papers being associated with their code, which was less than 50\% in the 2018 NeurIPS conference. From the very beginning of the challenge, we made these codebases available to participants and offered three tracks to choose from. 
 
 \begin{enumerate}
     \item \xhdr{Baselines Track} Sometimes it is not feasible to reproduce all the experiments in a paper: factors such as private datasets, extensive training time, the requirement of non-standard compute infrastructure can all limit reproducibility. It is also sometimes the case that baseline methods reported in the papers are not properly implemented, or hyper-parameter search is not done with sufficient care, leading to a poor comparison of alternative methods. Thus we provided an option to the challenge participants to perform a rigorous analysis on the baselines by re-implementing them wherever necessary. Reproducing the baselines can further add to the technical contributions of a paper, and therefore was encouraged in this challenge.
@@ -49,7 +49,7 @@ Replication of a computational study typically means running the same code, usin
 
 \section{Platform and Medium} 
 
-In this edition of the Reproducibility Challenge, we were fortunate enough to have big support from OpenReview and the Program Chairs of NeurIPS 2019. All NeurIPS 2019 accepted papers were hosted by OpenReview, which facilitated online discussions for the larger research community who were unable to be present physically at the conference in Vancouver in December 2019. OpenReview built a unique platform for the Reproducibility Challenge, which featured the accepted papers as well as allowed challenge participants to claim a paper to work on, and later submit their reports based on their claim. Once submitted, all reproducibility reports underwent an extensive review cycle by a large set of reviewers of the NeurIPS 2019 conference. Due to the transparent review process of OpenReview, many reproducibility reports attracted comments from the original authors, which in turn helped the overall reviewing pipeline. Finally, we selected 10 high-quality reports from 84 submissions to be published in this journal, ReScience C, which is a perfect platform for publication of reproducibility efforts of various computational fields of science.
+In this edition of the Reproducibility Challenge, we were fortunate enough to have big support from OpenReview \footnote{\href{https://openreview.net/group?id=NeurIPS.cc/2019/Reproducibility_Challenge}{https://openreview.net/group?id=NeurIPS.cc/2019/Reproducibility\_Challenge}} and the Program Chairs of NeurIPS 2019. All NeurIPS 2019 accepted papers were hosted by OpenReview, which facilitated online discussions for the larger research community who were unable to be present physically at the conference in Vancouver in December 2019. OpenReview built a unique platform for the Reproducibility Challenge, which featured the accepted papers as well as allowed challenge participants to claim a paper to work on, and later submit their reports based on their claim. Once submitted, all reproducibility reports underwent an extensive review cycle by a large set of reviewers of the NeurIPS 2019 conference. Due to the transparent review process of OpenReview, many reproducibility reports attracted comments from the original authors, which in turn helped the overall reviewing pipeline. Finally, we selected 10 high-quality reports from 84 submissions to be published in this journal, ReScience C, which is a perfect platform for publication of reproducibility efforts of various computational fields of science.
 
 \section{Relationship with Authors}
 
@@ -57,7 +57,7 @@ Authors of research papers have much to gain from this challenge as the particip
 
 \section{Computing Resources} 
 
-In this challenge, we partnered with CodeOcean for providing free cloud computing credits to select teams. CodeOcean is an online web-based platform for reproducible computational science, which is a shareable Docker container living in the cloud. Participants were able to leverage the free compute resources from CodeOcean to run their experiments. CodeOcean provided prompt and necessary support enabling participants to resolve implementation issues to request additional resources to support their experiments.
+In this challenge, we partnered with CodeOcean \footnote{\href{https://codeocean.com/}{https://codeocean.com/}} for providing free cloud computing credits to select teams. CodeOcean is an online web-based platform for reproducible computational science, which is a shareable Docker container living in the cloud. Participants were able to leverage the free compute resources from CodeOcean to run their experiments. CodeOcean provided prompt and necessary support enabling participants to resolve implementation issues to request additional resources to support their experiments.
 
 \section{Content}
 
@@ -123,8 +123,8 @@ In this iteration of the Reproducibility Challenge, we were fortunate enough to 
     \item Fang Liu
     \item Fang Zhao
     \item Felix Gimeno
-    \item Fernando Martínez-Plumed
-    \item Forough Poursabzi-Sangdeh
+    \item F. Martínez-Plumed
+    \item F. Poursabzi-Sangdeh
     \item Gabriel Synnaeve
     \item Gang Wang
     \item Gavin Weiguang Ding
