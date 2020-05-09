@@ -104,13 +104,13 @@ dates:
 
 # This information will be provided by the editor
 article:
-  - number: # Article number will be automatically assigned during publication
-  - doi:    # DOI from Zenodo
-  - url:    # Final PDF URL (Zenodo or rescience website?)
+  - number: 2 # Article number will be automatically assigned during publication
+  - doi: 10.5281/zenodo.3818623    # DOI from Zenodo
+  - url: https://zenodo.org/record/3818623/files/article.pdf   # Final PDF URL (Zenodo or rescience website?)
 
 # This information will be provided by the editor
 journal:
   - name:   "ReScience C"
   - issn:   2430-3658
   - volume: 6
-  - issue:  1
+  - issue:  2
