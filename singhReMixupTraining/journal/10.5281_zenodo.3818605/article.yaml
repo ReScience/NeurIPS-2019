@@ -1,0 +1,120 @@
+# To be filled by the author(s) at the time of submission
+# -------------------------------------------------------
+
+# Title of the article:
+#  - For a successful replication, it shoudl be prefixed with "[Re]"
+#  - For a failed replication, it should be prefixed with "[¬Re]"
+#  - For other article types, no instruction (but please, not too long)
+title: "[Re] Improved Calibration and Predictive Uncertainty for Deep Neural Networks"
+
+# List of authors with name, orcid number, email and affiliation
+# Affiliation "*" means contact author
+authors:
+  - name: Aditya Singh
+    orcid: 
+    email: aditya.singh@zebra.com
+    affiliations: 1,*
+    
+  - name: Alessandro Bay
+    orcid: 
+    email: alessandro.bay@zebra.com
+    affiliations: 1,      # * is for contact author
+
+# List of affiliations with code (corresponding to author affiliations), name
+# and address. You can also use these affiliations to add text such as "Equal
+# contributions" as name (with no address).
+affiliations:
+  - code:    1
+    name:    Zebra Technologies
+    address: USA
+
+
+# List of keywords (adding the programming language might be a good idea)
+keywords: rescience c, rescience x, network calibration, mixup, python, pytorch
+
+# Code URL and DOI (url is mandatory for replication, doi after acceptance)
+# You can get a DOI for your code from Zenodo,
+#   see https://guides.github.com/activities/citable-code/
+code:
+  - url: https://github.com/MacroMayhem/OnMixup
+  - doi: 
+  - swh: swh:1:dir:824bff001a04ed1c4bb78dc6fbed52fb4470b7a5
+
+# Date URL and DOI (optional if no data)
+data:
+  - url:
+  - doi:
+
+# Information about the original article that has been replicated
+replication:
+ - cite: "S. Thulasidasan, G. Chennupati, J. A. Bilmes, T. Bhattacharya, and S. E. Michalak. “On Mixup Training: Improved Calibration and Predictive Uncertainty for Deep Neural Networks.” In: ArXiv abs/1905.11001 (2019)." # Full textual citation
+ - bib:  onmixup # Bibtex key (if any) in your bibliography file
+ - url:  # URL to the PDF, try to link to a non-paywall version
+ - doi:  # Regular digital object identifier
+
+# Don't forget to surround abstract with double quotes
+abstract: "Miscalibration of a model is defined as the mismatch between predicting probability 
+          estimates and the true correctness likelihood. In this work, we aim to replicate 
+          the results reported by \\cite{onmixup} on their analysis of the effect of Mixup
+          \\cite{mixup_2018} on a network's calibration. Mixup is an effective yet 
+          simple approach of data augmentation, which generates a convex combination of a 
+          pair of training images and their corresponding labels as the input and 
+          target for training a network. We replicate the results reported by the
+           authors for CIFAR-100 \\cite{cifar100}, Fashion-MNIST \\cite{fmnist}, 
+           STL-10 \\cite{stl10}, out-of-distribution and random noise data. 
+           Our implementation code can be found at \\url{https://github.com/MacroMayhem/OnMixup}"
+
+# Bibliography file (yours)
+bibliography: bibliography.bib
+  
+# Type of the article
+# Type can be:
+#  * Editorial
+#  * Letter
+#  * Replication
+type: Replication
+
+# Scientific domain of the article (e.g. Computational Neuroscience)
+#  (one domain only & try to be not overly specific)
+domain: NeurIPS 2019 Reproducibility Challenge
+
+# Coding language (main one only if several)
+language: Python
+
+  
+# To be filled by the author(s) after acceptance
+# -----------------------------------------------------------------------------
+
+# For example, the URL of the GitHub issue where review actually occured
+review: 
+  - url: https://openreview.net/forum?id=JhZOkalsiI
+
+contributors:
+  - name: Koustuv Sinha
+    orcid: 0000-0002-2803-9236
+    role: editor
+  - name: Anonymous Reviewers
+    orcid:
+    role: reviewer
+  - name:
+    orcid:
+    role: reviewer
+
+# This information will be provided by the editor
+dates:
+  - received:  February 15, 2020
+  - accepted:  February 15, 2020
+  - published: May 21, 2020
+
+# This information will be provided by the editor
+article:
+  - number: 10 # Article number will be automatically assigned during publication
+  - doi: 10.5281/zenodo.3818605    # DOI from Zenodo
+  - url: https://zenodo.org/record/3818605/files/article.pdf   # Final PDF URL (Zenodo or rescience website?)
+
+# This information will be provided by the editor
+journal:
+  - name:   "ReScience C"
+  - issn:   2430-3658
+  - volume: 6
+  - issue:  2
