@@ -1,0 +1,118 @@
+# To be filled by the author(s) at the time of submission
+# -------------------------------------------------------
+
+# Title of the article:
+#  - For a successful replication, it shoudl be prefixed with "[Re]"
+#  - For a failed replication, it should be prefixed with "[¬Re]"
+#  - For other article types, no instruction (but please, not too long)
+title: "[Re] Unsupervised Representation Learning in Atari"
+
+# List of authors with name, orcid number, email and affiliation
+# Affiliation "*" means contact author
+authors:
+  - name: Gabriel Alacchi
+    orcid: 
+    email: gabriel.alacchi@mail.mcgill.ca
+    affiliations: 1,$\dagger$,*
+    
+  - name: Guillaume Lam
+    orcid: 
+    email: guillaume.lam@mail.mcgill.ca
+    affiliations: 1,$\dagger$      # * is for contact author
+
+  - name: Carl Perreault-Lafleur
+    orcid:
+    email: carl.perreault-lafleur@mail.mcgill.ca
+    affiliations: 1,$\dagger$      # * is for contact author
+
+# List of affiliations with code (corresponding to author affiliations), name
+# and address. You can also use these affiliations to add text such as "Equal
+# contributions" as name (with no address).
+affiliations:
+  - code:    1
+    name:    School of Computer Science, McGill University
+    address: Montreal, Canada
+
+  - code:    $\dagger$
+    name:    Equal contributions
+
+# List of keywords (adding the programming language might be a good idea)
+keywords: rescience c, rescience x
+
+# Code URL and DOI (url is mandatory for replication, doi after acceptance)
+# You can get a DOI for your code from Zenodo,
+#   see https://guides.github.com/activities/citable-code/
+code:
+  - url: https://github.com/GabrielAlacchi/atari-ari-extensions
+  - doi: 
+  - swh: swh:1:dir:9f3337a643ab37a0898e0f0acb9ccf29a0428108
+
+# Date URL and DOI (optional if no data)
+data:
+  - url:
+  - doi:
+
+# Information about the original article that has been replicated
+replication:
+ - cite: "A.Anand, E.Racah, S.Ozair, Y.Bengio, M.-A.Côté, and R.D.Hjelm. Unsupervised State Representation Learning in Atari. 2019." # Full textual citation
+ - bib: \cite{main_article} # Bibtex key (if any) in your bibliography file 
+ - url: https://arxiv.org/pdf/1906.08226.pdf # URL to the PDF, try to link to a non-paywall version
+ - doi:  # Regular digital object identifier
+
+# Don't forget to surround abstract with double quotes
+abstract: "In this study, we performed some ablations on the main model developed in the paper \\textbf{Unsupervised Representation Learning in Atari} as part of the 2019 NeurIPS Reproducibility Challenge. In this paper, Anand et. al introduce a new learning method called SpatioTemporal DeepInfoMax (STDIM), which is an unsupervised method that aims at learning state representations by maximizing particular forms of mutual information between a series of observations. Our work focuses on recreating a subset of their results, along with hyperparameter tuning, slightly altering the STDIM learning objective, and altering the receptive ﬁeld of the encoder model that Anand et. al introduce in their article. We also suggest directions for further expanding the STDIM method. Our results also suggest that creating an ensemble model would allow for further boosting of the eﬀectiveness of this model."
+
+# Bibliography file (yours)
+bibliography: bibliography.bib
+  
+# Type of the article
+# Type can be:
+#  * Editorial
+#  * Letter
+#  * Replication
+type: Replication
+
+# Scientific domain of the article (e.g. Computational Neuroscience)
+#  (one domain only & try to be not overly specific)
+domain: NeurIPS 2019 Reproducibility Challenge
+
+# Coding language (main one only if several)
+language: Python
+
+  
+# To be filled by the author(s) after acceptance
+# -----------------------------------------------------------------------------
+
+# For example, the URL of the GitHub issue where review actually occured
+review: 
+  - url: https://openreview.net/forum?id=GAY8Xw9Qzs
+
+contributors:
+  - name: Koustuv Sinha
+    orcid: 0000-0002-2803-9236
+    role: editor
+  - name: Anonymous Reviewers
+    orcid:
+    role: reviewer
+  - name:
+    orcid:
+    role: reviewer
+
+# This information will be provided by the editor
+dates:
+  - received:  February 15, 2020
+  - accepted: February 15, 2020
+  - published: May 21, 2020
+
+# This information will be provided by the editor
+article:
+  - number: 1 # Article number will be automatically assigned during publication
+  - doi: 10.5281/zenodo.3818625    # DOI from Zenodo
+  - url: https://zenodo.org/record/3818625/files/article.pdf   # Final PDF URL (Zenodo or rescience website?)
+
+# This information will be provided by the editor
+journal:
+  - name:   "ReScience C"
+  - issn:   2430-3658
+  - volume: 6
+  - issue:  2
