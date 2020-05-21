@@ -1,0 +1,116 @@
+# To be filled by the author(s) at the time of submission
+# -------------------------------------------------------
+
+# Title of the article:
+#  - For a successful replication, it shoudl be prefixed with "[Re]"
+#  - For a failed replication, it should be prefixed with "[¬Re]"
+#  - For other article types, no instruction (but please, not too long)
+title: "[Re] Generative Modeling by Estimating Gradients of the Data Distribution"
+
+# List of authors with name, orcid number, email and affiliation
+# Affiliation "*" means contact author
+authors:
+  - name: Antonio Matosevic
+    orcid: 
+    email: matose@kth.se
+    affiliations: 1,*
+    
+  - name: Eliisabet Hein
+    orcid: 
+    email: elihei@kth.se
+    affiliations: 1,      # * is for contact author
+
+  - name: Francesco Nuzzo
+    orcid:
+    email: fnuzzo@kth.se
+    affiliations: 1,      # * is for contact author
+
+# List of affiliations with code (corresponding to author affiliations), name
+# and address. You can also use these affiliations to add text such as "Equal
+# contributions" as name (with no address).
+affiliations:
+  - code:    1
+    name:    KTH Royal Institute of Technology
+    address: Stockholm, Sweden
+
+
+# List of keywords (adding the programming language might be a good idea)
+keywords: generative model, tensorflow
+
+# Code URL and DOI (url is mandatory for replication, doi after acceptance)
+# You can get a DOI for your code from Zenodo,
+#   see https://guides.github.com/activities/citable-code/
+code:
+  - url: https://github.com/Xemnas0/NCSN-TF2.0
+  - doi: 
+  - swh: swh:1:dir:fbec9d7aa3f9e35a60af607b09595304cc30a2a3
+
+# Date URL and DOI (optional if no data)
+data:
+  - url:
+  - doi:
+
+# Information about the original article that has been replicated
+replication:
+ - cite: "Yang Song, Stefano Ermon. \"Generative Modeling by Estimating Gradients of the Data Distribution\" In 33rd Conference on Neural Information Processing Systems, Vancouver, Canada. (NeurIPS 2019)" # Full textual citation
+ - bib: https://dblp.org/rec/journals/corr/abs-1907-05600.bib # Bibtex key (if any) in your bibliography file
+ - url: https://arxiv.org/abs/1907.05600v2  # URL to the PDF, try to link to a non-paywall version
+ - doi:  # no doi in the original article
+
+# Don't forget to surround abstract with double quotes
+abstract: "In this project we attempt to reproduce results from the paper \textit{Generative Modeling by Estimating Gradients of the Data Distribution} by \\citet{ncsn-paper}. The authors propose a novel generative framework based solely on gradients of data density estimated by a neural network. Once the model is trained, sampling can be performed with annealed Langevin dynamics. While we managed to reproduce the experiments qualitatively, we failed to achieve comparable results for Inception and FID scores for CIFAR-10. We further extended the original work in various directions (computing and analysing FID and IS also for CelebA, investigation of the sampling hyperparameters \\$\\epsilon\\$ and \\$T\\$, linear instead of geometric annealing schedule for noise levels, and different network architecture)."
+
+# Bibliography file (yours)
+bibliography: bibliography.bib
+  
+# Type of the article
+# Type can be:
+#  * Editorial
+#  * Letter
+#  * Replication
+type: Replication
+
+# Scientific domain of the article (e.g. Computational Neuroscience)
+#  (one domain only & try to be not overly specific)
+domain: NeurIPS 2019 Reproducibility Challenge
+
+# Coding language (main one only if several)
+language: Python
+
+  
+# To be filled by the author(s) after acceptance
+# -----------------------------------------------------------------------------
+
+# For example, the URL of the GitHub issue where review actually occured
+review: 
+  - url: https://openreview.net/forum?id=B1lcYrBgLH
+
+contributors:
+  - name: Koustuv Sinha
+    orcid: 0000-0002-2803-9236
+    role: editor
+  - name: Anonymous Reviewers
+    orcid:
+    role: reviewer
+  - name:
+    orcid:
+    role: reviewer
+
+# This information will be provided by the editor
+dates:
+  - received:  February 15, 2020
+  - accepted: February 15, 2020
+  - published: May 21, 2020 
+
+# This information will be provided by the editor
+article:
+  - number: 8 # Article number will be automatically assigned during publication
+  - doi: 10.5281/zenodo.3818609    # DOI from Zenodo
+  - url: https://zenodo.org/record/3818609/files/article.pdf  # Final PDF URL (Zenodo or rescience website?)
+
+# This information will be provided by the editor
+journal:
+  - name:   "ReScience C"
+  - issn:   2430-3658
+  - volume: 6
+  - issue:  2
