@@ -1,0 +1,119 @@
+# To be filled by the author(s) at the time of submission
+# -------------------------------------------------------
+
+# Title of the article:
+#  - For a successful replication, it shoudl be prefixed with "[Re]"
+#  - For a failed replication, it should be prefixed with "[¬Re]"
+#  - For other article types, no instruction (but please, not too long)
+title: "[Re] Tensor Monte Carlo: Particle Methods for the GPU Era"
+
+# List of authors with name, orcid number, email and affiliation
+# Affiliation "*" means contact author
+authors:
+  - name: Oskar Kviman
+    orcid: 0000-0002-6369-712X
+    email: okviman@kth.se
+    affiliations: 1,*
+    
+  - name: Linus Nilsson
+    orcid: 0000-0002-4232-1094
+    email: linunils@kth.se
+    affiliations: 1      # * is for contact author
+
+  - name: Martin Larsson
+    orcid: 0000-0002-9151-5119
+    email: mlar2@kth.se
+    affiliations: 1      # * is for contact author
+
+# List of affiliations with code (corresponding to author affiliations), name
+# and address. You can also use these affiliations to add text such as "Equal
+# contributions" as name (with no address).
+affiliations:
+  - code:    1
+    name:    KTH Royal Institute of Technology
+    address: Stockholm, Sweden
+
+
+# List of keywords (adding the programming language might be a good idea)
+keywords: deep learning, variational autoencoders, rescience c, python, tensorflow
+
+# Code URL and DOI (url is mandatory for replication, doi after acceptance)
+# You can get a DOI for your code from Zenodo,
+#   see https://guides.github.com/activities/citable-code/
+code:
+  - url: https://github.com/LinuNils/TMC\_reproduced
+  - doi:
+  - swh: swh:1:dir:7aa1df905b5c3f0a77a8b0c01123dc0013c79280
+
+# Date URL and DOI (optional if no data)
+data:
+  - url:
+  - doi:
+
+# Information about the original article that has been replicated
+replication:
+ - cite: "Laurence Aitchison. Tensor monte carlo: particle methods for the gpu era. In Advances in NeuralInformation Processing Systems, pages 7146–7155, 2019" # Full textual citation
+ - bib: \cite{tmc} # Bibtex key (if any) in your bibliography file
+ - url: http://papers.nips.cc/paper/8936-tensor-monte-carlo-particle-methods-for-the-gpu-era.pdf # URL to the PDF, try to link to a non-paywall version
+ - doi: 1806.08593 # Regular digital object identifier
+
+# Don't forget to surround abstract with double quotes
+abstract: "In this work, we reproduce what we believe are the most important results presented in the Tensor Monte Carlo paper (Aitchison [2019]),
+           where we also provide our reimplementation code. The original results in the TMC paper were attained via a PyTorch (Paszke et al. [2017]) implementation.
+           In an attempt to ease understanding for those unfamiliar with PyTorch, we contribute with a TensorFlow (Abadi et al. [2015]) implementation.
+           Additionally, as we found the TMC architecture non-trivial to understand, we aim to ease understanding for future users by complementing the textual description of the model with an algorithmic description and a depiction of the model."
+
+# Bibliography file (yours)
+bibliography: bibliography.bib
+  
+# Type of the article
+# Type can be:
+#  * Editorial
+#  * Letter
+#  * Replication
+type: Replication
+
+# Scientific domain of the article (e.g. Computational Neuroscience)
+#  (one domain only & try to be not overly specific)
+domain: NeurIPS 2019 Reproducibility Challenge
+
+# Coding language (main one only if several)
+language: Python
+
+  
+# To be filled by the author(s) after acceptance
+# -----------------------------------------------------------------------------
+
+# For example, the URL of the GitHub issue where review actually occured
+review: 
+  - url: https://openreview.net/forum?id=BJxUSaczTH
+
+contributors:
+  - name: Koustuv Sinha
+    orcid: 0000-0002-2803-9236
+    role: editor
+  - name: Anonymous Reviewers
+    orcid:
+    role: reviewer
+  - name:
+    orcid:
+    role: reviewer
+
+# This information will be provided by the editor
+dates:
+  - received:  February 15, 2020
+  - accepted:  February 15, 2020
+  - published: May 21, 2020
+
+# This information will be provided by the editor
+article:
+  - number: 5 # Article number will be automatically assigned during publication
+  - doi: 10.5281/zenodo.3818617    # DOI from Zenodo
+  - url: https://zenodo.org/record/3818617/files/article.pdf   # Final PDF URL (Zenodo or rescience website?)
+
+# This information will be provided by the editor
+journal:
+  - name:   "ReScience C"
+  - issn:   2430-3658
+  - volume: 6
+  - issue:  2
